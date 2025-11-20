@@ -68,7 +68,7 @@ spec:
         env: automation
       volumeSize: 80
       volumeType: gp2
-    - ami: ami-06382102d3ff79b05
+    - ami: ami-0987b3f5dcf2f89cb
       desiredCapacity: 1
       instanceType: t3.medium
       maxSize: 1
