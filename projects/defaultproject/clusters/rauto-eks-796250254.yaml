@@ -1,0 +1,71 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-eks-796250254
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_385476756
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.20.4-eksbuild.3
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.31.13-eksbuild.2
+    addonsConfig: {}
+    autoModeConfig: {}
+    metadata:
+      name: rauto-eks-796250254
+      region: us-east-1
+      tags:
+        DeleteBefore: "2025-11-20T21:30:29Z"
+        build_num: master-sanity-master-96
+        creation_time: "2025-11-20T13:30:29Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1763645429"
+        squad: blue
+      version: "1.31"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng-796250254
+      privateNetworking: true
+      version: "1.31"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
+  proxyConfig: {}
+  type: aws-eks
