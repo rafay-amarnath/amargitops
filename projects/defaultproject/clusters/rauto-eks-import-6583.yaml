@@ -387,6 +387,11 @@ spec:
             id: subnet-01d31b4a5842c99dd
           subnet-087ff7244ea42bcec:
             id: subnet-087ff7244ea42bcec
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-project-789637
+    - name: rauto-project-one-789637
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
