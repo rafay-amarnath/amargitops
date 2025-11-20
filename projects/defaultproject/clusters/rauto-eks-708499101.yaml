@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
+    name: rauto-test-bp-989145859
+    version: v1
   cloudCredentials: rauto_399559701
   config:
     accessConfig:
@@ -18,6 +19,9 @@ spec:
       version: v1.11.4-eksbuild.24
     - name: kube-proxy
       version: v1.31.13-eksbuild.2
+    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
+      name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     metadata:
