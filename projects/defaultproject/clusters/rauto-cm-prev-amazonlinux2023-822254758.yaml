@@ -29,7 +29,7 @@ spec:
     - us-east-1d
     - us-east-1f
     managedNodeGroups:
-    - ami: ami-07c0eba1a02814d42
+    - ami: ami-0f390f3be50cb43a3
       desiredCapacity: 1
       instanceType: t3.medium
       maxSize: 1
