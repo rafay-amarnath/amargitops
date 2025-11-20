@@ -462,6 +462,7 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: alpha
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
