@@ -505,6 +505,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: WindowsServer2019FullContainer
