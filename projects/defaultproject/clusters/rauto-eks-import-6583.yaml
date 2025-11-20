@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-4258201
+    name: rauto-nps-bp-4084
     version: v1
   cloudCredentials: rauto_437769356
   config:
