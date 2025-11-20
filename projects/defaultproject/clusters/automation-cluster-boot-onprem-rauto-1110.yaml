@@ -1,0 +1,36 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    edit: edit_142654004
+    workload: test563175876
+  name: automation-cluster-boot-onprem-rauto-1110
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+    version: latest
+  config:
+    installerTtl: 365
+    kubernetesVersion: v1.32.4
+    network:
+      cni:
+        name: Calico
+        version: 3.28.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: automation-cluster-boot-onprem-rauto-1110
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.202
+      roles:
+      - Worker
+      - ControlPlane
+    platformVersion: v1.1.0
+  proxy: {}
+  sharing:
+    enabled: true
+    projects:
+    - {}
+  type: mks

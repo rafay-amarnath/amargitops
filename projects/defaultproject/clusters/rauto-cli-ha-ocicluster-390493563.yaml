@@ -1,0 +1,74 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-ha-ocicluster-390493563
+  project: defaultproject
+spec:
+  blueprint:
+    name: minimal
+    version: latest
+  cloudCredentials: rauto-ssh-creds-390493563
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    kubeletExtraArgs:
+      max-pods: "800"
+    kubernetesVersion: v1.32.9
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: rauto-sdk-1761703610-726655
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.186
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.24.56
+    - arch: amd64
+      hostname: rauto-sdk-1761703679-327927
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.122
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.200.198
+    - arch: amd64
+      hostname: rauto-sdk-1761703754-837123
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.164
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 129.146.203.87
+    - arch: amd64
+      hostname: rauto-sdk-1761703831-436298
+      kubeletExtraArgs:
+        max-pods: "50"
+      labels:
+        key: rauto
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.77
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.203.42
+    - arch: amd64
+      hostname: rauto-sdk-1761703907-60323
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.0.12
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.58.21
+  type: mks

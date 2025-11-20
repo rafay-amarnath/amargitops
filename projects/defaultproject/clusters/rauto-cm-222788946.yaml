@@ -1,0 +1,87 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-cm-222788946
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: rauto_601295123
+  config:
+    accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy
+        kubernetesUsername: automationuser
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        type: STANDARD
+      authenticationMode: API
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.30.14-eksbuild.8
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - amiFamily: Ubuntu2204
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-222788946
+      overrideBootstrapCommand: null
+      version: "1.30"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: Ubuntu2204
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-222788946
+      overrideBootstrapCommand: null
+      version: "1.30"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-222788946
+      region: us-east-1
+      tags:
+        DeleteBefore: "2025-11-06T06:04:42Z"
+        build_num: master-sanity-master-64
+        creation_time: "2025-11-05T22:04:42Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1762380282"
+        squad: vikings
+      version: "1.30"
+    network:
+      cni:
+        name: Calico-v3.24.5
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks

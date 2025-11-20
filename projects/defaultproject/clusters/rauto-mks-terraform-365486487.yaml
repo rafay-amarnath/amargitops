@@ -1,0 +1,71 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-mks-terraform-365486487
+  project: defaultproject
+spec:
+  blueprint:
+    name: minimal
+    version: latest
+  config:
+    autoApproveNodes: true
+    installerTtl: 365
+    kubernetesVersion: v1.31.8
+    network:
+      cni:
+        name: CNI-via-Blueprint
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: ip-172-31-21-131
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.21.131
+      roles:
+      - ControlPlane
+      - Worker
+      ssh:
+        ipAddress: 3.82.14.90
+        port: "22"
+        privateKeyPath: /Users/manish/Desktop/rauto/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-26-104
+      kubeletExtraArgs:
+        cpu-manager-reconcile-period: 30s
+      labels:
+        key: rauto
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.26.104
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.81.24.167
+        port: "22"
+        privateKeyPath: /Users/manish/Desktop/rauto/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+    - arch: amd64
+      hostname: ip-172-31-17-92
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.17.92
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.89.227.85
+        port: "22"
+        privateKeyPath: /Users/manish/Desktop/rauto/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    platformVersion: v1.1.0
+    ssh:
+      port: "22"
+      privateKeyPath: /Users/manish/Desktop/rauto/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+      username: ubuntu
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-sharing-terraform-365486487
+  type: mks

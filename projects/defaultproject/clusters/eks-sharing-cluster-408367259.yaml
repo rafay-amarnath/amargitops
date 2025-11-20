@@ -1,0 +1,62 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    qe-owner: clouqe
+  name: eks-sharing-cluster-408367259
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+    version: latest
+  cloudCredentials: rauto_732306918
+  config:
+    addons:
+    - name: vpc-cni
+      version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3.xlarge
+      maxPodsPerNode: 50
+      maxSize: 2
+      minSize: 1
+      name: tf-1
+      privateNetworking: true
+      spot: false
+      version: "1.31"
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
+    metadata:
+      name: eks-sharing-cluster-408367259
+      region: us-west-2
+      tags:
+        email: automation-user@rafay.co
+        env: qa
+      version: "1.31"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      autoAllocateIPv6: false
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  type: aws-eks
