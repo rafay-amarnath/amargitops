@@ -1,29 +1,99 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: akshar-lucky
+  name: rauto-cm-76547858
   project: rauto-eks-gitsync-2735
 spec:
-  blueprint:
+  blueprintConfig:
     name: default
     version: latest
+  cloudCredentials: rauto_464160867
   config:
-    installerTtl: 365
-    kubernetesVersion: v1.32.4
+    accessConfig:
+      authenticationMode: API_AND_CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.20.1-eksbuild.3
+    - name: coredns
+      version: v1.11.4-eksbuild.22
+    - name: kube-proxy
+      version: v1.32.6-eksbuild.8
+    - name: aws-ebs-csi-driver
+      version: latest
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - ami: ami-0aeea817f0ec4421e
+      desiredCapacity: 1
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceTypes:
+      - t3.medium
+      maxSize: 2
+      minSize: 1
+      name: ubtunt
+      overrideBootstrapCommand: '| [Ubuntu]'
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: rauto-cm-76547858
+      region: us-east-1
+      tags:
+        DeleteBefore: "2025-09-09T14:44:32Z"
+        build_num: local
+        creation_time: "2025-09-09T06:44:32Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1757400272"
+        squad: local
+      version: "1.32"
     network:
       cni:
-        name: Calico
-        version: 3.28.1
-      podSubnet: 10.244.0.0/16
-      serviceSubnet: 10.96.0.0/12
-    nodes:
-    - arch: amd64
-      hostname: manish-22-1
-      operatingSystem: Ubuntu22.04
-      privateIP: 10.0.0.33
-      roles:
-      - ControlPlane
-      - Worker
-    platformVersion: v1.0.0
-  proxy: {}
-  type: mks
+        name: aws-cni
+    nodeGroups:
+    - ami: ami-0aeea817f0ec4421e
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-76547858
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    - ami: ami-0aeea817f0ec4421e
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-76547858
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
