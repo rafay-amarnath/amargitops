@@ -1,0 +1,8 @@
+apiVersion: system.k8smgmt.io/v3
+kind: Project
+metadata:
+  description: rauto created project
+  name: rauto-eks-gitsync-2735
+spec:
+  driftWebhook:
+    enabled: true
