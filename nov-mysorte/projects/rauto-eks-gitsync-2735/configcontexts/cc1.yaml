@@ -3,4 +3,11 @@ kind: ConfigContext
 metadata:
   name: cc1
   project: rauto-eks-gitsync-2735
-spec: {}
+spec:
+  variables:
+  - name: kjh
+    options:
+      override:
+        type: allowed
+    value: lkjh
+    valueType: text
