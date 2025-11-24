@@ -1,0 +1,13 @@
+apiVersion: eaas.envmgmt.io/v1
+kind: ConfigContext
+metadata:
+  name: cc2
+  project: rauto-eks-gitsync-2735
+spec:
+  variables:
+  - name: kjh
+    options:
+      override:
+        type: allowed
+    value: lkjh-helooooo
+    valueType: text
