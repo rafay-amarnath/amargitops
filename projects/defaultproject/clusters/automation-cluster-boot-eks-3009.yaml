@@ -49,6 +49,8 @@ spec:
       maxSize: 2
       minSize: 2
       name: ng-18059c1d
+      nodeRepairConfig:
+        enabled: true
       volumeSize: 80
       volumeType: gp3
     metadata:
