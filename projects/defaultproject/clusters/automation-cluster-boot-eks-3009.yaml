@@ -7,8 +7,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: vivek-aws-node-termination-handler
-    version: v1
+    name: minimal
+    version: latest
   cloudCredentials: rauto_20701
   config:
     accessConfig:
