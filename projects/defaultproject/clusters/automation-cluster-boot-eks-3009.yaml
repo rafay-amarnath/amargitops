@@ -29,6 +29,8 @@ spec:
         }
       name: aws-ebs-csi-driver
       version: latest
+    - name: eks-node-monitoring-agent
+      version: v1.4.2-eksbuild.1
     addonsConfig: {}
     autoModeConfig: {}
     identityMappings:
