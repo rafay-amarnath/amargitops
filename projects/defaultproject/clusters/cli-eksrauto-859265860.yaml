@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-674730406
+  name: cli-eksrauto-859265860
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
-  cloudCredentials: cli-cprauto-674730406
+    name: default
+  cloudCredentials: cli-cprauto-859265860
   config:
     addons:
     - name: vpc-cni
@@ -17,54 +17,56 @@ spec:
       version: latest
     - name: aws-ebs-csi-driver
       version: latest
-    iam:
-      withOIDC: true
-    kubernetesNetworkConfig:
-      ipFamily: IPv6
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
     managedNodeGroups:
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
-      instanceType: t3.xlarge
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-first-674730406
+      name: cli-ngrauto-first-859265860
+      nodeRepairConfig:
+        enabled: true
       privateNetworking: true
       version: "1.32"
-    - amiFamily: AmazonLinux2023
+    - amiFamily: AmazonLinux2
       desiredCapacity: 1
-      instanceType: t3.xlarge
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-second-674730406
+      name: cli-ngrauto-second-859265860
       privateNetworking: true
       version: "1.32"
     metadata:
-      name: cli-eksrauto-674730406
+      name: cli-eksrauto-859265860
       region: us-east-1
       tags:
-        build_num: master-sanity-master-98
-        creation_time: "2025-11-27T02:45:34Z"
         email: automation@rafay.co
         env: automation
-        squad: vikings
       version: "1.32"
     network:
       cni:
         name: aws-cni
     vpc:
-      cidr: 192.168.0.0/16
       clusterEndpoints:
         privateAccess: true
         publicAccess: false
+      nat:
+        gateway: Single
       subnets:
-        private:
-          subnet-09b241e3ee410a97c:
-            id: subnet-09b241e3ee410a97c
-          subnet-0b55b3326b18f0cb1:
-            id: subnet-0b55b3326b18f0cb1
-        public:
-          subnet-04cf44e23214ca5c1:
-            id: subnet-04cf44e23214ca5c1
-          subnet-094c8a28366d36289:
-            id: subnet-094c8a28366d36289
+        private: {}
+        public: {}
   type: aws-eks

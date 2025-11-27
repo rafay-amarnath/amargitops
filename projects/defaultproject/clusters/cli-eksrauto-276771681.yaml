@@ -17,6 +17,13 @@ spec:
         kubernetesUsername: kalyan-rafay
         principalARN: arn:aws:iam::679196758854:user/kalyan@rafay.co
         type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: rauto-entry
+        principalARN: arn:aws:iam::679196758854:user/chaitanya@rafay.co
+        type: STANDARD
       authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
@@ -58,7 +65,7 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: vikings
-      version: "1.32"
+      version: "1.33"
     nodeGroups:
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
@@ -67,7 +74,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-first-276771681
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
       instanceType: t3.xlarge
@@ -75,7 +82,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-second-276771681
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:

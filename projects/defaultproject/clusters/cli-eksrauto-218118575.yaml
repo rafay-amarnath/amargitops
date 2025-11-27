@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    cli: eks
   name: cli-eksrauto-218118575
   project: defaultproject
 spec:
@@ -36,6 +38,18 @@ spec:
     - name: vpc-cni
       version: latest
     - name: aws-ebs-csi-driver
+      version: latest
+    - name: adot
+      version: latest
+    - name: aws-guardduty-agent
+      version: latest
+    - name: aws-efs-csi-driver
+      version: latest
+    - name: snapshot-controller
+      version: latest
+    - name: amazon-cloudwatch-observability
+      version: latest
+    - name: aws-mountpoint-s3-csi-driver
       version: latest
     availabilityZones:
     - us-east-1a
