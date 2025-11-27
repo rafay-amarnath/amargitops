@@ -7,11 +7,12 @@ spec:
   blueprint:
     name: minimal
     version: latest
+  cloudCredentials: rauto-gke-cp-85462760
   config:
     controlPlaneVersion: "1.31"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
-    gcpProject: $__gcpproject
+    gcpProject: qa-automation-371111
     location:
       config:
         zone: us-west1-c
@@ -25,6 +26,7 @@ spec:
           enableAccessControlPlaneGlobal: true
           enablePrivateNodes: true
         type: private
+      dataPlaneV2: ADVANCED_DATAPATH
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
       name: default
