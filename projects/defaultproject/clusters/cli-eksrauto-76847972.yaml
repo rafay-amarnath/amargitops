@@ -94,10 +94,10 @@ spec:
       version: "1.33"
     nodeGroups:
     - amiFamily: AmazonLinux2023
-      desiredCapacity: 1
+      desiredCapacity: 2
       instanceType: t3.xlarge
-      maxSize: 1
-      minSize: 1
+      maxSize: 2
+      minSize: 2
       name: cli-ngrauto-first-76847972
       privateNetworking: true
       tags:
