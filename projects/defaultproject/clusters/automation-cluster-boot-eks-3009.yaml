@@ -52,7 +52,7 @@ spec:
       minSize: 2
       name: ng-18059c1d
       nodeRepairConfig:
-        enabled: true
+        enabled: false
       volumeSize: 80
       volumeType: gp3
     metadata:
