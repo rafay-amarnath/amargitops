@@ -111,7 +111,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-second-76847972
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
