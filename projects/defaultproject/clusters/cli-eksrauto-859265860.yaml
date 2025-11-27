@@ -37,6 +37,9 @@ spec:
       nodeRepairConfig:
         enabled: true
       privateNetworking: true
+      tags:
+        key1: value1
+        key2: value2
       version: "1.32"
     - amiFamily: AmazonLinux2
       desiredCapacity: 1
