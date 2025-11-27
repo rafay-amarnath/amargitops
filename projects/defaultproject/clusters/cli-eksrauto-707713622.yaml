@@ -48,15 +48,6 @@ spec:
       name: cli-ngrauto-second-707713622
       privateNetworking: true
       version: "1.32"
-    - ami: ami-0a6985ab37dd8bc8f
-      desiredCapacity: 1
-      instanceType: t3a.xlarge
-      name: eksngrauto-53546
-      overrideBootstrapCommand: '| [Windows]'
-      privateNetworking: true
-      tags:
-        email: automation@rafay.co
-        env: automation
     metadata:
       name: cli-eksrauto-707713622
       region: us-east-1
