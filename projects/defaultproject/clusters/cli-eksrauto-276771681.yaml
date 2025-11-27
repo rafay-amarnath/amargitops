@@ -67,7 +67,6 @@ spec:
         email: automation@rafay.co
         env: automation
         squad: vikings
-        tags-day2: edited-on-day-2
       version: "1.33"
     nodeGroups:
     - amiFamily: AmazonLinux2023
