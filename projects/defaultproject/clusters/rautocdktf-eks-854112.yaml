@@ -45,6 +45,26 @@ spec:
       volumeSize: 80
       volumeThroughput: 125
       volumeType: gp3
+    - ami: ami-06382102d3ff79b05
+      desiredCapacity: 1
+      disableIMDSv1: false
+      disablePodIMDS: false
+      ebsOptimized: false
+      efaEnabled: false
+      enableDetailedMonitoring: false
+      instanceType: t3a.xlarge
+      maxPodsPerNode: 0
+      maxSize: 2
+      minSize: 1
+      name: rauto-ng-windows
+      overrideBootstrapCommand: '[Windows]'
+      privateNetworking: true
+      spot: false
+      volumeEncrypted: false
+      volumeIOPS: 3000
+      volumeSize: 80
+      volumeThroughput: 125
+      volumeType: gp3
     metadata:
       name: rautocdktf-eks-854112
       region: us-east-1
