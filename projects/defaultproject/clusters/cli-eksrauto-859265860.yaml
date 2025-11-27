@@ -35,7 +35,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-first-859265860
       nodeRepairConfig:
-        enabled: true
+        enabled: false
       privateNetworking: true
       tags:
         key1: value1
