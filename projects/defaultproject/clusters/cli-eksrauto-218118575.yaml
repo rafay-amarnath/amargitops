@@ -98,7 +98,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-first-218118575
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
     - amiFamily: AmazonLinux2023
       desiredCapacity: 1
       instanceType: t3.xlarge
