@@ -72,7 +72,7 @@ spec:
         tags:
           irsatag: rauto-irsatag
       - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
         metadata:
           annotations:
             irsa: rauto-252780957
@@ -81,7 +81,7 @@ spec:
           name: rauto-irsa-8614
           namespace: namespace-252780957
         tags:
-          irsatag: rauto-252780957
+          awstag: rauto-irsa-252780957
       withOIDC: true
     managedNodeGroups:
     - amiFamily: Bottlerocket
