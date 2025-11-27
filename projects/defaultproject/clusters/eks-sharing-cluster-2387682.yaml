@@ -59,4 +59,8 @@ spec:
         publicAccess: true
       nat:
         gateway: Single
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-sharing-terraform-2387682
   type: aws-eks
