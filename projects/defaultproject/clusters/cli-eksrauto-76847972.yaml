@@ -71,6 +71,17 @@ spec:
           namespace: rafay-system
         tags:
           irsatag: rauto-irsatag
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-248865860
+          labels:
+            irsalabel: rauto-248865860
+          name: rauto-irsa-3113
+          namespace: namespace-248865860
+        tags:
+          irsatag: rauto-248865860
       withOIDC: true
     managedNodeGroups:
     - amiFamily: Bottlerocket
