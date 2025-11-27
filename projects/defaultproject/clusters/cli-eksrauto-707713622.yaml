@@ -9,7 +9,8 @@ spec:
   cloudCredentials: cli-cprauto-707713622
   config:
     addons:
-    - name: vpc-cni
+    - configurationValues: '{"enableWindowsIpam":"true"}'
+      name: vpc-cni
       version: latest
     - name: coredns
       version: latest
@@ -47,7 +48,7 @@ spec:
       minSize: 1
       name: cli-ngrauto-second-707713622
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
     metadata:
       name: cli-eksrauto-707713622
       region: us-east-1
