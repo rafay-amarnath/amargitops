@@ -26,18 +26,7 @@ spec:
     - us-east-1d
     - us-east-1f
     iam:
-      serviceAccounts:
-      - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3FullAccess
-        metadata:
-          annotations:
-            irsa: rauto-218379414
-          labels:
-            irsalabel: rauto-218379414
-          name: rauto-irsa-902
-          namespace: namespace-218379414
-        tags:
-          awstag: rauto-irsa-218379414
+      serviceAccounts: []
       withOIDC: true
     kubernetesNetworkConfig:
       ipFamily: IPv6
