@@ -37,6 +37,14 @@ spec:
       name: phani-default-nodepool
       nodeVersion: "1.31"
       size: 1
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-medium
+      name: rauto-np-2338
+      nodeVersion: "1.31"
+      size: 1
     preBootstrapCommands:
     - ""
     - ""
