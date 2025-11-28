@@ -1,13 +1,15 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: gke-cluster-499380266
+  labels:
+    rauto: "true"
+  name: rauto-gke-9694
   project: defaultproject
 spec:
   blueprint:
     name: default-gke
     version: latest
-  cloudCredentials: rauto-gke-cp-499380266
+  cloudCredentials: rauto-gke-cp-9694
   config:
     controlPlaneVersion: "1.31"
     features:
@@ -27,16 +29,14 @@ spec:
         type: public
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
-      name: default
-      podAddressRange: /14
-      serviceAddressRange: /20
-      subnetName: default
+      name: phani-vpc1
+      subnetName: sub1-phani-vpc1
     nodePools:
     - machineConfig:
-        bootDiskSize: 50
+        bootDiskSize: 100
         bootDiskType: pd-standard
         imageType: COS_CONTAINERD
-        machineType: e2-standard-2
+        machineType: e2-standard-4
       name: default-nodepool
       nodeVersion: "1.31"
       size: 1
@@ -44,10 +44,10 @@ spec:
         maxNodes: 1
         minNodes: 1
       machineConfig:
-        bootDiskSize: 50
+        bootDiskSize: 100
         bootDiskType: pd-standard
         imageType: COS_CONTAINERD
-        machineType: e2-standard-2
+        machineType: e2-standard-4
       name: second-nodepool
       nodeVersion: "1.31"
       size: 1
