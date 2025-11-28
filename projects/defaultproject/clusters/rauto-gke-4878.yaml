@@ -1,0 +1,47 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-gke-4878
+  project: defaultproject
+spec:
+  blueprint:
+    name: rauto-blueprint-4829223
+    version: v1
+  cloudCredentials: rauto-gke-cp-4878
+  config:
+    controlPlaneVersion: "1.31"
+    features:
+      enableComputeEnginePersistentDiskCSIDriver: true
+    gcpProject: qa-automation-371111
+    location:
+      config:
+        zone: us-central1-a
+      type: zonal
+    network:
+      access:
+        config: null
+        type: public
+      enableVPCNativetraffic: true
+      maxPodsPerNode: 110
+      name: default
+      subnetName: default
+    nodePools:
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-medium
+        reservationAffinity:
+          consumeReservationType: specific
+          reservationName: qa-automation-1
+      name: default-nodepool
+      nodeLocations:
+        enabled: true
+        zones:
+        - us-central1-a
+      nodeVersion: "1.31"
+      size: 2
+    preBootstrapCommands:
+    - ""
+    - ""
+  type: gke
