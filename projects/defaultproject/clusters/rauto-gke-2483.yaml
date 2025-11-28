@@ -2,8 +2,7 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   labels:
-    key1: value1
-    key2: value2
+    key3: value3
   name: rauto-gke-2483
   project: defaultproject
 spec:
@@ -50,6 +49,14 @@ spec:
         imageType: COS_CONTAINERD
         machineType: e2-standard-4
       name: second-nodepool
+      nodeVersion: "1.31"
+      size: 1
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-medium
+      name: rauto-ng-7482
       nodeVersion: "1.31"
       size: 1
     preBootstrapCommands:
