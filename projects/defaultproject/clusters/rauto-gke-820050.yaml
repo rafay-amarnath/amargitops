@@ -48,6 +48,14 @@ spec:
       name: second-nodepool
       nodeVersion: "1.31"
       size: 1
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-medium
+      name: rauto-ng-3561
+      nodeVersion: "1.31"
+      size: 1
     preBootstrapCommands:
     - ""
     - ""
