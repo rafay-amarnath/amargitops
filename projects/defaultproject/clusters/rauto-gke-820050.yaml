@@ -55,7 +55,7 @@ spec:
         machineType: e2-medium
       name: rauto-ng-3561
       nodeVersion: "1.31"
-      size: 3
+      size: 2
     preBootstrapCommands:
     - ""
     - ""
