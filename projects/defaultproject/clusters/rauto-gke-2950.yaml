@@ -65,6 +65,18 @@ spec:
               protocol: tcp
             sourceRanges:
             - 172.16.0.48/28
+          - action: ALLOW
+            description: firewall rule
+            destinationRanges:
+            - 172.16.0.48/28
+            direction: EGRESS
+            name: rauto-fw-782
+            priority: 1555
+            rules:
+            - ports:
+              - "22284"
+              - "9447"
+              protocol: tcp
         type: private
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
