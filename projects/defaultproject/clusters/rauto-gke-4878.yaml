@@ -41,6 +41,21 @@ spec:
         - us-central1-a
       nodeVersion: "1.31"
       size: 2
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-medium
+        reservationAffinity:
+          consumeReservationType: specific
+          reservationName: qa-automation-1
+      name: rauto-ng-5550
+      nodeLocations:
+        enabled: true
+        zones:
+        - us-central1-a
+      nodeVersion: "1.31"
+      size: 2
     preBootstrapCommands:
     - ""
     - ""
