@@ -43,7 +43,7 @@ spec:
         imageType: COS_CONTAINERD
         machineType: e2-medium
       name: rauto-np-2338
-      nodeVersion: "1.31"
+      nodeVersion: "1.32"
       size: 2
     preBootstrapCommands:
     - ""
