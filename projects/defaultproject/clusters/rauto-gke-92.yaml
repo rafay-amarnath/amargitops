@@ -59,6 +59,23 @@ spec:
       name: gpu-nodepool
       nodeVersion: "1.32"
       size: 1
+    - machineConfig:
+        accelerators:
+        - acceleratorSharing:
+            maxSharedClients: 2
+            strategy: TIME_SHARING
+          count: 1
+          gpuDriverInstallation:
+            config: null
+            type: user-managed
+          type: nvidia-tesla-t4
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: n1-standard-4
+      name: day-2-gpu-nodepool-464
+      nodeVersion: "1.31"
+      size: 1
     preBootstrapCommands:
     - ""
     - ""
