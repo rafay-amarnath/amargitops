@@ -54,9 +54,4 @@ spec:
     preBootstrapCommands:
     - ""
     - ""
-  sharing:
-    enabled: true
-    projects:
-    - name: rauto-proj-gke-434511086
-    - name: rauto-proj-gke-543457323
   type: gke
