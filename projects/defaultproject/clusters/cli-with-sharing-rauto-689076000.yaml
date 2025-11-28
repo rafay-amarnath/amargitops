@@ -38,8 +38,4 @@ spec:
       name: phani-defaultnodepool
       nodeVersion: "1.31"
       size: 1
-  sharing:
-    enabled: true
-    projects:
-    - name: '*'
   type: gke
