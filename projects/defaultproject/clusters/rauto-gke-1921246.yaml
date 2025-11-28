@@ -2,16 +2,16 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   labels:
-    key3: value3
-  name: rauto-gke-2483
+    rauto: "true"
+  name: rauto-gke-1921246
   project: defaultproject
 spec:
   blueprint:
     name: default-gke
     version: latest
-  cloudCredentials: rauto-gke-cp-2483
+  cloudCredentials: rauto-gke-cp-1921246
   config:
-    controlPlaneVersion: "1.32"
+    controlPlaneVersion: "1.31"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
     gcpProject: qa-automation-371111
