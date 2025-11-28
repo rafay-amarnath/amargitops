@@ -9,7 +9,7 @@ spec:
     version: latest
   cloudCredentials: rauto-gke-cp-5448
   config:
-    controlPlaneVersion: "1.31"
+    controlPlaneVersion: "1.32"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
     gcpProject: qa-automation-371111
