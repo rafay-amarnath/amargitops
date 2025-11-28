@@ -1,21 +1,25 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-gke-5448
+  name: gke-cluster-499380266
   project: defaultproject
 spec:
   blueprint:
     name: default-gke
     version: latest
-  cloudCredentials: rauto-gke-cp-5448
+  cloudCredentials: rauto-gke-cp-499380266
   config:
-    controlPlaneVersion: "1.32"
+    controlPlaneVersion: "1.31"
     features:
       enableComputeEnginePersistentDiskCSIDriver: true
     gcpProject: qa-automation-371111
     location:
       config:
         zone: us-central1-c
+      defaultNodeLocations:
+        enabled: true
+        zones:
+        - us-central1-c
       type: zonal
     network:
       access:
@@ -23,12 +27,10 @@ spec:
         type: public
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
-      name: projects/dev-382813/global/networks/qaautomation-dev-vpc
-      networkPolicy: CALICO
-      networkPolicyConfig: true
-      podSecondaryRangeName: qaautomation-sec-pods
-      serviceSecondaryRangeName: qaautomation-sec-svc
-      subnetName: projects/dev-382813/regions/us-central1/subnetworks/qaautomation-dev-sub1
+      name: default
+      podAddressRange: /14
+      serviceAddressRange: /20
+      subnetName: default
     nodePools:
     - machineConfig:
         bootDiskSize: 50
