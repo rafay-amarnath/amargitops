@@ -7,8 +7,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: default-gke
-    version: latest
+    name: rauto-blueprint-7868164
+    version: v1
   cloudCredentials: rauto-gke-cp-820050
   config:
     controlPlaneVersion: "1.32"
