@@ -1,0 +1,62 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-gke-2965
+  project: defaultproject
+spec:
+  blueprint:
+    name: default-gke
+    version: latest
+  cloudCredentials: rauto-gke-cp-2965
+  config:
+    controlPlaneVersion: "1.31"
+    features:
+      enableComputeEnginePersistentDiskCSIDriver: true
+    gcpProject: qa-automation-371111
+    location:
+      config:
+        zone: us-central1-a
+      type: zonal
+    network:
+      access:
+        config:
+          controlPlaneIPRange: 172.16.0.176/28
+          disableSNAT: true
+          enableAccessControlPlaneExternalIP: true
+          enableAccessControlPlaneGlobal: true
+          enablePrivateNodes: true
+          firewallRules:
+          - action: ALLOW
+            description: Allow Webhook Connections
+            direction: INGRESS
+            name: sharan-test-allow-webhook
+            priority: 1555
+            rules:
+            - ports:
+              - "22284"
+              - "9447"
+              protocol: tcp
+            sourceRanges:
+            - 192.168.0.0/24
+        type: private
+      enableVPCNativetraffic: true
+      maxPodsPerNode: 110
+      name: default
+      subnetName: default
+    nodePools:
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-standard-4
+      name: default-nodepool
+      nodeVersion: "1.31"
+      size: 1
+      upgradeSettings:
+        config:
+          maxSurge: 1
+        strategy: SURGE
+    preBootstrapCommands:
+    - ""
+    - ""
+  type: gke
