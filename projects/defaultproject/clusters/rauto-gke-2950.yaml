@@ -69,8 +69,6 @@ spec:
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
       name: phani-vpc1
-      networkPolicy: CALICO
-      networkPolicyConfig: true
       subnetName: sub1-phani-vpc1
     nodePools:
     - machineConfig:

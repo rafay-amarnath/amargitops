@@ -92,7 +92,7 @@ spec:
         machineType: e2-standard-4
       name: second-nodepool
       nodeVersion: "1.31"
-      size: 1
+      size: 2
     - machineConfig:
         bootDiskSize: 100
         bootDiskType: pd-standard
