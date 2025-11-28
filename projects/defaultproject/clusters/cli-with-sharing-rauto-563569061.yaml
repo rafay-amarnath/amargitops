@@ -1,13 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-with-sharing-rauto-689076000
+  name: cli-with-sharing-rauto-563569061
   project: defaultproject
 spec:
   blueprint:
     name: default-gke
     version: latest
-  cloudCredentials: rauto_463789073
+  cloudCredentials: rauto_900653403
   config:
     controlPlaneVersion: "1.31"
     features:
@@ -38,4 +38,9 @@ spec:
       name: phani-defaultnodepool
       nodeVersion: "1.31"
       size: 1
+  sharing:
+    enabled: true
+    projects:
+    - name: rauto-proj-gke-229273
+    - name: rauto-proj-gke-1606067
   type: gke
