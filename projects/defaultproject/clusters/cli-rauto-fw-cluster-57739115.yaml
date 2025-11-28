@@ -1,13 +1,15 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-v3spec-rauto-370687530
+  labels:
+    rauto: "true"
+  name: cli-rauto-fw-cluster-57739115
   project: defaultproject
 spec:
   blueprint:
     name: default-gke
     version: latest
-  cloudCredentials: rauto_681404294
+  cloudCredentials: rauto_915951126
   config:
     controlPlaneVersion: "1.31"
     features:
@@ -19,8 +21,28 @@ spec:
       type: zonal
     network:
       access:
-        config: null
-        type: public
+        config:
+          controlPlaneIPRange: 172.16.0.160/28
+          disableSNAT: true
+          enableAccessControlPlaneExternalIP: true
+          enableAccessControlPlaneGlobal: true
+          firewallRules:
+          - action: ALLOW
+            description: Allow Webhook Connections
+            destinationRanges:
+            - 172.16.8.48/28
+            direction: EGRESS
+            name: rauto-allow-egress
+            priority: 1555
+            rules:
+            - ports:
+              - "22284"
+              - "9447"
+              protocol: tcp
+        type: private
+      dataPlaneV2: ADVANCED_DATAPATH
+      enableDataPlaneV2Metrics: true
+      enableDataPlaneV2Observability: true
       enableVPCNativetraffic: true
       maxPodsPerNode: 110
       name: default
@@ -33,7 +55,7 @@ spec:
         machineType: e2-standard-4
       name: default-nodepool
       nodeVersion: "1.31"
-      size: 3
+      size: 1
       upgradeSettings:
         config:
           maxSurge: 1
