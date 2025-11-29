@@ -4,17 +4,17 @@ metadata:
   labels:
     environment: automation
     owner: defaultproject
-  name: rauto-terraform-aks-41907585
+  name: rauto-terraform-aks-8434797
   project: defaultproject
 spec:
   blueprintConfig:
-    name: custom-bp-aks-827565050
+    name: custom-bp-aks-682460611
     version: v1
-  cloudCredentials: rauto_662258999
+  cloudCredentials: rauto_243584288
   config:
     kind: aksClusterConfig
     metadata:
-      name: rauto-terraform-aks-41907585
+      name: rauto-terraform-aks-8434797
     spec:
       managedCluster:
         additionalMetadata:
@@ -66,7 +66,7 @@ spec:
             skip-nodes-with-local-storage: "true"
             skip-nodes-with-system-pods: "true"
           disableLocalAccounts: false
-          dnsPrefix: rauto-terraform-aks-41907585
+          dnsPrefix: rauto-terraform-aks-8434797
           enablePodSecurityPolicy: false
           enableRBAC: true
           kubernetesVersion: 1.33.3
@@ -85,7 +85,7 @@ spec:
             outboundType: userDefinedRouting
             podCidr: 10.244.0.0/16
             serviceCidr: 10.0.0.0/16
-          nodeResourceGroup: rauto-terraform-aks-41907585
+          nodeResourceGroup: rauto-terraform-aks-8434797
           powerState:
             code: Running
         sku:
@@ -120,7 +120,7 @@ spec:
           type: VirtualMachineScaleSets
           upgradeSettings:
             maxSurge: 40%
-          vmSize: Standard_DS2_v2
+          vmSize: Standard_B4ms
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
       - apiVersion: "2023-11-01"
@@ -150,13 +150,10 @@ spec:
           type: VirtualMachineScaleSets
           upgradeSettings:
             maxSurge: 40%
-          vmSize: Standard_DS2_v2
+          vmSize: Standard_B4ms
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
-  sharing:
-    projects:
-    - name: '*'
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
