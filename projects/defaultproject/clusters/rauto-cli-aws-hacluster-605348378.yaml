@@ -1,0 +1,363 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-aws-hacluster-605348378
+  project: defaultproject
+spec:
+  blueprint:
+    name: default-upstream
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    kubernetesVersion: v1.32.9
+    location: sanjose-us
+    network:
+      cni:
+        name: Cilium
+        version: 1.14.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: ip-172-31-19-231
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.19.231
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 34.204.87.196
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-18-129
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.18.129
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 18.234.59.10
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-17-13
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.17.13
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 3.88.50.230
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-19-135
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.19.135
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 52.23.242.244
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-20-213
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.213
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+      ssh:
+        ipAddress: 3.93.61.149
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-20-225
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.225
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.198.114.39
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-28-143
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.28.143
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 52.200.181.170
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-21-96
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.21.96
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.90.228.121
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-46
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.46
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.87.113.26
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-166
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.166
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.83.110.211
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-28-237
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.28.237
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.82.164.111
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-229
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.229
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.88.4.20
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-22-39
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.22.39
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.88.141.25
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-31-252
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.31.252
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.209.149.175
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-59
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.59
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.95.249.164
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-21-196
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.21.196
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.81.1.179
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-26-122
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.26.122
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.85.221.189
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-21-184
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.21.184
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.88.59.30
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-30-96
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.30.96
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.81.48.3
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-26-224
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.26.224
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.80.249.20
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-20-23
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.23
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 13.223.83.168
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-25-86
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.25.86
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 52.203.174.6
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-25-51
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.25.51
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.162.231.8
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-30-157
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.30.157
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.208.211.251
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-17-114
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.17.114
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.80.64.202
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-30-155
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.30.155
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 23.20.228.250
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-24-246
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.24.246
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 3.90.246.190
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-20-43
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.20.43
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 34.207.254.106
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-16-181
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.16.181
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.83.28.193
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-18-232
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.18.232
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.86.233.166
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+  type: mks

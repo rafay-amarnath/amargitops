@@ -1,0 +1,55 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-nonha-ocicluster-275542517
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+    version: latest
+  cloudCredentials: rauto-ssh-creds-275542517
+  config:
+    autoApproveNodes: true
+    dedicatedControlPlane: true
+    kubernetesVersion: v1.32.9
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: rauto-sdk-1764416861-595214
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.181
+      roles:
+      - ControlPlane
+      ssh:
+        ipAddress: 137.131.10.115
+    - arch: amd64
+      hostname: rauto-sdk-1764416932-666546
+      labels:
+        key: rauto
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.244
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.125.224
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+    - arch: amd64
+      hostname: rauto-sdk-1764417004-265066
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.28
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 144.24.49.230
+  type: mks
