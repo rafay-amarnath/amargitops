@@ -91,6 +91,9 @@ spec:
             scan-interval: 10s
             skip-nodes-with-local-storage: "true"
             skip-nodes-with-system-pods: "true"
+          autoUpgradeProfile:
+            nodeOsUpgradeChannel: NodeImage
+            upgradeChannel: patch
           disableLocalAccounts: false
           dnsPrefix: rauto-terraform-aks-42180
           enablePodSecurityPolicy: false
