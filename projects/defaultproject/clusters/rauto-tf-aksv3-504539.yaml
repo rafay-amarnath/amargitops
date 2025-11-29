@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default-aks
-    version: latest
+    name: golden-bp-aks-991738046
+    version: v1
   cloudCredentials: rauto_668350488
   config:
     kind: aksClusterConfig
