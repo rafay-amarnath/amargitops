@@ -106,7 +106,7 @@ spec:
           mode: System
           nodeLabels:
             node-type: pool1
-          orchestratorVersion: 1.33.3
+          orchestratorVersion: 1.33.4
           osType: Linux
           tags:
             email: automation@rafay.co
