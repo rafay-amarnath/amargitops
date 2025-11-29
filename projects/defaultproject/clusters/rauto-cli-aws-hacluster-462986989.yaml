@@ -1,0 +1,99 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    type: mks
+  name: rauto-cli-aws-hacluster-462986989
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+  config:
+    autoApproveNodes: true
+    highAvailability: true
+    kubeletExtraArgs:
+      max-pods: "800"
+    kubernetesVersion: v1.34.1
+    location: sanjose-us
+    network:
+      cni:
+        name: Calico
+        version: 3.28.1
+      podSubnet: 10.244.0.0/16
+      serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: ip-172-31-23-146
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.23.146
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 98.87.14.109
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-19-64
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.19.64
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 13.217.207.81
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-29-150
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.29.150
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 52.202.175.234
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+    - arch: amd64
+      hostname: ip-172-31-18-111
+      kubeletExtraArgs:
+        max-pods: "50"
+      labels:
+        app: infra
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.18.111
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 54.196.8.49
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+      taints:
+      - effect: NoSchedule
+        key: app
+        value: infra
+    - arch: amd64
+      hostname: ip-172-31-28-134
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.28.134
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 98.93.114.224
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+  systemComponentsPlacement:
+    nodeSelector:
+      app: infra
+    tolerations:
+    - effect: NoSchedule
+      key: app
+      operator: Equal
+      value: infra
+  type: mks
