@@ -69,7 +69,7 @@ spec:
           dnsPrefix: rauto-terraform-aks-41907585
           enablePodSecurityPolicy: false
           enableRBAC: true
-          kubernetesVersion: 1.33.3
+          kubernetesVersion: 1.33.4
           linuxProfile:
             adminUsername: iamadmin
             ssh:
