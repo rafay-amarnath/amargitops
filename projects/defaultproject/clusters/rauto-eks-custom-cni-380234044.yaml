@@ -1,0 +1,101 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-eks-custom-cni-380234044
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-blueprint-3127834
+  cloudCredentials: rauto-cp-380234044
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.20.5-eksbuild.1
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.32.9-eksbuild.2
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-west-2a
+    - us-west-2b
+    - us-west-2c
+    - us-west-2d
+    metadata:
+      name: rauto-eks-custom-cni-380234044
+      region: us-west-2
+      tags:
+        DeleteBefore: "2025-12-02T22:52:33Z"
+        build_num: local
+        creation_time: "2025-12-02T14:52:33Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1764687153"
+        squad: local
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+        params:
+          customCniCidr: 100.0.0.0/16
+    nodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      labels:
+        key: rauto
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng-380234044
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-380234044
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: false
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks
