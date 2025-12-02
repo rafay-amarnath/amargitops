@@ -60,6 +60,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     metadata:
@@ -90,7 +91,7 @@ spec:
       name: rauto-ng1-75809251
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: AmazonLinux2023
@@ -105,7 +106,7 @@ spec:
       name: rauto-ng2-75809251
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: AmazonLinux2023
