@@ -34,6 +34,14 @@ spec:
     - us-east-1d
     - us-east-1f
     iam:
+      podIdentityAssociations:
+      - createServiceAccount: true
+        namespace: namespace-843466503
+        permissionPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        serviceAccountName: rauto-irsa-4133265
+        tags:
+          irsatag: rauto-843466503
       serviceAccounts:
       - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
