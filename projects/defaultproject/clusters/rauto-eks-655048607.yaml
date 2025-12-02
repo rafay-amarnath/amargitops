@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-bp-network-policy-479710856
-    version: v1
+    name: minimal
+    version: latest
   cloudCredentials: rauto_467510006
   config:
     accessConfig:
