@@ -118,6 +118,7 @@ spec:
       tags:
         key1: value2
         key2: value3
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     vpc:
