@@ -8,7 +8,7 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: minimal
+    name: default
     version: latest
   config:
     installerTtl: 365
