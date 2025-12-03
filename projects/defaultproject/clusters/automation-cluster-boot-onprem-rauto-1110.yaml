@@ -33,4 +33,5 @@ spec:
     enabled: true
     projects:
     - {}
+    - name: rauto-infra-test-project
   type: mks
