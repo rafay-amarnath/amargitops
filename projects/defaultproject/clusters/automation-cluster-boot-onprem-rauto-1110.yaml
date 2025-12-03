@@ -32,5 +32,6 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rbac-project-798714377
+    - {}
+    - name: rbac-project-837588052
   type: mks
