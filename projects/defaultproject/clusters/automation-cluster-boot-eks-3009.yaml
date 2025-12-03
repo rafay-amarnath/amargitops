@@ -142,5 +142,6 @@ spec:
     - {}
     - {}
     - {}
-    - name: rbac-project-162204142
+    - {}
+    - name: rbac-project-982100400
   type: aws-eks
