@@ -272,14 +272,14 @@ spec:
       availabilityZones:
       - us-east-1d
       - us-east-1f
-      desiredCapacity: 1
+      desiredCapacity: 3
       iam:
         instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-custom-cni-importz-nodegrou-NodeInstanceRole-jao0PXJDi7g8
       instanceType: t3.medium
       labels:
         alpha.eksctl.io/cluster-name: custom-cni-importz
         alpha.eksctl.io/nodegroup-name: ng-nontainted
-      maxSize: 1
+      maxSize: 3
       minSize: 1
       name: ng-nontainted
       privateNetworking: true
