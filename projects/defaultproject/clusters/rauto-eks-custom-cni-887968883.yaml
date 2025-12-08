@@ -1,0 +1,122 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-eks-custom-cni-887968883
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-blueprint-8546644
+  cloudCredentials: rauto-cp-276544672
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.20.5-eksbuild.1
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.32.9-eksbuild.2
+    addonsConfig: {}
+    autoModeConfig: {}
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      labels:
+        key: rauto
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng-887968883
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-887968883
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-eks-custom-cni-887968883
+      region: us-west-2
+      tags:
+        DeleteBefore: "2025-12-08T19:54:48Z"
+        build_num: qc-stage-new-k8s-version-105
+        creation_time: "2025-12-08T11:54:48Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1765194888"
+        squad: all
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+        params:
+          customCniCrdSpec:
+            us-west-2a:
+            - subnet: subnet-05fe9dd12268b1955
+            us-west-2b:
+            - subnet: subnet-0be5122725d71afb4
+            us-west-2c:
+            - subnet: subnet-0615814a5d62227fd
+            us-west-2d:
+            - subnet: subnet-0ab448903013cb2b3
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-02b199193ba954870:
+            id: subnet-02b199193ba954870
+          subnet-0977d35b700e65068:
+            id: subnet-0977d35b700e65068
+          subnet-01860dfb04f07ef64:
+            id: subnet-01860dfb04f07ef64
+          subnet-06410adb1ef69f77c:
+            id: subnet-06410adb1ef69f77c
+        public:
+          subnet-031de475e30babc63:
+            id: subnet-031de475e30babc63
+          subnet-0829f7321f178e35b:
+            id: subnet-0829f7321f178e35b
+          subnet-0aebdff327f478410:
+            id: subnet-0aebdff327f478410
+          subnet-0f111138fb1c8b85f:
+            id: subnet-0f111138fb1c8b85f
+  proxyConfig: {}
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks
