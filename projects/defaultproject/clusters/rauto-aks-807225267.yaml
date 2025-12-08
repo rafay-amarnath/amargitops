@@ -43,11 +43,11 @@ spec:
       - apiVersion: "2024-01-01"
         name: primary
         properties:
-          count: 2
+          count: 3
           enableAutoScaling: true
-          maxCount: 2
+          maxCount: 3
           maxPods: 40
-          minCount: 2
+          minCount: 3
           mode: System
           orchestratorVersion: 1.33.2
           osType: Linux
