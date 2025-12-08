@@ -84,6 +84,19 @@ spec:
             - subnet: subnet-0615814a5d62227fd
             us-west-2d:
             - subnet: subnet-0ab448903013cb2b3
+    nodeGroups:
+    - amiFamily: WindowsServer2019FullContainer
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-new-ng-80969
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       clusterEndpoints:
         privateAccess: true
