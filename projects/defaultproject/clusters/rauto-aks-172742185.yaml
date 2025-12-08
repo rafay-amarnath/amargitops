@@ -28,7 +28,7 @@ spec:
           dnsPrefix: rauto-aks-172742185-dns
           enablePodSecurityPolicy: false
           enableRBAC: true
-          kubernetesVersion: 1.33.2
+          kubernetesVersion: 1.33.5
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
