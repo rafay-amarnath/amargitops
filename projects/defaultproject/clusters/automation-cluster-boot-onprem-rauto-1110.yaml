@@ -3,12 +3,12 @@ kind: Cluster
 metadata:
   labels:
     edit: edit_142654004
-    workload: test797561100
+    workload: test588541979
   name: automation-cluster-boot-onprem-rauto-1110
   project: defaultproject
 spec:
   blueprint:
-    name: default
+    name: minimal
     version: latest
   config:
     installerTtl: 365
@@ -32,7 +32,7 @@ spec:
   sharing:
     enabled: true
     projects:
+    - name: rbac-project-456109918
     - {}
     - {}
-    - name: rbac-project-51178907
   type: mks
