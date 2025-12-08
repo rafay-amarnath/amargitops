@@ -34,14 +34,7 @@ spec:
     - us-east-1d
     - us-east-1f
     iam:
-      podIdentityAssociations:
-      - namespace: namespace-240427198
-        permissionPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
-        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
-        serviceAccountName: rauto-irsa-6574077
-        tags:
-          awstag: rauto-irsa-240427198
+      podIdentityAssociations: []
       serviceAccounts:
       - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
