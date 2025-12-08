@@ -66,13 +66,13 @@ spec:
         name: aws-cni
     nodeGroups:
     - amiFamily: AmazonLinux2023
-      desiredCapacity: 2
+      desiredCapacity: 4
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3.medium
-      maxSize: 2
+      maxSize: 4
       minSize: 2
       name: rauto-ng1-344645402
       overrideBootstrapCommand: null
