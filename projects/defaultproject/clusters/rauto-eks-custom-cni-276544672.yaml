@@ -38,7 +38,7 @@ spec:
         env: automation
         rauto_launch_timestamp: "1765190338"
         squad: all
-      version: "1.32"
+      version: "1.33"
     network:
       cni:
         name: aws-cni
