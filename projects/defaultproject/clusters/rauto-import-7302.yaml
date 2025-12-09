@@ -233,14 +233,14 @@ spec:
       availabilityZones:
       - us-east-1a
       - us-east-1d
-      desiredCapacity: 2
+      desiredCapacity: 3
       iam:
         instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-7302-nodegroup-NodeInstanceRole-n2hFiIIWHScR
       instanceType: t3.medium
       labels:
         alpha.eksctl.io/cluster-name: rauto-import-7302
         alpha.eksctl.io/nodegroup-name: ng-custom
-      maxSize: 2
+      maxSize: 3
       minSize: 2
       name: ng-custom
       privateNetworking: true
