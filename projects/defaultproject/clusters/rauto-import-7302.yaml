@@ -297,6 +297,19 @@ spec:
         nodegroup: custom
       volumeSize: 80
       volumeType: gp3
+    - ami: ami-01872345de812817d
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-mng-al2023-540716139
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-import-7302
       region: us-east-1
