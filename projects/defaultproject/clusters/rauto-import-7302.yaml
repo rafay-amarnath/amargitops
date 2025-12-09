@@ -333,6 +333,20 @@ spec:
             - securityGroups:
               - sg-085b8d321ba9675e5
               subnet: subnet-0c673cd0f12e283d9
+    nodeGroups:
+    - ami: ami-01872345de812817d
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-al2023-119011574
+      overrideBootstrapCommand: '| [Ubuntu]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 10.0.0.0/16
       clusterEndpoints:
