@@ -8,8 +8,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: rauto-test-bp-533385373
-    version: v1
+    name: minimal
+    version: latest
   config:
     installerTtl: 365
     kubernetesVersion: v1.32.4
