@@ -363,6 +363,7 @@ spec:
       availabilityZones:
       - us-east-1b
       - us-east-1a
+      desiredCapacity: 3
       iam:
         instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-RNzctLGOO48d
       instanceTypes:
@@ -372,7 +373,8 @@ spec:
         alpha.eksctl.io/cluster-name: rauto-eks-import-4213
         alpha.eksctl.io/nodegroup-name: ng-multi-intstance-type
         key: rauto
-      maxSize: 1
+      maxSize: 3
+      minSize: 0
       name: ng-multi-intstance-type
       securityGroups:
         attachIDs:
