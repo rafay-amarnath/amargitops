@@ -3,7 +3,6 @@ kind: Cluster
 metadata:
   labels:
     edit: edit_142654004
-    rautons: gittest266836029
     workload: test305690602
   name: automation-cluster-boot-onprem-rauto-1110
   project: defaultproject
