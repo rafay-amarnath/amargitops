@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rautocdktf-blueprint-993238795
+    name: rautogl-blueprint-104834986
     version: v1.0
   cloudCredentials: rautocdktf-cloudp-993238795
   config:
