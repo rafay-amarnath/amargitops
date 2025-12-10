@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
-    version: latest
+    name: rauto-test-bp-289029882
+    version: v2
   cloudCredentials: rauto_877517282
   config:
     kind: aksClusterConfig
