@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rautogl-blueprint-104834986
-    version: v1.0
+    version: v2.0
   cloudCredentials: rautocdktf-cloudp-993238795
   config:
     kind: aksClusterConfig
