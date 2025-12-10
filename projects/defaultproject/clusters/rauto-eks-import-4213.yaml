@@ -438,6 +438,7 @@ spec:
       - effect: NoSchedule
         key: nodetaint
         value: rauto
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
