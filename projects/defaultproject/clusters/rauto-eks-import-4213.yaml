@@ -1,0 +1,525 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-eks-import-4213
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-blueprint-9283975
+    version: v1
+  cloudCredentials: rauto_859050134
+  config:
+    accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterInsightsPolicy
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSEventPolicy
+        kubernetesGroups:
+        - eks:managed
+        kubernetesUsername: arn:aws:sts::211125364662:assumed-role/AWSServiceRoleForAmazonEKS/{{SessionName}}
+        principalARN: arn:aws:iam::211125364662:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS
+        type: STANDARD
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-ITZfZcTkvOYK
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-MEhH6btdsDxK
+        tags:
+          Name: eksctl-rauto-eks-import-4213-nodegroup-ng2/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+          alpha.eksctl.io/eksctl-version: 0.210.0
+          alpha.eksctl.io/nodegroup-name: ng2
+          alpha.eksctl.io/nodegroup-type: unmanaged
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-4213-nodegroup-ng2/93b76a30-d5c5-11f0-a2c0-125a04e2c48d
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-4213-nodegroup-ng2
+          build_num: local
+          creation_time: "2025-12-10T12:27:43Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+          eksctl.io/v1alpha2/nodegroup-name: ng2
+          email: automation@rafay.co
+          env: automation
+          squad: local
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-RNzctLGOO48d
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-YR9uC5Zl4frK
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-sphtILMZfQQX
+        tags:
+          Name: eksctl-rauto-eks-import-4213-nodegroup-ng1/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+          alpha.eksctl.io/eksctl-version: 0.210.0
+          alpha.eksctl.io/nodegroup-name: ng1
+          alpha.eksctl.io/nodegroup-type: unmanaged
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-4213-nodegroup-ng1/93c5c210-d5c5-11f0-88ec-125b941285f1
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-4213-nodegroup-ng1
+          build_num: local
+          creation_time: "2025-12-10T12:27:43Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+          eksctl.io/v1alpha2/nodegroup-name: ng1
+          email: automation@rafay.co
+          env: automation
+          squad: local
+        type: EC2_LINUX
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: arn:aws:iam::211125364662:user/automation-user@rafay.co
+        principalARN: arn:aws:iam::211125364662:user/automation-user@rafay.co
+        type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: rautouser
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        tags:
+          Name: eksctl-rauto-eks-import-4213-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+          alpha.eksctl.io/eksctl-version: 0.210.0
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-4213-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V/13a4b3c0-d5c5-11f0-8714-0affe00e5c33
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-4213-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V
+          build_num: local
+          creation_time: "2025-12-10T12:27:43Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+          email: automation@rafay.co
+          env: automation
+          squad: local
+        type: STANDARD
+      authenticationMode: API_AND_CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: aws-ebs-csi-driver
+      serviceAccountRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-addon-aws-ebs-cs-Role1-S2K17QnRJNIZ
+      version: v1.53.0-eksbuild.1
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: eks-node-monitoring-agent
+      version: v1.4.2-eksbuild.1
+    - name: kube-proxy
+      version: v1.32.9-eksbuild.2
+    - name: metrics-server
+      version: v0.8.0-eksbuild.5
+    - name: vpc-cni
+      serviceAccountRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-addon-vpc-cni-Role1-nySbsG2ZawY7
+      version: v1.20.5-eksbuild.1
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1b
+    - us-east-1a
+    iam:
+      serviceAccounts:
+      - metadata:
+          name: default
+          namespace: default
+      - metadata:
+          name: default
+          namespace: default-rafay-master-sanity-automation
+      - metadata:
+          name: default
+          namespace: kube-node-lease
+      - metadata:
+          name: default
+          namespace: kube-public
+      - metadata:
+          name: attachdetach-controller
+          namespace: kube-system
+      - metadata:
+          name: aws-cloud-provider
+          namespace: kube-system
+      - attachRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-addon-vpc-cni-Role1-nySbsG2ZawY7
+        metadata:
+          labels:
+            app.kubernetes.io/instance: aws-vpc-cni
+            app.kubernetes.io/managed-by: Helm
+            app.kubernetes.io/name: aws-node
+            app.kubernetes.io/version: v1.20.5
+            helm.sh/chart: aws-vpc-cni-1.20.5
+            k8s-app: aws-node
+          name: aws-node
+          namespace: kube-system
+        tags:
+          alpha.eksctl.io/addon-name: vpc-cni
+          alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+          alpha.eksctl.io/eksctl-version: 0.210.0
+          build_num: local
+          creation_time: "2025-12-10T12:27:43Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+          email: automation@rafay.co
+          env: automation
+          squad: local
+      - metadata:
+          name: certificate-controller
+          namespace: kube-system
+      - metadata:
+          name: clusterrole-aggregation-controller
+          namespace: kube-system
+      - metadata:
+          labels:
+            eks.amazonaws.com/component: coredns
+            k8s-app: kube-dns
+          name: coredns
+          namespace: kube-system
+      - metadata:
+          name: cronjob-controller
+          namespace: kube-system
+      - metadata:
+          name: daemon-set-controller
+          namespace: kube-system
+      - metadata:
+          name: default
+          namespace: kube-system
+      - metadata:
+          name: deployment-controller
+          namespace: kube-system
+      - metadata:
+          name: disruption-controller
+          namespace: kube-system
+      - attachRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-addon-aws-ebs-cs-Role1-S2K17QnRJNIZ
+        metadata:
+          labels:
+            app.kubernetes.io/component: csi-driver
+            app.kubernetes.io/managed-by: EKS
+            app.kubernetes.io/name: aws-ebs-csi-driver
+            app.kubernetes.io/version: 1.53.0
+          name: ebs-csi-controller-sa
+          namespace: kube-system
+        tags:
+          alpha.eksctl.io/addon-name: aws-ebs-csi-driver
+          alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+          alpha.eksctl.io/eksctl-version: 0.210.0
+          build_num: local
+          creation_time: "2025-12-10T12:27:43Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+          email: automation@rafay.co
+          env: automation
+          squad: local
+      - metadata:
+          labels:
+            app.kubernetes.io/component: csi-driver
+            app.kubernetes.io/managed-by: EKS
+            app.kubernetes.io/name: aws-ebs-csi-driver
+            app.kubernetes.io/version: 1.53.0
+          name: ebs-csi-node-sa
+          namespace: kube-system
+      - metadata:
+          labels:
+            app.kubernetes.io/component: controller
+            app.kubernetes.io/instance: eks-node-monitoring-agent
+            app.kubernetes.io/managed-by: EKS
+            app.kubernetes.io/name: eks-node-monitoring-agent
+            app.kubernetes.io/version: 1.4.2
+          name: eks-node-monitoring-agent
+          namespace: kube-system
+      - metadata:
+          name: endpoint-controller
+          namespace: kube-system
+      - metadata:
+          name: endpointslice-controller
+          namespace: kube-system
+      - metadata:
+          name: endpointslicemirroring-controller
+          namespace: kube-system
+      - metadata:
+          name: ephemeral-volume-controller
+          namespace: kube-system
+      - metadata:
+          name: expand-controller
+          namespace: kube-system
+      - metadata:
+          name: generic-garbage-collector
+          namespace: kube-system
+      - metadata:
+          name: horizontal-pod-autoscaler
+          namespace: kube-system
+      - metadata:
+          name: job-controller
+          namespace: kube-system
+      - metadata:
+          labels:
+            eks.amazonaws.com/component: kube-proxy
+            k8s-app: kube-proxy
+          name: kube-proxy
+          namespace: kube-system
+      - metadata:
+          name: legacy-service-account-token-cleaner
+          namespace: kube-system
+      - metadata:
+          labels:
+            app.kubernetes.io/instance: metrics-server
+            app.kubernetes.io/managed-by: EKS
+            app.kubernetes.io/name: metrics-server
+            app.kubernetes.io/version: 0.7.2
+          name: metrics-server
+          namespace: kube-system
+      - metadata:
+          name: namespace-controller
+          namespace: kube-system
+      - metadata:
+          name: node-controller
+          namespace: kube-system
+      - metadata:
+          name: persistent-volume-binder
+          namespace: kube-system
+      - metadata:
+          name: pod-garbage-collector
+          namespace: kube-system
+      - metadata:
+          name: pv-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: pvc-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: replicaset-controller
+          namespace: kube-system
+      - metadata:
+          name: replication-controller
+          namespace: kube-system
+      - metadata:
+          name: resourcequota-controller
+          namespace: kube-system
+      - metadata:
+          name: root-ca-cert-publisher
+          namespace: kube-system
+      - metadata:
+          name: service-account-controller
+          namespace: kube-system
+      - metadata:
+          name: service-controller
+          namespace: kube-system
+      - metadata:
+          name: statefulset-controller
+          namespace: kube-system
+      - metadata:
+          name: tagging-controller
+          namespace: kube-system
+      - metadata:
+          name: ttl-after-finished-controller
+          namespace: kube-system
+      - metadata:
+          name: ttl-controller
+          namespace: kube-system
+      - metadata:
+          name: validatingadmissionpolicy-status-controller
+          namespace: kube-system
+      - metadata:
+          name: volumeattributesclass-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: default
+          namespace: rafay-system
+      - metadata:
+          labels:
+            authz-expiry: "1765399884"
+            authz-refreshed: "1765371084"
+            rafay-permission: kubectl.fullaccess
+            rafay-relay: "true"
+            relay-user: rs-45admin-64rafay-46co
+          name: rs-45admin-64rafay-46co
+          namespace: rafay-system
+      - metadata:
+          labels:
+            app.kubernetes.io/managed-by: Helm
+            k8smgmt.io/project: defaultproject
+            rep-addon: v2-infra
+            rep-cluster: 6kn0g62
+            rep-cluster-name: rauto-eks-import-4213
+            rep-drift-reconcillation: disabled
+            rep-organization: 7dkgjkx
+            rep-partner: q72dg2g
+            rep-placement: dk680qm
+            rep-project: 7w2lnkp
+            rep-project-name: defaultproject
+            rep-workloadid: lk5xw2e
+          name: system-sa
+          namespace: rafay-system
+      serviceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-cluster-ServiceRole-o15XlEdTU2JT
+      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      availabilityZones:
+      - us-east-1b
+      - us-east-1a
+      iam:
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-RNzctLGOO48d
+      instanceTypes:
+      - t3.xlarge
+      - t3a.xlarge
+      labels:
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/nodegroup-name: ng-multi-intstance-type
+        key: rauto
+      maxSize: 1
+      name: ng-multi-intstance-type
+      securityGroups:
+        attachIDs:
+        - sg-063749764dc3d6444
+      subnets:
+      - subnet-0bc8f7a2027792aae
+      - subnet-0ae00138465bb0fae
+      tags:
+        Name: eksctl-rauto-eks-import-4213-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.210.0
+        alpha.eksctl.io/nodegroup-name: ng-multi-intstance-type
+        alpha.eksctl.io/nodegroup-type: managed
+        build_num: local
+        creation_time: "2025-12-10T12:27:43Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+        email: automation@rafay.co
+        env: automation
+        squad: local
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      availabilityZones:
+      - us-east-1b
+      - us-east-1a
+      desiredCapacity: 1
+      iam:
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-ITZfZcTkvOYK
+      instanceType: t3.xlarge
+      labels:
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/nodegroup-name: ng3
+        key: rauto
+      maxSize: 1
+      minSize: 1
+      name: ng3
+      securityGroups:
+        attachIDs:
+        - sg-063749764dc3d6444
+      subnets:
+      - subnet-0bc8f7a2027792aae
+      - subnet-0ae00138465bb0fae
+      tags:
+        Name: eksctl-rauto-eks-import-4213-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.210.0
+        alpha.eksctl.io/nodegroup-name: ng3
+        alpha.eksctl.io/nodegroup-type: managed
+        build_num: local
+        creation_time: "2025-12-10T12:27:43Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+        email: automation@rafay.co
+        env: automation
+        squad: local
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      availabilityZones:
+      - us-east-1b
+      - us-east-1a
+      desiredCapacity: 1
+      iam:
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-4213-nodeg-NodeInstanceRole-YR9uC5Zl4frK
+      instanceType: t3.xlarge
+      labels:
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/nodegroup-name: ng4
+      maxSize: 1
+      minSize: 1
+      name: ng4
+      securityGroups:
+        attachIDs:
+        - sg-063749764dc3d6444
+      subnets:
+      - subnet-0bc8f7a2027792aae
+      - subnet-0ae00138465bb0fae
+      tags:
+        Name: eksctl-rauto-eks-import-4213-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.210.0
+        alpha.eksctl.io/nodegroup-name: ng4
+        alpha.eksctl.io/nodegroup-type: managed
+        build_num: local
+        creation_time: "2025-12-10T12:27:43Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+        email: automation@rafay.co
+        env: automation
+        squad: local
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: rauto-eks-import-4213
+      region: us-east-1
+      tags:
+        Name: eksctl-rauto-eks-import-4213-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-4213
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.210.0
+        build_num: local
+        creation_time: "2025-12-10T12:27:43Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-4213
+        email: automation@rafay.co
+        env: automation
+        squad: local
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: false
+        publicAccess: true
+      id: vpc-0c330e7696b68fb33
+      securityGroup: sg-0935ce6c18f13b570
+      sharedNodeSecurityGroup: sg-063749764dc3d6444
+      subnets:
+        private:
+          subnet-0e406510794586b9b:
+            id: subnet-0e406510794586b9b
+          subnet-0f721b6bb28ccffcd:
+            id: subnet-0f721b6bb28ccffcd
+        public:
+          subnet-0ae00138465bb0fae:
+            id: subnet-0ae00138465bb0fae
+          subnet-0bc8f7a2027792aae:
+            id: subnet-0bc8f7a2027792aae
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: NoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
+  type: aws-eks
