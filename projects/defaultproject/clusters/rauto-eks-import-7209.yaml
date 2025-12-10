@@ -1,13 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-import-5786
+  name: rauto-eks-import-7209
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-    version: latest
-  cloudCredentials: rauto_157932676
+  cloudCredentials: rauto_569614567
   config:
     accessConfig:
       accessEntries:
@@ -26,12 +25,54 @@ spec:
       - kubernetesGroups:
         - system:nodes
         kubernetesUsername: system:node:{{EC2PrivateDNSName}}
-        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-nodegroup-NodeInstanceRole-p6YTA6EdbeLk
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-FqpwYs6DbYrH
+        tags:
+          Name: eksctl-rauto-eks-import-7209-nodegroup-ng1/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+          alpha.eksctl.io/eksctl-version: 0.217.0
+          alpha.eksctl.io/nodegroup-name: ng1
+          alpha.eksctl.io/nodegroup-type: unmanaged
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-7209-nodegroup-ng1/06f12b30-d594-11f0-8059-0e3d31c2a1cf
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-7209-nodegroup-ng1
+          build_num: local
+          creation_time: "2025-12-10T06:34:49Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+          eksctl.io/v1alpha2/nodegroup-name: ng1
+          email: automation@rafay.co
+          env: automation
+          squad: local
         type: EC2_LINUX
       - kubernetesGroups:
         - system:nodes
         kubernetesUsername: system:node:{{EC2PrivateDNSName}}
-        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-nodegroup-NodeInstanceRole-robNsHcVBOx1
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-K3F9YHgnJdYW
+        tags:
+          Name: eksctl-rauto-eks-import-7209-nodegroup-ng2/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+          alpha.eksctl.io/eksctl-version: 0.217.0
+          alpha.eksctl.io/nodegroup-name: ng2
+          alpha.eksctl.io/nodegroup-type: unmanaged
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-7209-nodegroup-ng2/06ef7d80-d594-11f0-802b-0e45c61ed60b
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-7209-nodegroup-ng2
+          build_num: local
+          creation_time: "2025-12-10T06:34:49Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+          eksctl.io/v1alpha2/nodegroup-name: ng2
+          email: automation@rafay.co
+          env: automation
+          squad: local
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-O2ZdM5kIUfBk
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-oZHCFDfxYSmN
         type: EC2_LINUX
       - accessPolicies:
         - accessScope:
@@ -40,23 +81,42 @@ spec:
         kubernetesUsername: arn:aws:iam::211125364662:user/automation-user@rafay.co
         principalARN: arn:aws:iam::211125364662:user/automation-user@rafay.co
         type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: rautouser
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        tags:
+          Name: eksctl-rauto-eks-import-7209-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V/AccessEntry
+          alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+          alpha.eksctl.io/eksctl-version: 0.217.0
+          aws:cloudformation:logical-id: AccessEntry
+          aws:cloudformation:stack-id: arn:aws:cloudformation:us-east-1:211125364662:stack/eksctl-rauto-eks-import-7209-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V/a4d2c2b0-d593-11f0-b49f-0e0829ef9b45
+          aws:cloudformation:stack-name: eksctl-rauto-eks-import-7209-accessentry-YZY5DLDQ2SWAXOEGXCJXA4KDME3NTO2V
+          build_num: local
+          creation_time: "2025-12-10T06:34:49Z"
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+          email: automation@rafay.co
+          env: automation
+          squad: local
+        type: STANDARD
       authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: coredns
-      version: v1.11.4-eksbuild.24
+      version: v1.11.4-eksbuild.2
     - name: kube-proxy
       version: v1.32.6-eksbuild.12
     - name: metrics-server
       version: v0.8.0-eksbuild.5
     - name: vpc-cni
-      serviceAccountRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-addon-vpc-cni-Role1-KrskBxDAAmac
-      version: v1.20.5-eksbuild.1
+      version: v1.20.4-eksbuild.2
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
     - us-east-1b
-    - us-east-1f
+    - us-east-1a
     iam:
       serviceAccounts:
       - metadata:
@@ -74,22 +134,16 @@ spec:
       - metadata:
           name: aws-cloud-provider
           namespace: kube-system
-      - attachRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-addon-vpc-cni-Role1-KrskBxDAAmac
-        metadata:
+      - metadata:
           labels:
             app.kubernetes.io/instance: aws-vpc-cni
             app.kubernetes.io/managed-by: Helm
             app.kubernetes.io/name: aws-node
-            app.kubernetes.io/version: v1.20.5
-            helm.sh/chart: aws-vpc-cni-1.20.5
+            app.kubernetes.io/version: v1.20.4
+            helm.sh/chart: aws-vpc-cni-1.20.4
             k8s-app: aws-node
           name: aws-node
           namespace: kube-system
-        tags:
-          alpha.eksctl.io/addon-name: vpc-cni
-          alpha.eksctl.io/cluster-name: rauto-import-5786
-          alpha.eksctl.io/eksctl-version: 0.217.0
-          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-5786
       - metadata:
           name: certificate-controller
           namespace: kube-system
@@ -217,8 +271,8 @@ spec:
           namespace: rafay-system
       - metadata:
           labels:
-            authz-expiry: "1765317162"
-            authz-refreshed: "1765288362"
+            authz-expiry: "1765378419"
+            authz-refreshed: "1765349619"
             rafay-permission: kubectl.fullaccess
             rafay-relay: "true"
             relay-user: rs-45admin-64rafay-46co
@@ -229,128 +283,132 @@ spec:
             app.kubernetes.io/managed-by: Helm
             k8smgmt.io/project: defaultproject
             rep-addon: v2-infra
-            rep-cluster: d27d792
-            rep-cluster-name: rauto-import-5786
+            rep-cluster: 7kr569m
+            rep-cluster-name: rauto-eks-import-7209
             rep-drift-reconcillation: disabled
             rep-organization: 7dkgjkx
             rep-partner: q72dg2g
-            rep-placement: x28lpgm
+            rep-placement: dkg6lzm
             rep-project: 7w2lnkp
             rep-project-name: defaultproject
             rep-workloadid: lk5xw2e
           name: system-sa
           namespace: rafay-system
-      serviceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-cluster-ServiceRole-9Mx8Ly5GFAZE
+      serviceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-cluster-ServiceRole-0QPZm0pydZkJ
       withOIDC: true
     managedNodeGroups:
     - amiFamily: AmazonLinux2
       availabilityZones:
-      - us-east-1f
       - us-east-1b
-      desiredCapacity: 3
+      - us-east-1a
+      desiredCapacity: 1
       iam:
-        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-nodegroup-NodeInstanceRole-p6YTA6EdbeLk
-      instanceType: t3.medium
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-O2ZdM5kIUfBk
+      instanceType: t3.xlarge
       labels:
-        alpha.eksctl.io/cluster-name: rauto-import-5786
-        alpha.eksctl.io/nodegroup-name: ng-custom
-      maxSize: 3
-      minSize: 2
-      name: ng-custom
-      privateNetworking: true
+        alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+        alpha.eksctl.io/nodegroup-name: ng3
+        key: rauto
+      maxSize: 1
+      minSize: 1
+      name: ng3
       securityGroups:
         attachIDs:
-        - sg-09f144f2380963de4
+        - sg-093f21458137f0672
       subnets:
-      - subnet-091a82a10830da456
-      - subnet-0803dbccc17ea6cfe
+      - subnet-0bb7cc5def59aa9f0
+      - subnet-05ca6df62bf5150f3
       tags:
-        Name: eksctl-rauto-import-5786-cluster/ControlPlane
-        alpha.eksctl.io/cluster-name: rauto-import-5786
-        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        Name: eksctl-rauto-eks-import-7209-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+        alpha.eksctl.io/cluster-oidc-enabled: "false"
         alpha.eksctl.io/eksctl-version: 0.217.0
-        alpha.eksctl.io/nodegroup-name: ng-custom
+        alpha.eksctl.io/nodegroup-name: ng3
         alpha.eksctl.io/nodegroup-type: managed
-        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-5786
-        nodegroup: custom
+        build_num: local
+        creation_time: "2025-12-10T06:34:49Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+        email: automation@rafay.co
+        env: automation
+        squad: local
       taints:
       - effect: NoSchedule
-        key: dedicated
-        value: "true"
+        key: nodetaint
+        value: rauto
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2
       availabilityZones:
-      - us-east-1f
       - us-east-1b
+      - us-east-1a
       desiredCapacity: 1
       iam:
-        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-5786-nodegroup-NodeInstanceRole-robNsHcVBOx1
-      instanceType: t3.medium
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-eks-import-7209-nodeg-NodeInstanceRole-oZHCFDfxYSmN
+      instanceType: t3.xlarge
       labels:
-        alpha.eksctl.io/cluster-name: rauto-import-5786
-        alpha.eksctl.io/nodegroup-name: ng-nontainted
+        alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+        alpha.eksctl.io/nodegroup-name: ng4
       maxSize: 1
       minSize: 1
-      name: ng-nontainted
-      privateNetworking: true
+      name: ng4
       securityGroups:
         attachIDs:
-        - sg-09f144f2380963de4
+        - sg-093f21458137f0672
       subnets:
-      - subnet-091a82a10830da456
-      - subnet-0803dbccc17ea6cfe
+      - subnet-0bb7cc5def59aa9f0
+      - subnet-05ca6df62bf5150f3
       tags:
-        Name: eksctl-rauto-import-5786-cluster/ControlPlane
-        alpha.eksctl.io/cluster-name: rauto-import-5786
-        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        Name: eksctl-rauto-eks-import-7209-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+        alpha.eksctl.io/cluster-oidc-enabled: "false"
         alpha.eksctl.io/eksctl-version: 0.217.0
-        alpha.eksctl.io/nodegroup-name: ng-nontainted
+        alpha.eksctl.io/nodegroup-name: ng4
         alpha.eksctl.io/nodegroup-type: managed
-        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-5786
-        nodegroup: custom
+        build_num: local
+        creation_time: "2025-12-10T06:34:49Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+        email: automation@rafay.co
+        env: automation
+        squad: local
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: rauto-import-5786
+      name: rauto-eks-import-7209
       region: us-east-1
       tags:
-        Name: eksctl-rauto-import-5786-cluster/ControlPlane
-        alpha.eksctl.io/cluster-name: rauto-import-5786
-        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        Name: eksctl-rauto-eks-import-7209-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-eks-import-7209
+        alpha.eksctl.io/cluster-oidc-enabled: "false"
         alpha.eksctl.io/eksctl-version: 0.217.0
-        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-5786
+        build_num: local
+        creation_time: "2025-12-10T06:34:49Z"
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-eks-import-7209
+        email: automation@rafay.co
+        env: automation
+        squad: local
       version: "1.32"
     network:
       cni:
         name: aws-cni
-        params:
-          customCniCrdSpec:
-            us-east-1b:
-            - securityGroups:
-              - sg-09f144f2380963de4
-              subnet: subnet-0998f3a93c199875b
-            us-east-1f:
-            - securityGroups:
-              - sg-09f144f2380963de4
-              subnet: subnet-0ea5cd73861ba8dd1
     vpc:
-      cidr: 10.0.0.0/16
+      cidr: 192.168.0.0/16
       clusterEndpoints:
         privateAccess: false
         publicAccess: true
-      id: vpc-02b4e3a795da14743
-      securityGroup: sg-03ae40b5c71c7070b
-      sharedNodeSecurityGroup: sg-09f144f2380963de4
+      id: vpc-0dc5e9ef662f92ae6
+      securityGroup: sg-00359d058540173bf
+      sharedNodeSecurityGroup: sg-093f21458137f0672
       subnets:
         private:
-          subnet-091a82a10830da456:
-            id: subnet-091a82a10830da456
-          subnet-0803dbccc17ea6cfe:
-            id: subnet-0803dbccc17ea6cfe
+          subnet-02ea8a654d3678a60:
+            id: subnet-02ea8a654d3678a60
+          subnet-0b24c59f5dac62a73:
+            id: subnet-0b24c59f5dac62a73
         public:
-          subnet-0571ac5f40deacc98:
-            id: subnet-0571ac5f40deacc98
-          subnet-0cee097ec71d2bd29:
-            id: subnet-0cee097ec71d2bd29
+          subnet-05ca6df62bf5150f3:
+            id: subnet-05ca6df62bf5150f3
+          subnet-0bb7cc5def59aa9f0:
+            id: subnet-0bb7cc5def59aa9f0
+  proxyConfig: {}
+  systemComponentsPlacement: {}
   type: aws-eks
