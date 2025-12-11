@@ -29,4 +29,8 @@ spec:
       - ControlPlane
     platformVersion: v1.1.0
   proxy: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rbac-project-76139432
   type: mks
