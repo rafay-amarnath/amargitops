@@ -34,7 +34,18 @@ spec:
     - us-east-1d
     - us-east-1f
     iam:
-      serviceAccounts: []
+      serviceAccounts:
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-705870268
+          labels:
+            irsalabel: rauto-705870268
+          name: rauto-irsa-2326653
+          namespace: namespace-705870268
+        tags:
+          irsatag: rauto-705870268
       withOIDC: true
     metadata:
       name: rauto-cm-340086021
