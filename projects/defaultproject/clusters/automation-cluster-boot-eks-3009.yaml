@@ -95,7 +95,7 @@ spec:
     - {}
     - {}
     - {}
-    - name: rbac-project-76139432
+    - {}
     - name: rauto-infra-test-project
     - name: rauto-sharing-test-project
     - name: rauto-platform-test-project
@@ -147,6 +147,7 @@ spec:
     - {}
     - {}
     - {}
+    - name: rbac-project-375748596
     - {}
     - {}
     - {}
