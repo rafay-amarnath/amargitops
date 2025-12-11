@@ -503,6 +503,18 @@ spec:
     network:
       cni:
         name: aws-cni
+    nodeGroups:
+    - amiFamily: WindowsServer2019CoreContainer
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-win-611196590
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
