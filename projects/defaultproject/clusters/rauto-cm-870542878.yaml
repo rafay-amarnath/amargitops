@@ -72,6 +72,10 @@ spec:
         group:
         - system:masters
         username: sdvs
+      - arn: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        group:
+        - system:masters
+        username: sgfhs
     metadata:
       name: rauto-cm-870542878
       region: us-east-1
