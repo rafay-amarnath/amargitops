@@ -17,6 +17,13 @@ spec:
         kubernetesUsername: gxhdhg
         principalARN: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
         type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: sdvs
+        principalARN: arn:aws:iam::211125364662:user/uday.kumar@rafay.co
+        type: STANDARD
       authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
@@ -61,6 +68,10 @@ spec:
         group:
         - system:masters
         username: gxhdhg
+      - arn: arn:aws:iam::211125364662:user/uday.kumar@rafay.co
+        group:
+        - system:masters
+        username: sdvs
     metadata:
       name: rauto-cm-870542878
       region: us-east-1
