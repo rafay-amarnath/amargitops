@@ -33,5 +33,6 @@ spec:
     enabled: true
     projects:
     - {}
-    - name: rbac-project-375748596
+    - name: rbac-project-373894270
+    - {}
   type: mks
