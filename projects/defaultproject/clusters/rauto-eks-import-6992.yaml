@@ -474,6 +474,17 @@ spec:
         squad: local
       volumeSize: 80
       volumeType: gp3
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-770741126
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-eks-import-6992
       region: us-east-1
