@@ -29,14 +29,4 @@ spec:
       - ControlPlane
     platformVersion: v1.1.0
   proxy: {}
-  sharing:
-    enabled: true
-    projects:
-    - {}
-    - {}
-    - {}
-    - name: rauto-infra-test-project
-    - name: rauto-platform-test-project
-    - {}
-    - name: rbac-project-19132286
   type: mks
