@@ -7,8 +7,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
-    version: latest
+    name: new-helm-blueprint-2
+    version: default-8
   cloudCredentials: rauto_20701
   config:
     accessConfig:
