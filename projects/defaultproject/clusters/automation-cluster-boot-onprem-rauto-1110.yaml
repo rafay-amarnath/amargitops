@@ -33,7 +33,6 @@ spec:
     enabled: true
     projects:
     - name: rs-qouta-test-project-196684375
-    - name: rs-quota-test-project-506166
-    - name: rs-qouta-test-project-939692641
+    - {}
     - {}
   type: mks
