@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-680385092
+  name: rauto-cm-amar-219111265
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: rauto_198522668
+  cloudCredentials: rauto_343028931
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -15,9 +15,9 @@ spec:
     - name: vpc-cni
       version: v1.20.5-eksbuild.1
     - name: coredns
-      version: v1.11.4-eksbuild.24
+      version: v1.12.4-eksbuild.1
     - name: kube-proxy
-      version: v1.32.9-eksbuild.2
+      version: v1.33.5-eksbuild.2
     - name: eks-pod-identity-agent
       version: latest
     - name: aws-ebs-csi-driver
@@ -43,26 +43,27 @@ spec:
             irsalabel: rauto-irsalabel
           name: rauto-irsa
           namespace: rafay-system
+        roleOnly: true
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
     metadata:
-      name: rauto-cm-680385092
+      name: rauto-cm-amar-219111265
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-15T18:09:40Z"
+        DeleteBefore: "2025-12-15T21:44:26Z"
         build_num: local
-        creation_time: "2025-12-15T10:09:40Z"
+        creation_time: "2025-12-15T13:44:26Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765793380"
+        rauto_launch_timestamp: "1765806266"
         squad: local
-      version: "1.32"
+      version: "1.33"
     network:
       cni:
         name: aws-cni
     nodeGroups:
-    - amiFamily: AmazonLinux2023
+    - ami: ami-0b643482870c8f6db
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -71,13 +72,12 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-680385092
-      overrideBootstrapCommand: null
+      name: rauto-ng1-219111265
+      overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
-      version: "1.32"
       volumeSize: 80
       volumeType: gp2
-    - amiFamily: AmazonLinux2023
+    - ami: ami-0b643482870c8f6db
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -86,12 +86,13 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-680385092
-      overrideBootstrapCommand: null
+      name: rauto-ng2-219111265
+      overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
-      version: "1.32"
       volumeSize: 80
       volumeType: gp2
+    secretsEncryption:
+      keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
