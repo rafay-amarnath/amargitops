@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-nps-bp-73560156
-    version: v1
+    version: v2
   cloudCredentials: rauto_367900164
   config:
     accessConfig:
