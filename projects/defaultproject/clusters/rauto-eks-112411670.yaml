@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-namespace-network-bp-756296558
-    version: v1
+    name: default
+    version: latest
   cloudCredentials: rauto_367900164
   config:
     accessConfig:
