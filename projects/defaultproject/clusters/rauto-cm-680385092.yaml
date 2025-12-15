@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-349054226
+  name: rauto-cm-680385092
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: rauto_198475966
+  cloudCredentials: rauto_198522668
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -19,9 +19,6 @@ spec:
     - name: kube-proxy
       version: v1.32.9-eksbuild.2
     - name: eks-pod-identity-agent
-      version: latest
-    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
-      name: aws-ebs-csi-driver
       version: latest
     addonsConfig:
       autoApplyPodIdentityAssociations: true
@@ -48,15 +45,15 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     metadata:
-      name: rauto-cm-349054226
+      name: rauto-cm-680385092
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-15T17:26:18Z"
+        DeleteBefore: "2025-12-15T18:09:40Z"
         build_num: local
-        creation_time: "2025-12-15T09:26:18Z"
+        creation_time: "2025-12-15T10:09:40Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765790778"
+        rauto_launch_timestamp: "1765793380"
         squad: local
       version: "1.32"
     network:
@@ -72,7 +69,7 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-349054226
+      name: rauto-ng1-680385092
       overrideBootstrapCommand: null
       privateNetworking: true
       version: "1.32"
@@ -87,7 +84,7 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-349054226
+      name: rauto-ng2-680385092
       overrideBootstrapCommand: null
       privateNetworking: true
       version: "1.32"
