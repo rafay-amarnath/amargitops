@@ -1,13 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-amar-392381647
+  name: rauto-cm-amar-742754119
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-458418
-    version: v1
-  cloudCredentials: rauto_154437009
+    name: minimal
+  cloudCredentials: rauto_694421521
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -48,16 +47,22 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
+        group:
+        - system:masters
+        username: automation
     metadata:
-      name: rauto-cm-amar-392381647
+      name: rauto-cm-amar-742754119
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-15T21:49:25Z"
+        DeleteBefore: "2025-12-15T22:24:07Z"
         build_num: local
-        creation_time: "2025-12-15T13:49:25Z"
+        creation_time: "2025-12-15T14:24:07Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765806565"
+        rauto_launch_timestamp: "1765808647"
         squad: local
       version: "1.33"
     network:
@@ -70,10 +75,10 @@ spec:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.xlarge
+      instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-392381647
+      name: rauto-ng1-742754119
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
@@ -84,10 +89,10 @@ spec:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.xlarge
+      instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-392381647
+      name: rauto-ng2-742754119
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
