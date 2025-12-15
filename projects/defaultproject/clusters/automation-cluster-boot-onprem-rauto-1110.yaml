@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   labels:
     edit: edit_133528798
-    workload: test684919545
+    workload: test495177285
   name: automation-cluster-boot-onprem-rauto-1110
   project: defaultproject
 spec:
@@ -32,6 +32,7 @@ spec:
   sharing:
     enabled: true
     projects:
+    - name: rbac-project-231838963
     - {}
     - {}
   type: mks

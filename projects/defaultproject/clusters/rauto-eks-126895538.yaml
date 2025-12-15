@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: eks-cbp-342901565
+  name: rauto-eks-126895538
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_149439608
+  cloudCredentials: rauto_319345601
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -15,29 +15,23 @@ spec:
     - name: vpc-cni
       version: v1.20.5-eksbuild.1
     - name: coredns
-      version: v1.12.4-eksbuild.1
+      version: v1.11.4-eksbuild.24
     - name: kube-proxy
-      version: v1.33.5-eksbuild.2
+      version: v1.31.13-eksbuild.2
     addonsConfig: {}
     autoModeConfig: {}
-    availabilityZones:
-    - us-east-1a
-    - us-east-1b
-    - us-east-1c
-    - us-east-1d
-    - us-east-1f
     metadata:
-      name: eks-cbp-342901565
+      name: rauto-eks-126895538
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-12T23:56:38Z"
-        build_num: master-sanity-master-136
-        creation_time: "2025-12-12T15:56:38Z"
+        DeleteBefore: "2025-12-15T12:23:20Z"
+        build_num: master-sanity-master-138
+        creation_time: "2025-12-15T04:23:20Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765554998"
+        rauto_launch_timestamp: "1765772600"
         squad: blue
-      version: "1.33"
+      version: "1.31"
     network:
       cni:
         name: aws-cni
@@ -49,19 +43,31 @@ spec:
           autoScaler: true
           imageBuilder: true
       instanceType: t3.medium
+      labels:
+        k8smgmt.io/vm-operator: ""
       maxSize: 2
       minSize: 2
-      name: rauto-ng-342901565
+      name: rauto-ng-126895538
       privateNetworking: true
-      version: "1.33"
+      version: "1.31"
       volumeSize: 80
       volumeType: gp2
     vpc:
-      cidr: 192.168.0.0/16
       clusterEndpoints:
         privateAccess: true
         publicAccess: false
       nat:
         gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
   proxyConfig: {}
   type: aws-eks
