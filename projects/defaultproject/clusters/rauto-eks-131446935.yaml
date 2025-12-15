@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-test-bp-790185154
-    version: v1
+    version: v2.1
   cloudCredentials: rauto_951817391
   config:
     accessConfig:
