@@ -1,13 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-eks-131446935
+  name: rauto-eks-841476237
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-test-bp-870541142
-    version: v1
-  cloudCredentials: rauto_951817391
+    name: default
+  cloudCredentials: rauto_646830881
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -16,26 +15,23 @@ spec:
     - name: vpc-cni
       version: v1.20.5-eksbuild.1
     - name: coredns
-      version: v1.11.4-eksbuild.24
+      version: v1.12.4-eksbuild.1
     - name: kube-proxy
-      version: v1.31.13-eksbuild.2
-    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
-      name: aws-ebs-csi-driver
-      version: latest
+      version: v1.33.5-eksbuild.2
     addonsConfig: {}
     autoModeConfig: {}
     metadata:
-      name: rauto-eks-131446935
+      name: rauto-eks-841476237
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-15T12:23:20Z"
+        DeleteBefore: "2025-12-15T14:03:44Z"
         build_num: master-sanity-master-138
-        creation_time: "2025-12-15T04:23:20Z"
+        creation_time: "2025-12-15T06:03:44Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765772600"
+        rauto_launch_timestamp: "1765778624"
         squad: blue
-      version: "1.31"
+      version: "1.33"
     network:
       cni:
         name: aws-cni
@@ -51,9 +47,9 @@ spec:
         k8smgmt.io/vm-operator: ""
       maxSize: 2
       minSize: 2
-      name: rauto-ng-131446935
+      name: rauto-ng-841476237
       privateNetworking: true
-      version: "1.31"
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     vpc:
