@@ -1,23 +1,16 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-amar-742754119
+  name: rauto-cm-amar-330279850
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
-  cloudCredentials: rauto_694421521
+    name: rauto-blueprint-5359462
+    version: v1
+  cloudCredentials: rauto_520163615
   config:
     accessConfig:
-      accessEntries:
-      - accessPolicies:
-        - accessScope:
-            type: cluster
-          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
-        kubernetesUsername: automation
-        principalARN: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
-        type: STANDARD
-      authenticationMode: API_AND_CONFIG_MAP
+      authenticationMode: CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: vpc-cni
@@ -26,12 +19,7 @@ spec:
       version: v1.12.4-eksbuild.1
     - name: kube-proxy
       version: v1.33.5-eksbuild.2
-    - name: eks-pod-identity-agent
-      version: latest
-    - name: aws-ebs-csi-driver
-      version: latest
-    addonsConfig:
-      autoApplyPodIdentityAssociations: true
+    addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
     - us-east-1a
@@ -55,18 +43,16 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
-    identityMappings:
-      arns: []
     metadata:
-      name: rauto-cm-amar-742754119
+      name: rauto-cm-amar-330279850
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-15T22:24:07Z"
+        DeleteBefore: "2025-12-16T00:28:39Z"
         build_num: local
-        creation_time: "2025-12-15T14:24:07Z"
+        creation_time: "2025-12-15T16:28:39Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765808647"
+        rauto_launch_timestamp: "1765816119"
         squad: local
       version: "1.33"
     network:
@@ -79,10 +65,10 @@ spec:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.medium
+      instanceType: t3.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-742754119
+      name: rauto-ng1-330279850
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
@@ -93,10 +79,10 @@ spec:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.medium
+      instanceType: t3.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-742754119
+      name: rauto-ng2-330279850
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
