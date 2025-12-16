@@ -62,6 +62,10 @@ spec:
         group:
         - system:masters
         username: gfg
+      - arn: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        group:
+        - system:masters
+        username: jsbj
     metadata:
       name: rauto-cm-amar-213055466
       region: us-east-1
