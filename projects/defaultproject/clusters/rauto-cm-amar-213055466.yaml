@@ -18,6 +18,13 @@ spec:
         kubernetesUsername: dvd
         principalARN: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
         type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: jsbj
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        type: STANDARD
       authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
