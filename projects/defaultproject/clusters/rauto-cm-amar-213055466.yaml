@@ -10,7 +10,7 @@ spec:
   cloudCredentials: rauto_107489372
   config:
     accessConfig:
-      authenticationMode: CONFIG_MAP
+      authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: vpc-cni
@@ -48,12 +48,6 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
-    identityMappings:
-      arns:
-      - arn: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
-        group:
-        - system:masters
-        username: dvd
     metadata:
       name: rauto-cm-amar-213055466
       region: us-east-1
