@@ -69,6 +69,8 @@ spec:
       maxSize: 2
       minSize: 0
       name: cli-managedngrauto-296373802
+      nodeRepairConfig:
+        enabled: true
       privateNetworking: true
       version: "1.32"
       volumeSize: 80
