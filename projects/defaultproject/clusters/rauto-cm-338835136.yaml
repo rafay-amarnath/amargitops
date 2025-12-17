@@ -1,24 +1,16 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-303220970
+  name: rauto-cm-338835136
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-3535918
-    version: v2
-  cloudCredentials: rauto_642665983
+    name: rauto-blueprint-6119911
+    version: v1
+  cloudCredentials: rauto_736958365
   config:
     accessConfig:
-      accessEntries:
-      - accessPolicies:
-        - accessScope:
-            type: cluster
-          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
-        kubernetesUsername: automation
-        principalARN: arn:aws:iam::211125364662:user/amarnath.savalgi@rafay.co
-        type: STANDARD
-      authenticationMode: API_AND_CONFIG_MAP
+      authenticationMode: CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: vpc-cni
@@ -28,8 +20,6 @@ spec:
     - name: kube-proxy
       version: v1.33.5-eksbuild.2
     - name: eks-pod-identity-agent
-      version: latest
-    - name: aws-ebs-csi-driver
       version: latest
     addonsConfig:
       autoApplyPodIdentityAssociations: true
@@ -56,33 +46,17 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
-    identityMappings:
-      arns: []
-    managedNodeGroups:
-    - ami: ami-06382102d3ff79b05
-      desiredCapacity: 1
-      instanceType: t3.medium
-      maxSize: 1
-      minSize: 1
-      name: rauto-ng1-win-462073864
-      overrideBootstrapCommand: '| [Windows]'
-      privateNetworking: true
-      tags:
-        email: automation@rafay.co
-        env: automation
-      volumeSize: 80
-      volumeType: gp2
     metadata:
-      name: rauto-cm-303220970
+      name: rauto-cm-338835136
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-17T12:12:40Z"
-        build_num: local
-        creation_time: "2025-12-17T04:12:40Z"
+        DeleteBefore: "2025-12-17T13:07:01Z"
+        build_num: qc-stage-new-k8s-version-115
+        creation_time: "2025-12-17T05:07:01Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1765944760"
-        squad: local
+        rauto_launch_timestamp: "1765948021"
+        squad: all
       version: "1.33"
     network:
       cni:
@@ -97,7 +71,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-303220970
+      name: rauto-ng1-338835136
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
@@ -111,7 +85,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-303220970
+      name: rauto-ng2-338835136
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       volumeSize: 80
