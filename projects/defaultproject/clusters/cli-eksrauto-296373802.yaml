@@ -108,6 +108,9 @@ spec:
       minSize: 1
       name: cli-ngrauto-second-296373802
       privateNetworking: true
+      tags:
+        key1: value1
+        key2: value2
       version: "1.32"
     vpc:
       cidr: 192.168.0.0/16
