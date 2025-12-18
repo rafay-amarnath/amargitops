@@ -23,6 +23,21 @@ spec:
       version: latest
     addonsConfig: {}
     autoModeConfig: {}
+    iam:
+      serviceAccounts:
+      - attachPolicy:
+          Statement:
+          - Action:
+            - secretsmanager:GetSecretValue
+            - secretsmanager:DescribeSecret
+            Effect: Allow
+            Resource:
+            - arn:aws:secretsmanager:us-east-1:211125364662:secret:rauto-secrets-manager-QURCVI
+          Version: "2012-10-17"
+        metadata:
+          name: rauto-sa-wk-spc-958822044
+          namespace: rauto-ns-wk-spc-958822044
+      withOIDC: true
     metadata:
       name: rauto-eks-453962197
       region: us-east-1
