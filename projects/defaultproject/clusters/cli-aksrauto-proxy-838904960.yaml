@@ -1,0 +1,70 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: gk-qe
+    team: rafay-infra
+  name: cli-aksrauto-proxy-838904960
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+  cloudCredentials: cli-cprauto-838904960
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: cli-aksrauto-proxy-838904960
+    spec:
+      managedCluster:
+        apiVersion: "2023-11-01"
+        identity:
+          type: SystemAssigned
+        location: northcentralus
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: cli-aksrauto-proxy-838904960-dns
+          enablePodSecurityPolicy: false
+          kubernetesVersion: 1.33.4
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: standard
+            networkDataplane: azure
+            networkPlugin: azure
+            networkPluginMode: overlay
+            podCidr: 10.244.0.0/16
+            serviceCidr: 10.0.0.0/16
+        sku:
+          name: Base
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2021-05-01"
+        location: northcentralus
+        name: pool1
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.33.4
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+          vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default2
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: shobhit-rg
+  proxyConfig:
+    enabled: true
+    httpProxy: http://10.225.0.10:443/
+    httpsProxy: http://10.225.0.10:443/
+    noProxy: .hcp.centralindia.azmk8s.io,10.224.0.0/12,10.0.0.0/16,169.254.169.254,168.63.129.16,localhost,konnectivity,10.244.0.0/16,127.0.0.1,k8master.service.consul,ingress-controller-v1-controller-admission.rafay-system.svc,rafay-drift-v3.rafay-system.svc,secretstore-webhook.rafay-system.svc
+  type: aks
