@@ -31,6 +31,8 @@ spec:
       version: latest
     - name: eks-node-monitoring-agent
       version: v1.4.2-eksbuild.1
+    - name: adot
+      version: v0.131.0-eksbuild.1
     addonsConfig: {}
     autoModeConfig: {}
     identityMappings:

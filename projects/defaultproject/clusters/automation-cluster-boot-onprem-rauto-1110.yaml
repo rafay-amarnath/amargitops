@@ -32,6 +32,5 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rs-quota-test-project-731190
-    - name: rs-qouta-test-project-91436968
+    - {}
   type: mks
