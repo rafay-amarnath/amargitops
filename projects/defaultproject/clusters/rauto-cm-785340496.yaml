@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-755896
-    version: v1
+    version: v2
   cloudCredentials: rauto_146276474
   config:
     accessConfig:
@@ -20,6 +20,8 @@ spec:
     - name: kube-proxy
       version: v1.33.5-eksbuild.2
     - name: eks-pod-identity-agent
+      version: latest
+    - name: aws-ebs-csi-driver
       version: latest
     addonsConfig:
       autoApplyPodIdentityAssociations: true
