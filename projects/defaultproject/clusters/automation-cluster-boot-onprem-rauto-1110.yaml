@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   labels:
     edit: edit_133528798
-    workload: test101280921
+    workload: test191048275
   name: automation-cluster-boot-onprem-rauto-1110
   project: defaultproject
 spec:
@@ -29,8 +29,4 @@ spec:
       - ControlPlane
     platformVersion: v1.1.0
   proxy: {}
-  sharing:
-    enabled: true
-    projects:
-    - {}
   type: mks
