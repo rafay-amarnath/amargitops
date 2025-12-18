@@ -1,0 +1,65 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    role: gk-qe
+    team: rafay-infra
+  name: cli-aksrauto-proxy-918704626
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+  cloudCredentials: cli-cprauto-918704626
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: cli-aksrauto-proxy-918704626
+    spec:
+      managedCluster:
+        apiVersion: "2021-05-01"
+        identity:
+          type: SystemAssigned
+        location: northcentralus
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: cli-aksrauto-proxy-918704626-dns
+          enablePodSecurityPolicy: false
+          kubernetesVersion: 1.33.4
+          networkProfile:
+            loadBalancerSku: standard
+            networkPlugin: kubenet
+            networkPolicy: calico
+        sku:
+          name: Basic
+          tier: Free
+        tags:
+          migrationtag: migratevalue
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2021-05-01"
+        location: northcentralus
+        name: pool1
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
+          orchestratorVersion: 1.33.4
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  proxyConfig:
+    enabled: true
+    httpProxy: http://192.168.0.46:443/
+    httpsProxy: http://192.168.0.46:443/
+    noProxy: hcp.centralindia.azmk8s.io,10.224.0.0/12,10.0.0.0/16,169.254.169.254,168.63.129.16,localhost,konnectivity,10.244.0.0/16,127.0.0.1
+  type: aks
