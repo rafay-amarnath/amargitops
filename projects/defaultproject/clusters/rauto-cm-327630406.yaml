@@ -87,8 +87,8 @@ spec:
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
-        privateAccess: false
-        publicAccess: true
+        privateAccess: true
+        publicAccess: false
       nat:
         gateway: Single
   proxyConfig: {}
