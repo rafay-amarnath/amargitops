@@ -390,8 +390,8 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rauto-project-464411
-    - name: rauto-project-one-464411
+    - name: rauto-project-761605
+    - name: rauto-project-one-761605
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
