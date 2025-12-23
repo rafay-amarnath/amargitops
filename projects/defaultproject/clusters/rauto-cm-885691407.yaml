@@ -21,6 +21,8 @@ spec:
       version: v1.32.9-eksbuild.2
     - name: eks-pod-identity-agent
       version: latest
+    - name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
