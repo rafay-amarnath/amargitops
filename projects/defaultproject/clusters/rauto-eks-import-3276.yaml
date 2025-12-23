@@ -391,6 +391,17 @@ spec:
         env: automation
       volumeSize: 80
       volumeType: gp2
+    - amiFamily: WindowsServer2019FullContainer
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-560826260
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
