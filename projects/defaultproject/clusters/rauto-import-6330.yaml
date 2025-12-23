@@ -309,7 +309,7 @@ spec:
         alpha.eksctl.io/cluster-oidc-enabled: "true"
         alpha.eksctl.io/eksctl-version: 0.217.0
         eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-6330
-      version: "1.32"
+      version: "1.33"
     network:
       cni:
         name: aws-cni
