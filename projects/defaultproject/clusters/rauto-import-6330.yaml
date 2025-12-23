@@ -1,0 +1,345 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-import-6330
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+    version: latest
+  cloudCredentials: rauto_634153919
+  config:
+    accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterInsightsPolicy
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSEventPolicy
+        kubernetesGroups:
+        - eks:managed
+        kubernetesUsername: arn:aws:sts::211125364662:assumed-role/AWSServiceRoleForAmazonEKS/{{SessionName}}
+        principalARN: arn:aws:iam::211125364662:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS
+        type: STANDARD
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-nodegroup-NodeInstanceRole-5P6dQH3bNf2i
+        type: EC2_LINUX
+      - kubernetesGroups:
+        - system:nodes
+        kubernetesUsername: system:node:{{EC2PrivateDNSName}}
+        principalARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-nodegroup-NodeInstanceRole-O6DUgRkpVl2Q
+        type: EC2_LINUX
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: arn:aws:iam::211125364662:user/automation-user@rafay.co
+        principalARN: arn:aws:iam::211125364662:user/automation-user@rafay.co
+        type: STANDARD
+      authenticationMode: API_AND_CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.32.6-eksbuild.12
+    - name: metrics-server
+      version: v0.8.0-eksbuild.6
+    - name: vpc-cni
+      serviceAccountRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-addon-vpc-cni-Role1-lKUrcL3GPsbT
+      version: v1.21.1-eksbuild.1
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1a
+    - us-east-1d
+    iam:
+      serviceAccounts:
+      - metadata:
+          name: default
+          namespace: default
+      - metadata:
+          name: default
+          namespace: kube-node-lease
+      - metadata:
+          name: default
+          namespace: kube-public
+      - metadata:
+          name: attachdetach-controller
+          namespace: kube-system
+      - metadata:
+          name: aws-cloud-provider
+          namespace: kube-system
+      - attachRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-addon-vpc-cni-Role1-lKUrcL3GPsbT
+        metadata:
+          labels:
+            app.kubernetes.io/instance: aws-vpc-cni
+            app.kubernetes.io/managed-by: Helm
+            app.kubernetes.io/name: aws-node
+            app.kubernetes.io/version: v1.21.1
+            helm.sh/chart: aws-vpc-cni-1.21.1
+            k8s-app: aws-node
+          name: aws-node
+          namespace: kube-system
+        tags:
+          alpha.eksctl.io/addon-name: vpc-cni
+          alpha.eksctl.io/cluster-name: rauto-import-6330
+          alpha.eksctl.io/eksctl-version: 0.217.0
+          eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-6330
+      - metadata:
+          name: certificate-controller
+          namespace: kube-system
+      - metadata:
+          name: clusterrole-aggregation-controller
+          namespace: kube-system
+      - metadata:
+          labels:
+            eks.amazonaws.com/component: coredns
+            k8s-app: kube-dns
+          name: coredns
+          namespace: kube-system
+      - metadata:
+          name: cronjob-controller
+          namespace: kube-system
+      - metadata:
+          name: daemon-set-controller
+          namespace: kube-system
+      - metadata:
+          name: default
+          namespace: kube-system
+      - metadata:
+          name: deployment-controller
+          namespace: kube-system
+      - metadata:
+          name: disruption-controller
+          namespace: kube-system
+      - metadata:
+          name: endpoint-controller
+          namespace: kube-system
+      - metadata:
+          name: endpointslice-controller
+          namespace: kube-system
+      - metadata:
+          name: endpointslicemirroring-controller
+          namespace: kube-system
+      - metadata:
+          name: ephemeral-volume-controller
+          namespace: kube-system
+      - metadata:
+          name: expand-controller
+          namespace: kube-system
+      - metadata:
+          name: generic-garbage-collector
+          namespace: kube-system
+      - metadata:
+          name: horizontal-pod-autoscaler
+          namespace: kube-system
+      - metadata:
+          name: job-controller
+          namespace: kube-system
+      - metadata:
+          labels:
+            eks.amazonaws.com/component: kube-proxy
+            k8s-app: kube-proxy
+          name: kube-proxy
+          namespace: kube-system
+      - metadata:
+          name: legacy-service-account-token-cleaner
+          namespace: kube-system
+      - metadata:
+          labels:
+            app.kubernetes.io/instance: metrics-server
+            app.kubernetes.io/managed-by: EKS
+            app.kubernetes.io/name: metrics-server
+            app.kubernetes.io/version: 0.7.2
+          name: metrics-server
+          namespace: kube-system
+      - metadata:
+          name: namespace-controller
+          namespace: kube-system
+      - metadata:
+          name: node-controller
+          namespace: kube-system
+      - metadata:
+          name: persistent-volume-binder
+          namespace: kube-system
+      - metadata:
+          name: pod-garbage-collector
+          namespace: kube-system
+      - metadata:
+          name: pv-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: pvc-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: replicaset-controller
+          namespace: kube-system
+      - metadata:
+          name: replication-controller
+          namespace: kube-system
+      - metadata:
+          name: resourcequota-controller
+          namespace: kube-system
+      - metadata:
+          name: root-ca-cert-publisher
+          namespace: kube-system
+      - metadata:
+          name: service-account-controller
+          namespace: kube-system
+      - metadata:
+          name: service-controller
+          namespace: kube-system
+      - metadata:
+          name: statefulset-controller
+          namespace: kube-system
+      - metadata:
+          name: tagging-controller
+          namespace: kube-system
+      - metadata:
+          name: ttl-after-finished-controller
+          namespace: kube-system
+      - metadata:
+          name: ttl-controller
+          namespace: kube-system
+      - metadata:
+          name: validatingadmissionpolicy-status-controller
+          namespace: kube-system
+      - metadata:
+          name: volumeattributesclass-protection-controller
+          namespace: kube-system
+      - metadata:
+          name: default
+          namespace: rafay-system
+      - metadata:
+          labels:
+            authz-expiry: "1766528831"
+            authz-refreshed: "1766500031"
+            rafay-permission: kubectl.fullaccess
+            rafay-relay: "true"
+            relay-user: rs-45admin-64rafay-46co
+          name: rs-45admin-64rafay-46co
+          namespace: rafay-system
+      - metadata:
+          labels:
+            app.kubernetes.io/managed-by: Helm
+          name: system-sa
+          namespace: rafay-system
+      serviceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-cluster-ServiceRole-W1XiSYyJV7Wd
+      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      availabilityZones:
+      - us-east-1d
+      - us-east-1a
+      desiredCapacity: 2
+      iam:
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-nodegroup-NodeInstanceRole-O6DUgRkpVl2Q
+      instanceType: t3.medium
+      labels:
+        alpha.eksctl.io/cluster-name: rauto-import-6330
+        alpha.eksctl.io/nodegroup-name: ng-custom
+      maxSize: 2
+      minSize: 2
+      name: ng-custom
+      privateNetworking: true
+      securityGroups:
+        attachIDs:
+        - sg-031ff3bf108e6e489
+      subnets:
+      - subnet-04355856d276e415d
+      - subnet-05dc3c3779fd9a726
+      tags:
+        Name: eksctl-rauto-import-6330-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-import-6330
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.217.0
+        alpha.eksctl.io/nodegroup-name: ng-custom
+        alpha.eksctl.io/nodegroup-type: managed
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-6330
+        nodegroup: custom
+      taints:
+      - effect: NoSchedule
+        key: dedicated
+        value: "true"
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      availabilityZones:
+      - us-east-1d
+      - us-east-1a
+      desiredCapacity: 1
+      iam:
+        instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-6330-nodegroup-NodeInstanceRole-5P6dQH3bNf2i
+      instanceType: t3.medium
+      labels:
+        alpha.eksctl.io/cluster-name: rauto-import-6330
+        alpha.eksctl.io/nodegroup-name: ng-nontainted
+      maxSize: 1
+      minSize: 1
+      name: ng-nontainted
+      privateNetworking: true
+      securityGroups:
+        attachIDs:
+        - sg-031ff3bf108e6e489
+      subnets:
+      - subnet-04355856d276e415d
+      - subnet-05dc3c3779fd9a726
+      tags:
+        Name: eksctl-rauto-import-6330-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-import-6330
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.217.0
+        alpha.eksctl.io/nodegroup-name: ng-nontainted
+        alpha.eksctl.io/nodegroup-type: managed
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-6330
+        nodegroup: custom
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: rauto-import-6330
+      region: us-east-1
+      tags:
+        Name: eksctl-rauto-import-6330-cluster/ControlPlane
+        alpha.eksctl.io/cluster-name: rauto-import-6330
+        alpha.eksctl.io/cluster-oidc-enabled: "true"
+        alpha.eksctl.io/eksctl-version: 0.217.0
+        eksctl.cluster.k8s.io/v1alpha1/cluster-name: rauto-import-6330
+      version: "1.32"
+    network:
+      cni:
+        name: aws-cni
+        params:
+          customCniCrdSpec:
+            us-east-1a:
+            - securityGroups:
+              - sg-031ff3bf108e6e489
+              subnet: subnet-01992c4ffa97573c0
+            us-east-1d:
+            - securityGroups:
+              - sg-031ff3bf108e6e489
+              subnet: subnet-0d9acfd6f9f929976
+    vpc:
+      cidr: 10.0.0.0/16
+      clusterEndpoints:
+        privateAccess: false
+        publicAccess: true
+      id: vpc-0cc242e222ab12ef3
+      securityGroup: sg-0b0e2cf680a94a107
+      sharedNodeSecurityGroup: sg-031ff3bf108e6e489
+      subnets:
+        private:
+          subnet-05dc3c3779fd9a726:
+            id: subnet-05dc3c3779fd9a726
+          subnet-04355856d276e415d:
+            id: subnet-04355856d276e415d
+        public:
+          subnet-093d453f7867a5acf:
+            id: subnet-093d453f7867a5acf
+          subnet-0c2a9ca182021e6d3:
+            id: subnet-0c2a9ca182021e6d3
+  type: aws-eks
