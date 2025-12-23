@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-1226123
-    version: v1
+    version: v2
   cloudCredentials: rauto_964855929
   config:
     kind: aksClusterConfig
