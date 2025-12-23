@@ -76,7 +76,7 @@ spec:
       version: "1.32"
       volumeSize: 80
       volumeType: gp2
-    - ami: ami-0b643482870c8f6db
+    - ami: ami-06f504b27ae5ab994
       desiredCapacity: 1
       instanceType: t3.medium
       maxSize: 1
