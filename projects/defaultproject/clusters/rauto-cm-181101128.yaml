@@ -1,17 +1,23 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  labels:
-    rauto: rauto-cm-885691407
-  name: rauto-cm-885691407
+  name: rauto-cm-181101128
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: rauto_899262550
+  cloudCredentials: rauto-cp-181101128
   config:
     accessConfig:
-      authenticationMode: CONFIG_MAP
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: automationuser
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        type: STANDARD
+      authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: vpc-cni
@@ -23,10 +29,8 @@ spec:
       version: v1.32.9-eksbuild.2
     - name: eks-pod-identity-agent
       version: latest
-    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
-      name: aws-ebs-csi-driver
-      version: latest
-    addonsConfig: {}
+    addonsConfig:
+      disableEBSCSIDriver: true
     autoModeConfig: {}
     availabilityZones:
     - us-east-1a
@@ -34,71 +38,57 @@ spec:
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    iam:
-      serviceAccounts:
-      - attachPolicyARNs:
-        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
-        metadata:
-          annotations:
-            irsa: rauto-491887967
-          labels:
-            irsalabel: rauto-491887967
-          name: rauto-irsa-4245985
-          namespace: namespace-491887967
-        tags:
-          irsatag: rauto-491887967
-      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-181101128
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-181101128
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
     metadata:
-      name: rauto-cm-885691407
+      name: rauto-cm-181101128
       region: us-east-1
       tags:
-        DeleteBefore: "2025-12-23T12:19:39Z"
+        DeleteBefore: "2025-12-23T13:03:47Z"
         build_num: qc-stage-new-k8s-version-121
-        creation_time: "2025-12-23T04:19:39Z"
+        creation_time: "2025-12-23T05:03:47Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1766463579"
+        rauto_launch_timestamp: "1766466227"
         squad: all
       version: "1.32"
     network:
       cni:
         name: aws-cni
-    nodeGroups:
-    - amiFamily: AmazonLinux2023
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.medium
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng1-885691407
-      overrideBootstrapCommand: null
-      privateNetworking: true
-      version: "1.32"
-      volumeSize: 80
-      volumeType: gp2
-    - amiFamily: AmazonLinux2023
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.medium
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-885691407
-      overrideBootstrapCommand: null
-      privateNetworking: true
-      version: "1.32"
-      volumeSize: 80
-      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
-        privateAccess: true
-        publicAccess: false
+        privateAccess: false
+        publicAccess: true
       nat:
         gateway: Single
   proxyConfig: {}
