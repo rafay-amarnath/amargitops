@@ -224,14 +224,14 @@ spec:
       availabilityZones:
       - us-east-1a
       - us-east-1d
-      desiredCapacity: 2
+      desiredCapacity: 3
       iam:
         instanceRoleARN: arn:aws:iam::211125364662:role/eksctl-rauto-import-9874-nodegroup-NodeInstanceRole-xEUsyCG4WWet
       instanceType: t3.xlarge
       labels:
         alpha.eksctl.io/cluster-name: rauto-import-9874
         alpha.eksctl.io/nodegroup-name: rauto-ng
-      maxSize: 2
+      maxSize: 3
       minSize: 2
       name: rauto-ng
       securityGroups:
