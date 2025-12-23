@@ -85,6 +85,23 @@ spec:
             maxSurge: 10%
           vmSize: Standard_B4ms
         type: Microsoft.ContainerService/managedClusters/agentPools
+      - apiVersion: "2023-11-01"
+        location: centralindia
+        name: rauto2262
+        properties:
+          count: 1
+          maxPods: 250
+          mode: System
+          nodeTaints:
+          - check1=value1:PreferNoSchedule
+          orchestratorVersion: 1.33.5
+          osDiskSizeGB: 128
+          osType: Linux
+          type: VirtualMachineScaleSets
+          upgradeSettings:
+            maxSurge: 10%
+          vmSize: Standard_B4ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: qa-automation
   systemComponentsPlacement:
     daemonSetOverride:
