@@ -522,11 +522,6 @@ spec:
             id: subnet-08c30773865be14bb
           subnet-0b81e5434aa45670f:
             id: subnet-0b81e5434aa45670f
-  sharing:
-    enabled: true
-    projects:
-    - name: rauto-project-383659
-    - name: rauto-project-one-383659
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
