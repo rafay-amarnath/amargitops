@@ -110,9 +110,9 @@ spec:
       volumeSize: 80
       volumeType: gp2
     - amiFamily: AmazonLinux2023
-      desiredCapacity: 0
+      desiredCapacity: 4
       instanceType: t3.medium
-      maxSize: 1
+      maxSize: 4
       minSize: 0
       name: rauto-ng-918858859
       privateNetworking: true
