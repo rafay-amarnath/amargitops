@@ -104,8 +104,8 @@ spec:
       name: rauto-ng-918858859
       privateNetworking: true
       tags:
-        email: automation@rafay.co
-        env: automation
+        key1: value2
+        key2: value3
       volumeSize: 80
       volumeType: gp2
     vpc:
