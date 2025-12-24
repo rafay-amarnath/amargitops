@@ -9,7 +9,7 @@ spec:
   config:
     highAvailability: true
     installerTtl: 365
-    kubernetesVersion: v1.33.5
+    kubernetesVersion: v1.34.1
     network:
       cni:
         name: Cilium
