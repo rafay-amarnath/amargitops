@@ -38,12 +38,5 @@ spec:
       - Worker
       - ControlPlane
       - Storage
-    - arch: x86_64
-      hostname: ip-172-31-11-244
-      operatingSystem: Flatcar Container by Kinvolk4081.2.1
-      privateIP: 172.31.11.244
-      roles:
-      - Worker
-      - Storage
     platformVersion: v1.1.0
   type: mks
