@@ -9,7 +9,7 @@ spec:
   config:
     highAvailability: true
     installerTtl: 365
-    kubernetesVersion: v1.32.9
+    kubernetesVersion: v1.33.5
     network:
       cni:
         name: Cilium
@@ -26,14 +26,6 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
-      hostname: ip-172-31-29-99
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.29.99
-      roles:
-      - Worker
-      - ControlPlane
-      - Storage
-    - arch: amd64
       hostname: ip-172-31-21-26
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.21.26
@@ -41,14 +33,6 @@ spec:
       - Worker
       - ControlPlane
       - Storage
-    - arch: amd64
-      hostname: ip-172-31-19-25
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.19.25
-      roles:
-      - ControlPlane
-      - Storage
-      - Worker
     - arch: amd64
       hostname: ip-172-31-17-123
       operatingSystem: Ubuntu22.04
@@ -64,5 +48,21 @@ spec:
       - Worker
       - ControlPlane
       - Storage
+    - arch: amd64
+      hostname: ip-172-31-29-99
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.29.99
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: amd64
+      hostname: ip-172-31-19-25
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.19.25
+      roles:
+      - ControlPlane
+      - Storage
+      - Worker
     platformVersion: v1.1.0
   type: mks
