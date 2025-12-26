@@ -2,7 +2,7 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   labels:
-    workload: test214375489
+    workload: test224957463
   name: automation-cluster-boot-eks-1225
   project: defaultproject
 spec:
@@ -87,7 +87,5 @@ spec:
   sharing:
     enabled: true
     projects:
-    - {}
-    - {}
-    - name: rbac-project-30022597
+    - name: '*'
   type: aws-eks
