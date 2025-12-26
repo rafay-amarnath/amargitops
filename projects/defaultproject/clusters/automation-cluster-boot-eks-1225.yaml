@@ -88,4 +88,5 @@ spec:
     enabled: true
     projects:
     - name: rs-quota-test-project-880753
+    - name: rs-qouta-test-project-439242743
   type: aws-eks
