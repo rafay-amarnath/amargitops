@@ -2,7 +2,6 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   labels:
-    edit: edit_151440220
     workload: test224957463
   name: automation-cluster-boot-eks-1225
   project: defaultproject
