@@ -6,5 +6,3 @@ spec:
   default: true
   driftWebhook:
     enabled: true
-  syncExcludedNamespaces:
-  - rauto-ns-34004580
