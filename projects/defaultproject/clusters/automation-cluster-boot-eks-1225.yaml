@@ -84,4 +84,8 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rs-quota-test-project-880753
   type: aws-eks
