@@ -84,4 +84,10 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - {}
+    - {}
+    - name: rbac-project-30022597
   type: aws-eks

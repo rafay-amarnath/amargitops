@@ -33,5 +33,12 @@ spec:
     enabled: true
     projects:
     - {}
-    - name: rs-quota-test-project-387864
+    - {}
+    - {}
+    - {}
+    - name: rauto-infra-test-project
+    - {}
+    - name: rbac-project-30022597
+    - {}
+    - name: rauto-platform-test-project
   type: mks
