@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rautogl-blueprint-701294622
-    version: v2.0
+    name: minimal
+    version: latest
   cloudCredentials: rautocdktf-cloudp-231030960
   config:
     kind: aksClusterConfig
