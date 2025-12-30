@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  annotations:
+    rafay-version: "1.33"
   labels:
     workload: test224957463
   name: automation-cluster-boot-eks-1225
