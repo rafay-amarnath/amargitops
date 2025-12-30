@@ -2,8 +2,8 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   annotations:
-    rafa-version: "1.33"
-    test-day-add: nothing-day-2
+    rafa-version: "1.333"
+    test-day: nothing-day-2
   labels:
     workload: test224957463
   name: automation-cluster-boot-eks-1225
