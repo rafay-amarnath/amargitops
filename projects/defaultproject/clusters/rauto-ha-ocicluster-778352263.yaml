@@ -23,6 +23,7 @@ spec:
     nodes:
     - arch: amd64
       hostname: rauto-sdk-1767160535-150624
+      kubeletConfigurationOverrides: 'maxPods: 650'
       kubeletExtraArgs:
         max-pods: "460"
       operatingSystem: Ubuntu22.04
