@@ -10,6 +10,8 @@ spec:
   config:
     highAvailability: true
     installerTtl: 365
+    kubeletExtraArgs:
+      max-pods: "660"
     kubernetesVersion: v1.32.9
     network:
       cni:
