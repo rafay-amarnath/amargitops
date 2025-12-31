@@ -12,7 +12,7 @@ spec:
     autoApproveNodes: true
     highAvailability: true
     kubeletConfigurationOverrides: |-
-      maxPods: 600
+      maxPods: 800
       rotateCertificates: true
     kubeletExtraArgs:
       max-pods: "800"
