@@ -28,8 +28,6 @@ spec:
     - arch: amd64
       hostname: ip-172-31-16-57
       kubeletConfigurationOverrides: 'maxPods: 400'
-      kubeletExtraArgs:
-        max-pods: "200"
       labels:
         app: infra
       operatingSystem: Ubuntu22.04
