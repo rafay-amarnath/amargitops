@@ -10,6 +10,7 @@ spec:
   config:
     highAvailability: true
     installerTtl: 365
+    kubeletConfigurationOverrides: 'maxPods: 550'
     kubeletExtraArgs:
       max-pods: "660"
     kubernetesVersion: v1.32.9
