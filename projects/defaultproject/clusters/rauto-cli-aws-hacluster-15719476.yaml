@@ -29,7 +29,7 @@ spec:
       hostname: ip-172-31-16-57
       kubeletConfigurationOverrides: 'maxPods: 400'
       kubeletExtraArgs:
-        max-pods: "50"
+        max-pods: "100"
       labels:
         app: infra
       operatingSystem: Ubuntu22.04
@@ -58,13 +58,14 @@ spec:
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
     - arch: amd64
-      hostname: ip-172-31-16-237
+      hostname: ip-172-31-30-242
       operatingSystem: Ubuntu22.04
-      privateIP: 172.31.16.237
+      privateIP: 172.31.30.242
       roles:
       - Worker
+      - ControlPlane
       ssh:
-        ipAddress: 54.81.225.79
+        ipAddress: 13.217.83.195
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
@@ -81,14 +82,13 @@ spec:
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
     - arch: amd64
-      hostname: ip-172-31-30-242
+      hostname: ip-172-31-16-237
       operatingSystem: Ubuntu22.04
-      privateIP: 172.31.30.242
+      privateIP: 172.31.16.237
       roles:
       - Worker
-      - ControlPlane
       ssh:
-        ipAddress: 13.217.83.195
+        ipAddress: 54.81.225.79
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
