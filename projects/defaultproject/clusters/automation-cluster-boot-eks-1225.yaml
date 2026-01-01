@@ -90,6 +90,7 @@ spec:
   sharing:
     enabled: true
     projects:
+    - name: rbac-project-568211661
     - name: rauto-infra-test-project
     - name: rauto-platform-test-project
     - {}
