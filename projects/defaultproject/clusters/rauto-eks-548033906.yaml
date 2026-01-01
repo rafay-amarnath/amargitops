@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
+    name: rauto-spc-blueprint-33508433
+    version: v1
   cloudCredentials: rauto_921952716
   config:
     accessConfig:
