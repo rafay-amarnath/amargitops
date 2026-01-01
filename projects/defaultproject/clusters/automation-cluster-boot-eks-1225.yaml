@@ -90,8 +90,9 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rbac-project-568211661
+    - {}
     - name: rauto-infra-test-project
+    - name: rbac-project-162588437
     - name: rauto-platform-test-project
     - {}
   type: aws-eks
