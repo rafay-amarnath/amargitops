@@ -39,8 +39,9 @@ spec:
     - {}
     - name: rauto-infra-test-project
     - {}
-    - name: rbac-project-162588437
     - {}
+    - {}
+    - name: rbac-project-804490336
     - {}
     - name: rauto-platform-test-project
   type: mks
