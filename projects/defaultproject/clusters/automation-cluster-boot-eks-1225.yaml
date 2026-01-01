@@ -90,5 +90,6 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rbac-project-804490336
+    - {}
+    - name: rbac-project-948797204
   type: aws-eks
