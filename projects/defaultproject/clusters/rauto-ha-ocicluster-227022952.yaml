@@ -26,16 +26,9 @@ spec:
       - Worker
       - Storage
     - arch: amd64
-      hostname: rauto-sdk-1767334416-970103
+      hostname: rauto-sdk-1767334176-798758
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.2.192
-      roles:
-      - Storage
-      - Worker
-    - arch: amd64
-      hostname: rauto-sdk-1767334260-168856
-      operatingSystem: Ubuntu22.04
-      privateIP: 10.0.2.111
+      privateIP: 10.0.2.108
       roles:
       - Worker
       - ControlPlane
@@ -49,9 +42,16 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
-      hostname: rauto-sdk-1767334176-798758
+      hostname: rauto-sdk-1767334416-970103
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.2.108
+      privateIP: 10.0.2.192
+      roles:
+      - Storage
+      - Worker
+    - arch: amd64
+      hostname: rauto-sdk-1767334260-168856
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.111
       roles:
       - Worker
       - ControlPlane
