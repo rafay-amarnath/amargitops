@@ -10,6 +10,8 @@ spec:
   config:
     highAvailability: true
     installerTtl: 365
+    kubeletExtraArgs:
+      max-pods: "660"
     kubernetesVersion: v1.32.9
     network:
       cni:
@@ -34,9 +36,9 @@ spec:
       - ControlPlane
       - Storage
     - arch: amd64
-      hostname: rauto-sdk-1767334092-345391
+      hostname: rauto-sdk-1767334260-168856
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.2.121
+      privateIP: 10.0.2.111
       roles:
       - Worker
       - ControlPlane
@@ -49,9 +51,9 @@ spec:
       - Storage
       - Worker
     - arch: amd64
-      hostname: rauto-sdk-1767334260-168856
+      hostname: rauto-sdk-1767334092-345391
       operatingSystem: Ubuntu22.04
-      privateIP: 10.0.2.111
+      privateIP: 10.0.2.121
       roles:
       - Worker
       - ControlPlane
