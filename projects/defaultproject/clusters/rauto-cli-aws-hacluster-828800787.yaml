@@ -40,7 +40,7 @@ spec:
     - arch: amd64
       hostname: ip-172-31-20-113
       kubeletExtraArgs:
-        max-pods: "100"
+        max-pods: "200"
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.20.113
       roles:

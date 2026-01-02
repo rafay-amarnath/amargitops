@@ -22,6 +22,8 @@ spec:
     nodes:
     - arch: amd64
       hostname: rauto-sdk-1767334342-943214
+      kubeletExtraArgs:
+        max-pods: "460"
       operatingSystem: Ubuntu22.04
       privateIP: 10.0.2.151
       roles:
