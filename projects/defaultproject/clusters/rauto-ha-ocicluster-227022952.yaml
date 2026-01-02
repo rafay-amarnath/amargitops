@@ -1,0 +1,61 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-ha-ocicluster-227022952
+  project: defaultproject
+spec:
+  blueprint:
+    name: rauto-blueprint-5707925
+    version: v1
+  config:
+    highAvailability: true
+    installerTtl: 365
+    kubernetesVersion: v1.32.9
+    network:
+      cni:
+        name: Calico
+        version: 3.26.1
+      podSubnet: 10.20.0.0/16
+      serviceSubnet: 10.21.0.0/20
+    nodes:
+    - arch: amd64
+      hostname: rauto-sdk-1767334342-943214
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.151
+      roles:
+      - Worker
+      - Storage
+    - arch: amd64
+      hostname: rauto-sdk-1767334416-970103
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.192
+      roles:
+      - Storage
+      - Worker
+    - arch: amd64
+      hostname: rauto-sdk-1767334260-168856
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.111
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: amd64
+      hostname: rauto-sdk-1767334092-345391
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.121
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    - arch: amd64
+      hostname: rauto-sdk-1767334176-798758
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.2.108
+      roles:
+      - Worker
+      - ControlPlane
+      - Storage
+    platformVersion: v1.1.0
+  proxy: {}
+  type: mks
