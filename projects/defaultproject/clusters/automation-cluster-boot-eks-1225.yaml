@@ -91,5 +91,4 @@ spec:
     enabled: true
     projects:
     - {}
-    - name: rs-qouta-test-project-590539854
   type: aws-eks
