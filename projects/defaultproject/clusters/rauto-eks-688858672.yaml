@@ -5,7 +5,7 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-cluster-override-test-blueprint
+    name: rauto-test-bp-8772902
     version: v1
   cloudCredentials: rauto_970081195
   config:
