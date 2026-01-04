@@ -26,22 +26,8 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: ip-172-31-19-201
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.19.201
-      roles:
-      - Worker
-      - ControlPlane
-      ssh:
-        ipAddress: 100.30.218.93
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
-        username: ubuntu
-    - arch: amd64
       hostname: ip-172-31-26-106
       kubeletConfigurationOverrides: 'maxPods: 400'
-      kubeletExtraArgs:
-        max-pods: "200"
       labels:
         app: infra
       operatingSystem: Ubuntu22.04
@@ -57,6 +43,18 @@ spec:
       - effect: NoSchedule
         key: app
         value: infra
+    - arch: amd64
+      hostname: ip-172-31-19-201
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.19.201
+      roles:
+      - Worker
+      - ControlPlane
+      ssh:
+        ipAddress: 100.30.218.93
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
     - arch: amd64
       hostname: ip-172-31-18-212
       operatingSystem: Ubuntu22.04
