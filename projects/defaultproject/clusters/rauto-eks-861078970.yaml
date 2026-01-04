@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-test-bp-prometheus-861078970
-    version: v1
+    name: minimal
+    version: latest
   cloudCredentials: rauto_480585183
   config:
     accessConfig:
