@@ -5,6 +5,7 @@ metadata:
     rafa-version: "1.333"
     test-day: nothing-day-2
   labels:
+    edit: edit_826692420
     workload: test660596384
   name: automation-cluster-boot-eks-1225
   project: defaultproject
