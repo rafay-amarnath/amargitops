@@ -43,7 +43,17 @@ spec:
     - {}
     - {}
     - {}
+    - {}
+    - {}
+    - {}
+    - {}
     - name: rauto-platform-test-project
     - {}
-    - name: rbac-project-528716455
+    - {}
+    - {}
+    - {}
+    - {}
+    - {}
+    - {}
+    - name: rbac-project-880595293
   type: mks

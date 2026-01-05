@@ -91,4 +91,7 @@ spec:
     enabled: true
     projects:
     - {}
+    - {}
+    - {}
+    - name: rbac-project-880595293
   type: aws-eks
