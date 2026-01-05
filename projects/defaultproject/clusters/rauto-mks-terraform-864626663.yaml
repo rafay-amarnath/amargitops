@@ -19,6 +19,25 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
+      hostname: ip-172-31-29-179
+      kubeletExtraArgs:
+        cpu-manager-reconcile-period: 30s
+      labels:
+        key: rauto
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.29.179
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 34.203.209.13
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
+        username: ubuntu
+      taints:
+      - effect: NoSchedule
+        key: nodetaint
+        value: rauto
+    - arch: amd64
       hostname: ip-172-31-31-51
       operatingSystem: Ubuntu22.04
       privateIP: 172.31.31.51
@@ -41,25 +60,6 @@ spec:
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
-    - arch: amd64
-      hostname: ip-172-31-29-179
-      kubeletExtraArgs:
-        cpu-manager-reconcile-period: 30s
-      labels:
-        key: rauto
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.29.179
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 34.203.209.13
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
-        username: ubuntu
-      taints:
-      - effect: NoSchedule
-        key: nodetaint
-        value: rauto
     platformVersion: v1.1.0
     ssh:
       port: "22"
