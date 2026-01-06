@@ -47,6 +47,9 @@ spec:
     - {}
     - {}
     - {}
+    - name: rbac-project-226673583
+    - name: rbac-project-436198224
+    - {}
     - name: rauto-platform-test-project
     - {}
     - {}
@@ -55,5 +58,7 @@ spec:
     - {}
     - {}
     - {}
-    - name: rbac-project-880595293
+    - {}
+    - {}
+    - {}
   type: mks
