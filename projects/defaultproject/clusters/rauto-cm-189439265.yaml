@@ -73,6 +73,19 @@ spec:
       version: "1.31"
       volumeSize: 80
       volumeType: gp2
+    - ami: ami-06d9bcac32f727ddb
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-mng-al2-889582691
+      overrideBootstrapCommand: AmazonLinux2
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-cm-189439265
       region: us-east-1
