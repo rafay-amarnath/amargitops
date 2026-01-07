@@ -61,13 +61,13 @@ spec:
       volumeSize: 80
       volumeType: gp2
     - ami: ami-099af0196b2d0ff43
-      desiredCapacity: 2
+      desiredCapacity: 4
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
       instanceType: t3.medium
-      maxSize: 2
+      maxSize: 4
       minSize: 2
       name: rauto-ng2-5830
       overrideBootstrapCommand: '| [Bottlerocket]'
