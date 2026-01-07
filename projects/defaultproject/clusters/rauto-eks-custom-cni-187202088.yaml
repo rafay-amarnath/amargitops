@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-2030283
-  cloudCredentials: rauto-cp-187202088
+  cloudCredentials: role-secondary-19172814
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
