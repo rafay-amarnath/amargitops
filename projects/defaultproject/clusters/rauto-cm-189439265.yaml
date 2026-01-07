@@ -101,6 +101,20 @@ spec:
     network:
       cni:
         name: aws-cni
+    nodeGroups:
+    - ami: ami-06d9bcac32f727ddb
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-al2-51017979
+      overrideBootstrapCommand: AmazonLinux2
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
