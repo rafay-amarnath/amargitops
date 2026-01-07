@@ -17,6 +17,13 @@ spec:
         kubernetesUsername: automationuser
         principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
         type: STANDARD
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+        kubernetesUsername: saira-rafay
+        principalARN: arn:aws:iam::211125364662:user/saira@rafay.co
+        type: STANDARD
       authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
