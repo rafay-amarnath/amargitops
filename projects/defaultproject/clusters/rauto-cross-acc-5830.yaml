@@ -74,6 +74,18 @@ spec:
       privateNetworking: true
       volumeSize: 80
       volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-cross-acc-ng3-1478
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
