@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-os-62946739
+  name: cli-eksrauto-os-55388665
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-62946739
+  cloudCredentials: cli-cprauto-55388665
   config:
     accessConfig:
       accessEntries:
@@ -95,16 +95,16 @@ spec:
     - ami: ami-01de35d274c7f0361
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-1-62946739
+      name: cli-managed-ng-1-55388665
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0b9e545aa4c20aac6
+    - ami: ami-01493046d3cff1aba
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-2-62946739
+      name: cli-managed-ng-2-55388665
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
@@ -113,18 +113,18 @@ spec:
     - ami: ami-0ad0f739ba9218571
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-3-62946739
+      name: cli-managed-ng-3-55388665
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
     metadata:
-      name: cli-eksrauto-os-62946739
+      name: cli-eksrauto-os-55388665
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-06T13:11:59Z"
+        creation_time: "2026-01-07T04:38:31Z"
         email: automation@rafay.co
         env: automation
         squad: local
@@ -178,16 +178,16 @@ spec:
     - ami: ami-01de35d274c7f0361
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-1-62946739
+      name: cli-self-managed-ng-1-55388665
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0b9e545aa4c20aac6
+    - ami: ami-01493046d3cff1aba
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-2-62946739
+      name: cli-self-managed-ng-2-55388665
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
@@ -196,7 +196,7 @@ spec:
     - ami: ami-0ad0f739ba9218571
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-3-62946739
+      name: cli-self-managed-ng-3-55388665
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
