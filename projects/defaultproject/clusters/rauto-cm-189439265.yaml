@@ -70,7 +70,7 @@ spec:
       name: rauto-ng2-189439265
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.30"
+      version: "1.31"
       volumeSize: 80
       volumeType: gp2
     metadata:
