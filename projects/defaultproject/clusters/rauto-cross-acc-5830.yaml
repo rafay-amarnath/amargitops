@@ -46,7 +46,7 @@ spec:
       cni:
         name: aws-cni
     nodeGroups:
-    - ami: ami-099af0196b2d0ff43
+    - ami: ami-07e4e828a19159636
       desiredCapacity: 2
       iam:
         withAddonPolicies:
