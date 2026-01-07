@@ -18,6 +18,8 @@ spec:
       version: v1.12.4-eksbuild.1
     - name: kube-proxy
       version: v1.33.5-eksbuild.2
+    - name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
@@ -26,6 +28,12 @@ spec:
     - us-east-1c
     - us-east-1d
     - us-east-1f
+    identityMappings:
+      arns:
+      - arn: arn:aws:iam::211125364662:role/automation_user_readonly_role
+        group:
+        - system:masters
+        username: rauto
     metadata:
       name: rauto-cross-acc-5830
       region: us-east-1
