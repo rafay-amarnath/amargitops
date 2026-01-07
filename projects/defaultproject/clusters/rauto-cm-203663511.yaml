@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-72044460
+  name: rauto-cm-203663511
   project: defaultproject
 spec:
   blueprintConfig:
     name: default
-  cloudCredentials: rauto_963874405
+  cloudCredentials: rauto_947499256
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -15,69 +15,57 @@ spec:
     - name: vpc-cni
       version: v1.21.1-eksbuild.1
     - name: coredns
-      version: v1.12.4-eksbuild.1
+      version: v1.11.4-eksbuild.24
     - name: kube-proxy
-      version: v1.33.5-eksbuild.2
-    - name: aws-ebs-csi-driver
-      version: latest
+      version: v1.32.9-eksbuild.2
     addonsConfig: {}
     autoModeConfig: {}
-    availabilityZones:
-    - us-east-1a
-    - us-east-1b
-    - us-east-1c
-    - us-east-1d
-    - us-east-1f
     managedNodeGroups:
-    - ami: ami-07e4e828a19159636
+    - amiFamily: AmazonLinux2023
       desiredCapacity: 2
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.medium
+      instanceType: m5.xlarge
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-72044460
-      overrideBootstrapCommand: '| [Bottlerocket]'
+      name: rauto-ng1-203663511
       privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
-    - ami: ami-099af0196b2d0ff43
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.medium
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-72044460
-      overrideBootstrapCommand: '| [Bottlerocket]'
-      privateNetworking: true
+      version: "1.32"
       volumeSize: 80
       volumeType: gp2
     metadata:
-      name: rauto-cm-72044460
+      name: rauto-cm-203663511
       region: us-east-1
       tags:
-        DeleteBefore: "2026-01-07T21:45:49Z"
+        DeleteBefore: "2026-01-07T23:04:03Z"
         build_num: master-sanity-master-153
-        creation_time: "2026-01-07T13:45:49Z"
+        creation_time: "2026-01-07T15:04:03Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1767793549"
+        rauto_launch_timestamp: "1767798243"
         squad: vikings
-      version: "1.34"
+      version: "1.32"
     network:
       cni:
         name: aws-cni
     vpc:
-      cidr: 192.168.0.0/16
       clusterEndpoints:
         privateAccess: true
         publicAccess: false
       nat:
         gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
   proxyConfig: {}
   type: aws-eks
