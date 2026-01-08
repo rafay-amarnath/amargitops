@@ -9,8 +9,8 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-8980547
-    version: v1
-  cloudCredentials: cli-cprauto-868934224
+    version: v2
+  cloudCredentials: cli-cprauto-938851299
   config:
     kind: aksClusterConfig
     metadata:
