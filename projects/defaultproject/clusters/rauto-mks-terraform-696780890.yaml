@@ -19,14 +19,13 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: ip-172-31-16-17
+      hostname: ip-172-31-20-226
       operatingSystem: Ubuntu22.04
-      privateIP: 172.31.16.17
+      privateIP: 172.31.20.226
       roles:
-      - ControlPlane
       - Worker
       ssh:
-        ipAddress: 52.55.173.246
+        ipAddress: 54.162.42.235
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
@@ -50,13 +49,14 @@ spec:
         key: nodetaint
         value: rauto
     - arch: amd64
-      hostname: ip-172-31-20-226
+      hostname: ip-172-31-16-17
       operatingSystem: Ubuntu22.04
-      privateIP: 172.31.20.226
+      privateIP: 172.31.16.17
       roles:
+      - ControlPlane
       - Worker
       ssh:
-        ipAddress: 54.162.42.235
+        ipAddress: 52.55.173.246
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/awstest.pem
         username: ubuntu
