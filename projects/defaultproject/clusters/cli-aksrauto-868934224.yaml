@@ -54,7 +54,7 @@ spec:
             enablePrivateClusterPublicFQDN: false
           autoUpgradeProfile:
             nodeOsUpgradeChannel: NodeImage
-            upgradeChannel: patch
+            upgradeChannel: stable
           disableLocalAccounts: false
           dnsPrefix: cli-aksrauto-868934224-dns
           enablePodSecurityPolicy: false
