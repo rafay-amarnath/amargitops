@@ -22,6 +22,11 @@ spec:
       version: latest
     - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
       name: aws-ebs-csi-driver
+      podIdentityAssociations:
+      - namespace: rafay-system
+        permissionPolicyARNs:
+        - arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
+        serviceAccountName: ebs-csi-controller-sa
       version: latest
     addonsConfig: {}
     autoModeConfig: {}
