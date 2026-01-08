@@ -208,6 +208,15 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+    - amiFamily: Bottlerocket
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-Bottlerocket-888498693
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: null
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
