@@ -1,0 +1,62 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    rauto: rauto-aks-780378879
+  name: rauto-aks-780378879
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: rauto-blueprint-2106929
+    version: v3
+  cloudCredentials: rauto_889207590
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: rauto-aks-780378879
+    spec:
+      managedCluster:
+        apiVersion: "2024-01-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: true
+            enablePrivateClusterPublicFQDN: false
+          disableLocalAccounts: false
+          dnsPrefix: rauto-aks-780378879-dns
+          enablePodSecurityPolicy: false
+          enableRBAC: true
+          kubernetesVersion: 1.33.4
+          networkProfile:
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: standard
+            networkPlugin: azure
+            networkPluginMode: overlay
+            podCidr: 10.244.0.0/16
+            serviceCidr: 10.0.0.0/16
+          powerState:
+            code: Running
+        sku:
+          name: Base
+          tier: Free
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2024-01-01"
+        name: primary
+        properties:
+          count: 3
+          enableAutoScaling: true
+          maxCount: 3
+          maxPods: 40
+          minCount: 3
+          mode: System
+          orchestratorVersion: 1.33.4
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B4ms
+          vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/qa-automation/providers/Microsoft.Network/virtualNetworks/rautoqa/subnets/default
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: qa-automation
+  type: aks
