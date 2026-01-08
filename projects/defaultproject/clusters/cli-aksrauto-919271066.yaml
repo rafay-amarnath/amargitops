@@ -28,7 +28,7 @@ spec:
           disableLocalAccounts: false
           dnsPrefix: cli-aksrauto-919271066-dns
           enablePodSecurityPolicy: false
-          kubernetesVersion: 1.33.4
+          kubernetesVersion: 1.33.5
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
