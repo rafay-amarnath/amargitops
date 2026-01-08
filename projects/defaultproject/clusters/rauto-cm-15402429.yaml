@@ -55,6 +55,18 @@ spec:
         metadata:
           name: uday-test-sa
           namespace: ns-284948928
+      - attachPolicy: {}
+        attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-irsa-uday
+          labels:
+            irsalabel: rauto-irsalabel-uday
+          name: rauto-irsa-uday
+          namespace: rafay-system
+        tags:
+          irsatag: rauto-irsatag-uday
       withOIDC: true
     metadata:
       name: rauto-cm-15402429
