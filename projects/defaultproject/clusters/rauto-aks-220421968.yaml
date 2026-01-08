@@ -1,48 +1,46 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  labels:
-    role: gk-qe
-    team: rafay-infra
-  name: cli-aksrauto-amarv3-117906242
+  name: rauto-aks-220421968
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-2327055
-    version: v2
-  cloudCredentials: cli-cprauto-106275252
+    name: default-aks
+  cloudCredentials: rauto_184595612
   config:
     kind: aksClusterConfig
     metadata:
-      name: cli-aksrauto-amarv3-117906242
+      name: rauto-aks-220421968
     spec:
       managedCluster:
-        apiVersion: "2021-05-01"
+        apiVersion: "2024-01-01"
         identity:
           type: SystemAssigned
-        location: northcentralus
+        location: centralindia
         properties:
+          aadProfile:
+            enableAzureRBAC: true
+            managed: true
           apiServerAccessProfile:
-            enablePrivateCluster: false
+            enablePrivateCluster: true
             enablePrivateClusterPublicFQDN: false
-          disableLocalAccounts: false
-          dnsPrefix: cli-aksrauto-amarv3-117906242-dns
+          disableLocalAccounts: true
+          dnsPrefix: rauto-aks-220421968-dns
           enablePodSecurityPolicy: false
-          kubernetesVersion: 1.33.5
+          enableRBAC: true
+          kubernetesVersion: 1.33.2
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
-            networkPolicy: calico
+          powerState:
+            code: Running
         sku:
-          name: Basic
+          name: Base
           tier: Free
-        tags:
-          migrationtag: migratevalue
         type: Microsoft.ContainerService/managedClusters
       nodePools:
-      - apiVersion: "2021-05-01"
-        location: northcentralus
-        name: pool1
+      - apiVersion: "2024-01-01"
+        name: primary
         properties:
           count: 2
           enableAutoScaling: true
@@ -50,9 +48,7 @@ spec:
           maxPods: 40
           minCount: 2
           mode: System
-          nodeLabels:
-            pool1migratekey: poool1migratevalue
-          orchestratorVersion: 1.33.4
+          orchestratorVersion: 1.33.2
           osType: Linux
           type: VirtualMachineScaleSets
           vmSize: Standard_B4ms
