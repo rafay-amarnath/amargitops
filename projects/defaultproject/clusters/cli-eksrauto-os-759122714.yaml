@@ -113,7 +113,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0ad0f739ba9218571
+    - ami: ami-068ba406f08e8c28f
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-managed-ng-3-759122714
