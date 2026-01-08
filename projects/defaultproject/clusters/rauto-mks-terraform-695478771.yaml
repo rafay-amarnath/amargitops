@@ -20,17 +20,6 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: rauto-sdk-1767862787-92172
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.0.91
-      roles:
-      - Worker
-      ssh:
-        ipAddress: 129.146.38.170
-        port: "22"
-        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
-        username: ubuntu
-    - arch: amd64
       hostname: rauto-sdk-1767862850-776377
       operatingSystem: Ubuntu24.04
       privateIP: 10.0.0.220
@@ -62,6 +51,17 @@ spec:
       - Worker
       ssh:
         ipAddress: 144.24.12.114
+        port: "22"
+        privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
+        username: ubuntu
+    - arch: amd64
+      hostname: rauto-sdk-1767862787-92172
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.0.91
+      roles:
+      - Worker
+      ssh:
+        ipAddress: 129.146.38.170
         port: "22"
         privateKeyPath: /home/ubuntu/rauto/rafay_keywords/api_common/../../rauto-config/infra_config/oci_key
         username: ubuntu
