@@ -5,7 +5,7 @@ metadata:
     rafa-version: "1.333"
     test-day: nothing-day-2
   labels:
-    workload: test660596384
+    workload: test641495432
   name: automation-cluster-boot-eks-1225
   project: defaultproject
 spec:
@@ -90,7 +90,5 @@ spec:
   sharing:
     enabled: true
     projects:
-    - name: rbac-project-226673583
-    - name: rbac-project-436198224
     - {}
   type: aws-eks

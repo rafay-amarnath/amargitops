@@ -1,24 +1,29 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-461577066
+  name: rauto-cm-399567062
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-4187463
-    version: v1
-  cloudCredentials: rauto_700732272
+    name: minimal
+  cloudCredentials: rauto_226039105
   config:
     accessConfig:
-      authenticationMode: CONFIG_MAP
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy
+        kubernetesUsername: automationuser
+        principalARN: arn:aws:iam::211125364662:user/kalyan@rafay.co
+        type: STANDARD
+      authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
-    - name: vpc-cni
-      version: v1.21.1-eksbuild.1
     - name: coredns
       version: v1.11.4-eksbuild.24
     - name: kube-proxy
-      version: v1.32.9-eksbuild.2
+      version: v1.30.14-eksbuild.18
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
@@ -28,7 +33,7 @@ spec:
     - us-east-1d
     - us-east-1f
     managedNodeGroups:
-    - amiFamily: AmazonLinux2023
+    - amiFamily: Ubuntu2204
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -37,13 +42,12 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-461577066
+      name: rauto-ng1-399567062
       overrideBootstrapCommand: null
-      privateNetworking: true
-      version: "1.32"
+      version: "1.30"
       volumeSize: 80
       volumeType: gp2
-    - amiFamily: AmazonLinux2023
+    - amiFamily: Ubuntu2204
       desiredCapacity: 2
       iam:
         withAddonPolicies:
@@ -52,27 +56,26 @@ spec:
       instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-461577066
+      name: rauto-ng2-399567062
       overrideBootstrapCommand: null
-      privateNetworking: true
-      version: "1.32"
+      version: "1.30"
       volumeSize: 80
       volumeType: gp2
     metadata:
-      name: rauto-cm-461577066
+      name: rauto-cm-399567062
       region: us-east-1
       tags:
-        DeleteBefore: "2026-01-08T00:14:30Z"
+        DeleteBefore: "2026-01-08T04:08:01Z"
         build_num: master-sanity-master-153
-        creation_time: "2026-01-07T16:14:30Z"
+        creation_time: "2026-01-07T20:08:01Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1767802470"
+        rauto_launch_timestamp: "1767816481"
         squad: vikings
-      version: "1.32"
+      version: "1.30"
     network:
       cni:
-        name: aws-cni
+        name: Calico-v3.24.5
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
