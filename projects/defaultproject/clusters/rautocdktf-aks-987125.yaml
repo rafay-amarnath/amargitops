@@ -1,19 +1,16 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  labels:
-    role: automation
-    team: rafay-infra
-  name: cli-aksrauto-37888247
+  name: rautocdktf-aks-987125
   project: defaultproject
 spec:
   blueprintConfig:
     name: default-aks
-  cloudCredentials: cli-cprauto-37888247
+  cloudCredentials: rautocdktf-cloudp-987125
   config:
     kind: aksClusterConfig
     metadata:
-      name: cli-aksrauto-37888247
+      name: rautocdktf-aks-987125
     spec:
       maintenanceConfigurations:
       - apiVersion: "2024-01-01"
@@ -43,51 +40,57 @@ spec:
             utcOffset: "+05:30"
         type: Microsoft.ContainerService/managedClusters/maintenanceConfigurations
       managedCluster:
-        apiVersion: "2021-05-01"
+        apiVersion: "2024-01-01"
         identity:
           type: SystemAssigned
-        location: northcentralus
+        location: centralindia
         properties:
-          apiServerAccessProfile:
-            enablePrivateCluster: false
-            enablePrivateClusterPublicFQDN: false
+          addonProfiles:
+            azurePolicy:
+              enabled: true
           autoUpgradeProfile:
             nodeOsUpgradeChannel: NodeImage
             upgradeChannel: patch
           disableLocalAccounts: false
-          dnsPrefix: cli-aksrauto-37888247-dns
+          dnsPrefix: rautocdktf-aks-987125
           enablePodSecurityPolicy: false
           kubernetesVersion: 1.33.4
           networkProfile:
-            loadBalancerSku: standard
+            loadBalancerSku: Standard
             networkPlugin: kubenet
             networkPolicy: calico
-          powerState:
-            code: Running
-        sku:
-          name: Basic
-          tier: Free
-        tags:
-          migrationtag: migratevalue
+          nodeResourceGroup: qa-automation-node-987125
         type: Microsoft.ContainerService/managedClusters
       nodePools:
-      - apiVersion: "2021-05-01"
-        location: northcentralus
-        name: pool1
+      - apiVersion: "2024-01-01"
+        name: primary
         properties:
-          count: 1
+          count: 2
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
           minCount: 1
           mode: System
           nodeLabels:
-            pool1migratekey: poool1migratevalue
+            key: rauto
+          nodeTaints:
+          - nodetaint=rauto:PreferNoSchedule
           orchestratorVersion: 1.33.4
           osType: Linux
           type: VirtualMachineScaleSets
-          vmSize: Standard_B4ms
+          vmSize: Standard_DS2_v2
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: qa-automation
-  proxyConfig: {}
+  sharing: {}
+  systemComponentsPlacement:
+    daemonSetOverride:
+      tolerations:
+      - operator: Exists
+    nodeSelector:
+      key: rauto
+    tolerations:
+    - effect: PreferNoSchedule
+      key: nodetaint
+      operator: Equal
+      value: rauto
   type: aks

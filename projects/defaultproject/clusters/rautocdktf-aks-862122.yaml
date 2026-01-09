@@ -1,61 +1,61 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  labels:
-    role: gk-qe
-    team: rafay-infra
-  name: cli-aksrauto-amarv3-622115768
+  name: rautocdktf-aks-862122
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-4512875
-    version: v2
-  cloudCredentials: cli-cprauto-426660731
+    name: rautocdktf-blueprint-862122
+    version: v1.0
+  cloudCredentials: rautocdktf-cloudp-862122
   config:
     kind: aksClusterConfig
     metadata:
-      name: cli-aksrauto-amarv3-622115768
+      name: rautocdktf-aks-862122
     spec:
       managedCluster:
-        apiVersion: "2021-05-01"
+        apiVersion: "2023-11-01"
         identity:
           type: SystemAssigned
-        location: northcentralus
+        location: centralindia
         properties:
-          apiServerAccessProfile:
-            enablePrivateCluster: false
-            enablePrivateClusterPublicFQDN: false
+          addonProfiles:
+            azurePolicy:
+              enabled: true
           disableLocalAccounts: false
-          dnsPrefix: cli-aksrauto-amarv3-622115768-dns
+          dnsPrefix: rautocdktf-aks-862122
           enablePodSecurityPolicy: false
           kubernetesVersion: 1.33.4
           networkProfile:
-            loadBalancerSku: standard
-            networkPlugin: kubenet
-            networkPolicy: calico
-        sku:
-          name: Basic
-          tier: Free
-        tags:
-          migrationtag: migratevalue
+            dnsServiceIP: 10.0.0.10
+            loadBalancerSku: Standard
+            networkPlugin: azure
+            networkPluginMode: overlay
+            podCidr: 192.168.0.0/16
+            serviceCidr: 10.0.0.0/16
+          nodeResourceGroup: qa-automation-node-862122
+          powerState:
+            code: Running
         type: Microsoft.ContainerService/managedClusters
       nodePools:
-      - apiVersion: "2021-05-01"
-        location: northcentralus
-        name: pool1
+      - apiVersion: "2023-11-01"
+        location: centralindia
+        name: primary
         properties:
-          count: 1
+          count: 2
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
           minCount: 1
           mode: System
-          nodeLabels:
-            pool1migratekey: poool1migratevalue
           orchestratorVersion: 1.33.4
           osType: Linux
           type: VirtualMachineScaleSets
           vmSize: Standard_B4ms
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: qa-automation
+  sharing:
+    enabled: true
+    projects:
+    - name: rautocdktf-project-862122
   type: aks
