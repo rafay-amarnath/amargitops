@@ -72,7 +72,7 @@ spec:
           maxPods: 40
           minCount: 1
           mode: System
-          orchestratorVersion: 1.33.4
+          orchestratorVersion: 1.33.5
           osType: Linux
           type: VirtualMachineScaleSets
           vmSize: Standard_DS2_v2
