@@ -142,7 +142,7 @@ spec:
           nodeTaints:
           - CriticalAddonsOnly=true:NoSchedule
           - key2=value2:PreferNoSchedule
-          orchestratorVersion: 1.33.3
+          orchestratorVersion: 1.33.4
           osType: Linux
           tags:
             email: automation@rafay.co

@@ -2,7 +2,7 @@ apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
   labels:
-    environment: automation
+    rauto: rauto-terraform-aks-73077
   name: rauto-terraform-aks-73077
   project: defaultproject
 spec:
