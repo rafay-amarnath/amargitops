@@ -1,25 +1,25 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  labels:
-    environment: automation
-    owner: defaultproject
-  name: rauto-terraform-aks-376887381
+  name: rauto-tf-aksv3-927878
   project: defaultproject
 spec:
   blueprintConfig:
-    name: custom-bp-aks-717641046
-    version: v2
-  cloudCredentials: rauto_530301780
+    name: custom-bp-aks-908433596
+    version: v1
+  cloudCredentials: rauto_994649303
   config:
     kind: aksClusterConfig
     metadata:
-      name: rauto-terraform-aks-376887381
+      name: rauto-tf-aksv3-927878
     spec:
       managedCluster:
         additionalMetadata:
-          oms_workspace_location: centralindia
-        apiVersion: "2023-11-01"
+          acrProfile:
+            registries:
+            - acrName: shobhitfnfacr
+              resourceGroupName: shobhit-fnf-cluster-rg
+        apiVersion: "2023-07-01"
         identity:
           type: UserAssigned
           userAssignedIdentities:
@@ -28,6 +28,7 @@ spec:
         location: centralindia
         properties:
           aadProfile:
+            enableAzureRBAC: true
             managed: true
           addonProfiles:
             azureKeyvaultSecretsProvider:
@@ -39,14 +40,9 @@ spec:
               enabled: false
             httpApplicationRouting:
               enabled: false
-            omsAgent:
-              config:
-                logAnalyticsWorkspaceResourceID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/gautham-rg-ci/providers/Microsoft.OperationalInsights/workspaces/gautham-aco-law-1
-              enabled: true
           apiServerAccessProfile:
-            enablePrivateCluster: true
+            enablePrivateCluster: false
             enablePrivateClusterPublicFQDN: false
-            privateDNSZone: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/gautham-rg-ci/providers/Microsoft.Network/privateDnsZones/gautham.private.centralindia.azmk8s.io
           autoScalerProfile:
             balance-similar-node-groups: "false"
             expander: random
@@ -65,11 +61,14 @@ spec:
             scan-interval: 10s
             skip-nodes-with-local-storage: "true"
             skip-nodes-with-system-pods: "true"
-          disableLocalAccounts: false
-          dnsPrefix: rauto-terraform-aks-376887381
+          disableLocalAccounts: true
+          dnsPrefix: rauto-tf-aksv3-927878
           enablePodSecurityPolicy: false
           enableRBAC: true
-          kubernetesVersion: 1.33.4
+          identityProfile:
+            kubeletIdentity:
+              resourceId: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-cluster-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/shobhit-kubelet-identity
+          kubernetesVersion: 1.33.3
           linuxProfile:
             adminUsername: iamadmin
             ssh:
@@ -81,11 +80,10 @@ spec:
             loadBalancerSku: Standard
             networkPlugin: azure
             networkPluginMode: overlay
-            networkPolicy: calico
-            outboundType: userDefinedRouting
+            networkPolicy: azure
             podCidr: 10.244.0.0/16
             serviceCidr: 10.0.0.0/16
-          nodeResourceGroup: rauto-terraform-aks-376887381
+          nodeResourceGroup: rauto-tf-aksv3-927878
           powerState:
             code: Running
         sku:
@@ -93,21 +91,17 @@ spec:
           tier: Free
         tags:
           email: automation@rafay.co
-          env: automation
+          env: dev
         type: Microsoft.ContainerService/managedClusters
       nodePools:
-      - apiVersion: "2023-11-01"
+      - apiVersion: "2023-07-01"
         location: centralindia
         name: pool1
         properties:
-          availabilityZones:
-          - "1"
-          - "2"
-          - "3"
-          count: 3
+          count: 2
           enableAutoScaling: true
-          maxCount: 5
-          maxPods: 30
+          maxCount: 2
+          maxPods: 40
           minCount: 1
           mode: System
           nodeLabels:
@@ -116,47 +110,39 @@ spec:
           osType: Linux
           tags:
             email: automation@rafay.co
-            env: automation
+            env: dev
           type: VirtualMachineScaleSets
-          upgradeSettings:
-            maxSurge: 40%
-          vmSize: Standard_DS2_v2
+          vmSize: Standard_B4ms
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
-      - apiVersion: "2023-11-01"
+      - apiVersion: "2023-07-01"
         location: centralindia
         name: pool2
         properties:
-          availabilityZones:
-          - "1"
-          - "2"
-          - "3"
-          count: 2
+          count: 1
           enableAutoScaling: true
-          maxCount: 5
-          maxPods: 30
+          maxCount: 1
+          maxPods: 110
           minCount: 1
           mode: System
           nodeLabels:
-            node-type: pool2
+            env: azure
           nodeTaints:
-          - CriticalAddonsOnly=true:NoSchedule
-          - key2=value2:PreferNoSchedule
+          - CriticalAddonsOnly=true:PreferNoSchedule
           orchestratorVersion: 1.33.3
           osType: Linux
           tags:
             email: automation@rafay.co
-            env: automation
+            env: dev
           type: VirtualMachineScaleSets
-          upgradeSettings:
-            maxSurge: 40%
-          vmSize: Standard_DS2_v2
+          vmSize: Standard_B4ms
           vnetSubnetID: /subscriptions/a2252eb2-7a25-432b-a5ec-e18eba6f26b1/resourceGroups/shobhit-fnf-nw-rg/providers/Microsoft.Network/virtualNetworks/shobhit-fnf-vnet/subnets/default
         type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: shobhit-rg
   sharing:
     projects:
-    - name: '*'
+    - name: rauto-project-908433596
+    - name: rauto-project-one-908433596
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
@@ -169,9 +155,9 @@ spec:
         operator: Equal
         value: true2
     nodeSelector:
-      node-type: pool1
+      env: azure
     tolerations:
-    - effect: NoSchedule
+    - effect: PreferNoSchedule
       key: CriticalAddonsOnly
       operator: Equal
       value: "true"
