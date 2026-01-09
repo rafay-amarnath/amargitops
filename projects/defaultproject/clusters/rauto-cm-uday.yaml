@@ -1,13 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cm-353428319
+  name: rauto-cm-uday
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-353200
-    version: v1
-  cloudCredentials: rauto_418294985
+    name: minimal
+  cloudCredentials: rauto_888382382
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -16,13 +15,20 @@ spec:
     - name: vpc-cni
       version: v1.21.1-eksbuild.1
     - name: coredns
-      version: v1.12.4-eksbuild.1
+      version: v1.11.4-eksbuild.24
     - name: kube-proxy
-      version: v1.33.5-eksbuild.2
+      version: v1.32.9-eksbuild.2
     - name: eks-pod-identity-agent
       version: latest
-    addonsConfig:
-      autoApplyPodIdentityAssociations: true
+    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
+      name: aws-ebs-csi-driver
+      podIdentityAssociations:
+      - namespace: rafay-system
+        permissionPolicyARNs:
+        - arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy
+        serviceAccountName: ebs-csi-controller-sa
+      version: latest
+    addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
     - us-east-1a
@@ -42,56 +48,72 @@ spec:
             irsalabel: rauto-irsalabel
           name: rauto-irsa
           namespace: rafay-system
-        roleOnly: true
         tags:
           irsatag: rauto-irsatag
+      - attachPolicy: {}
+        attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-irsa-uday
+          labels:
+            irsalabel: rauto-irsalabel-uday
+          name: rauto-irsa-uday
+          namespace: rafay-system
+        tags:
+          irsatag: rauto-irsatag-uday
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          name: uday-test-sa
+          namespace: ns-284948928
       withOIDC: true
     metadata:
-      name: rauto-cm-353428319
+      name: rauto-cm-uday
       region: us-east-1
       tags:
-        DeleteBefore: "2026-01-09T18:35:50Z"
-        build_num: qc-stage-new-k8s-version-223
-        creation_time: "2026-01-09T10:35:50Z"
+        DeleteBefore: "2026-01-08T17:01:35Z"
+        build_num: local
+        creation_time: "2026-01-08T09:01:35Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1767954950"
-        squad: vikings
-      version: "1.33"
+        rauto_launch_timestamp: "1767862895"
+        squad: local
+      version: "1.32"
     network:
       cni:
         name: aws-cni
     nodeGroups:
-    - ami: ami-0b643482870c8f6db
+    - amiFamily: AmazonLinux2023
       desiredCapacity: 2
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.xlarge
+      instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng1-353428319
-      overrideBootstrapCommand: '| [AmazonLinux2023]'
+      name: rauto-ng1-uday
+      overrideBootstrapCommand: null
       privateNetworking: true
+      version: "1.32"
       volumeSize: 80
       volumeType: gp2
-    - ami: ami-0b643482870c8f6db
+    - amiFamily: AmazonLinux2023
       desiredCapacity: 2
       iam:
         withAddonPolicies:
           autoScaler: true
           imageBuilder: true
-      instanceType: t3.xlarge
+      instanceType: t3.medium
       maxSize: 2
       minSize: 2
-      name: rauto-ng2-353428319
-      overrideBootstrapCommand: '| [AmazonLinux2023]'
+      name: rauto-ng2-15402429
+      overrideBootstrapCommand: null
       privateNetworking: true
+      version: "1.32"
       volumeSize: 80
       volumeType: gp2
-    secretsEncryption:
-      keyARN: arn:aws:kms:us-east-1:211125364662:key/d30cd169-de6e-43e5-9f06-0a8eab64c2d8
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
