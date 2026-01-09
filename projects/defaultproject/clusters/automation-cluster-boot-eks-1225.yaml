@@ -87,8 +87,4 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
-  sharing:
-    enabled: true
-    projects:
-    - {}
   type: aws-eks

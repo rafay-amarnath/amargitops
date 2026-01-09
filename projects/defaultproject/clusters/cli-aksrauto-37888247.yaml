@@ -4,27 +4,26 @@ metadata:
   labels:
     role: automation
     team: rafay-infra
-  name: cli-aksrauto-868934224
+  name: cli-aksrauto-37888247
   project: defaultproject
 spec:
   blueprintConfig:
-    name: rauto-blueprint-8980547
-    version: v2
-  cloudCredentials: cli-cprauto-938851299
+    name: default-aks
+  cloudCredentials: cli-cprauto-37888247
   config:
     kind: aksClusterConfig
     metadata:
-      name: cli-aksrauto-868934224
+      name: cli-aksrauto-37888247
     spec:
       maintenanceConfigurations:
       - apiVersion: "2024-01-01"
         name: aksManagedAutoUpgradeSchedule
         properties:
           maintenanceWindow:
-            durationHours: 5
+            durationHours: 4
             schedule:
               weekly:
-                dayOfWeek: Wednesday
+                dayOfWeek: Tuesday
                 intervalWeeks: 1
             startDate: "2024-07-16"
             startTime: "18:34"
@@ -34,10 +33,10 @@ spec:
         name: aksManagedNodeOSUpgradeSchedule
         properties:
           maintenanceWindow:
-            durationHours: 5
+            durationHours: 4
             schedule:
               weekly:
-                dayOfWeek: Wednesday
+                dayOfWeek: Tuesday
                 intervalWeeks: 1
             startDate: "2024-07-16"
             startTime: "18:34"
@@ -54,11 +53,11 @@ spec:
             enablePrivateClusterPublicFQDN: false
           autoUpgradeProfile:
             nodeOsUpgradeChannel: NodeImage
-            upgradeChannel: stable
+            upgradeChannel: patch
           disableLocalAccounts: false
-          dnsPrefix: cli-aksrauto-868934224-dns
+          dnsPrefix: cli-aksrauto-37888247-dns
           enablePodSecurityPolicy: false
-          kubernetesVersion: 1.33.5
+          kubernetesVersion: 1.33.4
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
@@ -76,11 +75,11 @@ spec:
         location: northcentralus
         name: pool1
         properties:
-          count: 2
+          count: 1
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
-          minCount: 2
+          minCount: 1
           mode: System
           nodeLabels:
             pool1migratekey: poool1migratevalue

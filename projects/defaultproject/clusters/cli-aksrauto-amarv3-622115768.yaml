@@ -1,50 +1,56 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-aks-489979972
+  labels:
+    role: gk-qe
+    team: rafay-infra
+  name: cli-aksrauto-amarv3-622115768
   project: defaultproject
 spec:
   blueprintConfig:
     name: default-aks
-  cloudCredentials: rauto_531595203
+  cloudCredentials: cli-cprauto-622115768
   config:
     kind: aksClusterConfig
     metadata:
-      name: rauto-aks-489979972
+      name: cli-aksrauto-amarv3-622115768
     spec:
       managedCluster:
-        apiVersion: "2024-01-01"
+        apiVersion: "2021-05-01"
         identity:
           type: SystemAssigned
-        location: centralindia
+        location: northcentralus
         properties:
           apiServerAccessProfile:
-            enablePrivateCluster: true
+            enablePrivateCluster: false
             enablePrivateClusterPublicFQDN: false
           disableLocalAccounts: false
-          dnsPrefix: rauto-aks-489979972-dns
+          dnsPrefix: cli-aksrauto-amarv3-622115768-dns
           enablePodSecurityPolicy: false
-          enableRBAC: true
           kubernetesVersion: 1.33.4
           networkProfile:
             loadBalancerSku: standard
             networkPlugin: kubenet
-          powerState:
-            code: Running
+            networkPolicy: calico
         sku:
-          name: Base
+          name: Basic
           tier: Free
+        tags:
+          migrationtag: migratevalue
         type: Microsoft.ContainerService/managedClusters
       nodePools:
-      - apiVersion: "2024-01-01"
-        name: primary
+      - apiVersion: "2021-05-01"
+        location: northcentralus
+        name: pool1
         properties:
-          count: 2
+          count: 1
           enableAutoScaling: true
           maxCount: 2
           maxPods: 40
-          minCount: 2
+          minCount: 1
           mode: System
+          nodeLabels:
+            pool1migratekey: poool1migratevalue
           orchestratorVersion: 1.33.4
           osType: Linux
           type: VirtualMachineScaleSets
