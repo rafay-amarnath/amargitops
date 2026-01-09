@@ -55,7 +55,7 @@ spec:
           disableLocalAccounts: false
           dnsPrefix: rautocdktf-aks-726632
           enablePodSecurityPolicy: false
-          kubernetesVersion: 1.33.4
+          kubernetesVersion: 1.33.5
           networkProfile:
             loadBalancerSku: Standard
             networkPlugin: kubenet
