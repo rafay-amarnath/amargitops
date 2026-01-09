@@ -158,6 +158,8 @@ spec:
     enabled: true
     projects:
     - name: rauto-sharing-terraform-587035896
+    - name: rauto-sharing-terraform-587035896-2
+    - name: rauto-sharing-terraform-587035896-3
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
