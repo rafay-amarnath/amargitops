@@ -71,10 +71,6 @@ spec:
           maxPods: 40
           minCount: 1
           mode: System
-          nodeLabels:
-            key: rauto
-          nodeTaints:
-          - nodetaint=rauto:PreferNoSchedule
           orchestratorVersion: 1.33.4
           osType: Linux
           type: VirtualMachineScaleSets
