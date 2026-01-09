@@ -8,8 +8,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: custom-bp-aks-717641046
-    version: v2
+    name: minimal
+    version: latest
   cloudCredentials: rauto_530301780
   config:
     kind: aksClusterConfig
