@@ -156,8 +156,7 @@ spec:
       resourceGroupName: shobhit-rg
   sharing:
     projects:
-    - name: rauto-project-717641046
-    - name: rauto-project-one-717641046
+    - name: '*'
   systemComponentsPlacement:
     daemonSetOverride:
       tolerations:
