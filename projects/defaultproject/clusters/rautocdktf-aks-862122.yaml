@@ -35,7 +35,7 @@ spec:
             serviceCidr: 10.0.0.0/16
           nodeResourceGroup: qa-automation-node-862122
           powerState:
-            code: Stopped
+            code: Running
         type: Microsoft.ContainerService/managedClusters
       nodePools:
       - apiVersion: "2023-11-01"
