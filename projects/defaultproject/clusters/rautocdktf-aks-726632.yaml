@@ -51,7 +51,7 @@ spec:
               enabled: true
           autoUpgradeProfile:
             nodeOsUpgradeChannel: NodeImage
-            upgradeChannel: patch
+            upgradeChannel: stable
           disableLocalAccounts: false
           dnsPrefix: rautocdktf-aks-726632
           enablePodSecurityPolicy: false

@@ -76,6 +76,24 @@ spec:
           type: VirtualMachineScaleSets
           vmSize: Standard_DS2_v2
         type: Microsoft.ContainerService/managedClusters/agentPools
+      - apiVersion: "2024-01-01"
+        name: secondary
+        properties:
+          count: 2
+          enableAutoScaling: true
+          maxCount: 2
+          maxPods: 40
+          minCount: 1
+          mode: System
+          nodeLabels:
+            key: rauto
+          nodeTaints:
+          - nodetaint2=rauto2:PreferNoSchedule
+          orchestratorVersion: 1.33.4
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_DS2_v2
+        type: Microsoft.ContainerService/managedClusters/agentPools
       resourceGroupName: qa-automation
   sharing: {}
   systemComponentsPlacement:
