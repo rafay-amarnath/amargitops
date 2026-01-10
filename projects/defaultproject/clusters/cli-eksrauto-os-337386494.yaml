@@ -92,6 +92,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-br
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     metadata:
