@@ -92,7 +92,7 @@ spec:
       name: ng-defaultami-managed-br
       volumeSize: 80
       volumeType: gp3
-    - ami: ami-01de35d274c7f0361
+    - ami: ami-099af0196b2d0ff43
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-managed-ng-1-625504826
@@ -101,7 +101,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-01493046d3cff1aba
+    - ami: ami-0b643482870c8f6db
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-managed-ng-2-625504826
