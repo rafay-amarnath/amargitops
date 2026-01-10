@@ -202,6 +202,15 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-AmazonLinux2023-625504826
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: null
     - amiFamily: Ubuntu2404
       desiredCapacity: 1
       instanceType: t3.xlarge
