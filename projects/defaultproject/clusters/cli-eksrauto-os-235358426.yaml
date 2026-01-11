@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-os-385945786
+  name: cli-eksrauto-os-235358426
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-385945786
+  cloudCredentials: cli-cprauto-235358426
   config:
     accessConfig:
       accessEntries:
@@ -92,43 +92,43 @@ spec:
       name: ng-defaultami-managed-br
       volumeSize: 80
       volumeType: gp3
-    - ami: ami-099af0196b2d0ff43
+    - ami: ami-01de35d274c7f0361
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-1-385945786
+      name: cli-managed-ng-1-235358426
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0b643482870c8f6db
+    - ami: ami-01493046d3cff1aba
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-2-385945786
+      name: cli-managed-ng-2-235358426
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-068ba406f08e8c28f
+    - ami: ami-0ad0f739ba9218571
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-3-385945786
+      name: cli-managed-ng-3-235358426
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
     metadata:
-      name: cli-eksrauto-os-385945786
+      name: cli-eksrauto-os-235358426
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-10T11:42:51Z"
+        creation_time: "2026-01-11T05:52:35Z"
         email: automation@rafay.co
         env: automation
         squad: local
-      version: "1.33"
+      version: "1.32"
     network:
       cni:
         name: aws-cni
@@ -178,16 +178,16 @@ spec:
     - ami: ami-01de35d274c7f0361
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-1-385945786
+      name: cli-self-managed-ng-1-235358426
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0b643482870c8f6db
+    - ami: ami-01493046d3cff1aba
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-2-385945786
+      name: cli-self-managed-ng-2-235358426
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
@@ -196,7 +196,7 @@ spec:
     - ami: ami-0ad0f739ba9218571
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-3-385945786
+      name: cli-self-managed-ng-3-235358426
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
