@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-os-235358426
+  name: cli-eksrauto-os-752924172
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-235358426
+  cloudCredentials: cli-cprauto-752924172
   config:
     accessConfig:
       accessEntries:
@@ -53,7 +53,8 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     managedNodeGroups:
-    - amiFamily: Ubuntu2404
+    - ami: ""
+      amiFamily: Ubuntu2404
       desiredCapacity: 1
       iam:
         withAddonPolicies:
@@ -64,9 +65,11 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-ubuntu2404
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
-    - amiFamily: AmazonLinux2023
+    - ami: ""
+      amiFamily: AmazonLinux2023
       desiredCapacity: 1
       iam:
         withAddonPolicies:
@@ -77,9 +80,11 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-AmazonLinux2023
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
-    - amiFamily: Bottlerocket
+    - ami: ""
+      amiFamily: Bottlerocket
       desiredCapacity: 1
       iam:
         withAddonPolicies:
@@ -90,41 +95,45 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-br
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
-    - ami: ami-01de35d274c7f0361
+    - ami: ami-099af0196b2d0ff43
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-1-235358426
+      name: cli-managed-ng-1-752924172
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-01493046d3cff1aba
+      version: "1.33"
+    - ami: ami-0b643482870c8f6db
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-2-235358426
+      name: cli-managed-ng-2-752924172
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0ad0f739ba9218571
+      version: "1.33"
+    - ami: ami-068ba406f08e8c28f
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-managed-ng-3-235358426
+      name: cli-managed-ng-3-752924172
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.33"
     metadata:
-      name: cli-eksrauto-os-235358426
+      name: cli-eksrauto-os-752924172
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-11T05:52:35Z"
+        creation_time: "2026-01-07T05:55:33Z"
         email: automation@rafay.co
         env: automation
         squad: local
@@ -145,6 +154,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-self-def-Ubuntu2404
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: Bottlerocket
@@ -159,6 +169,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-self-def-Bottlerocket
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2023
@@ -173,30 +184,61 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-self-def-AmazonLinux2023
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
-    - ami: ami-01de35d274c7f0361
+    - ami: ami-099af0196b2d0ff43
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-1-235358426
+      name: cli-self-managed-ng-1-752924172
       overrideBootstrapCommand: '| [Bottlerocket]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-01493046d3cff1aba
+      version: "1.33"
+    - ami: ami-0b643482870c8f6db
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-2-235358426
+      name: cli-self-managed-ng-2-752924172
       overrideBootstrapCommand: '| [AmazonLinux2023]'
       privateNetworking: true
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0ad0f739ba9218571
+      version: "1.33"
+    - ami: ami-068ba406f08e8c28f
       desiredCapacity: 1
       instanceType: t3.xlarge
-      name: cli-self-managed-ng-3-235358426
+      name: cli-self-managed-ng-3-752924172
+      overrideBootstrapCommand: '| [Ubuntu2404]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.33"
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-AmazonLinux2023-752924172
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: null
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-Ubuntu2404-752924172
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: null
+    - ami: AmazonLinux2023dugfj
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-Bottlerocket-752924172
       overrideBootstrapCommand: '| [Ubuntu2404]'
       privateNetworking: true
       tags:
