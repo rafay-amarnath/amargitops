@@ -22,13 +22,8 @@ spec:
     addons:
     - name: eks-pod-identity-agent
       version: latest
-    - name: coredns
-      version: latest
-    - name: kube-proxy
-      version: latest
     - name: vpc-cni
-      version: latest
-    - name: aws-ebs-csi-driver
+      useDefaultPodIdentityAssociations: true
       version: latest
     availabilityZones:
     - us-east-1a
