@@ -1,0 +1,133 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  labels:
+    rauto: rauto-cm-780849891
+  name: rauto-cm-780849891
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+  cloudCredentials: rauto_225307237
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.21.1-eksbuild.1
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.32.9-eksbuild.2
+    - name: eks-pod-identity-agent
+      version: latest
+    - configurationValues: '{"defaultStorageClass": {"enabled": true}}'
+      name: aws-ebs-csi-driver
+      version: latest
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    iam:
+      podIdentityAssociations: []
+      serviceAccounts:
+      - attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        metadata:
+          annotations:
+            irsa: rauto-22346
+          labels:
+            irsalabel: rauto-22346
+          name: rauto-irsa-73846
+          namespace: namespace-22346
+        roleOnly: true
+        tags:
+          irsatag: rauto-22346
+      withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-651409954
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: "1.33"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-780849891
+      region: us-east-1
+      tags:
+        DeleteBefore: "2026-01-12T18:43:01Z"
+        build_num: master-sanity-master-155
+        creation_time: "2026-01-12T10:43:01Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1768214581"
+        squad: vikings
+      version: "1.34"
+    network:
+      cni:
+        name: aws-cni
+    nodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 4
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 4
+      minSize: 2
+      name: rauto-ng1-780849891
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.33"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-780849891
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.33"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-594746592
+      privateNetworking: true
+      tags:
+        key1: value2
+        key2: value3
+      version: "1.33"
+      volumeSize: 80
+      volumeType: gp2
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
