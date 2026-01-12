@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-376869524
+  name: cli-eksrauto-174777476
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-376869524
+  cloudCredentials: cli-cprauto-174777476
   config:
     accessConfig:
       accessEntries:
@@ -51,12 +51,6 @@ spec:
         tags:
           irsatag: rauto-irsatag
       withOIDC: true
-    identityMappings:
-      arns:
-      - arn: arn:aws:iam::679196758854:user/automation-qa
-        group:
-        - system:masters
-        username: automation
     managedNodeGroups:
     - amiFamily: Bottlerocket
       bottlerocket:
@@ -74,17 +68,17 @@ spec:
       - t3.xlarge
       maxSize: 2
       minSize: 0
-      name: cli-managedngrauto-376869524
+      name: cli-managedngrauto-174777476
       privateNetworking: true
       version: "1.32"
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: cli-eksrauto-376869524
+      name: cli-eksrauto-174777476
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-12T00:21:19Z"
+        creation_time: "2026-01-12T05:55:24Z"
         email: automation@rafay.co
         env: automation
         squad: local
@@ -95,7 +89,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-first-376869524
+      name: cli-ngrauto-first-174777476
       privateNetworking: true
       version: "1.32"
     - amiFamily: AmazonLinux2023
@@ -103,7 +97,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-second-376869524
+      name: cli-ngrauto-second-174777476
       privateNetworking: true
       version: "1.32"
     vpc:
