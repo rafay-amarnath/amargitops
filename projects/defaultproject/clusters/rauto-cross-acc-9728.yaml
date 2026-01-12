@@ -60,7 +60,7 @@ spec:
       privateNetworking: true
       volumeSize: 80
       volumeType: gp2
-    - ami: ami-099af0196b2d0ff43
+    - ami: ami-07e4e828a19159636
       desiredCapacity: 2
       iam:
         withAddonPolicies:
