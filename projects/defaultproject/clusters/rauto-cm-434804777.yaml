@@ -1,12 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: rauto-cross-acc-9728
+  name: rauto-cm-434804777
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
-  cloudCredentials: rauto-role-cp-9728
+    name: rauto-blueprint-5046622
+    version: v1
+  cloudCredentials: rauto_400892210
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
@@ -15,11 +16,9 @@ spec:
     - name: vpc-cni
       version: v1.21.1-eksbuild.1
     - name: coredns
-      version: v1.12.4-eksbuild.1
+      version: v1.11.4-eksbuild.24
     - name: kube-proxy
-      version: v1.33.5-eksbuild.2
-    - name: aws-ebs-csi-driver
-      version: latest
+      version: v1.32.9-eksbuild.2
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
@@ -28,56 +27,52 @@ spec:
     - us-east-1c
     - us-east-1d
     - us-east-1f
-    identityMappings:
-      arns:
-      - arn: arn:aws:iam::211125364662:role/automation_user_readonly_role
-        group:
-        - system:masters
-        username: rauto
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-434804777
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-434804777
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.32"
+      volumeSize: 80
+      volumeType: gp2
     metadata:
-      name: rauto-cross-acc-9728
+      name: rauto-cm-434804777
       region: us-east-1
       tags:
-        DeleteBefore: "2026-01-12T22:02:06Z"
+        DeleteBefore: "2026-01-12T22:25:45Z"
         build_num: master-sanity-master-155
-        creation_time: "2026-01-12T14:02:06Z"
+        creation_time: "2026-01-12T14:25:45Z"
         email: automation@rafay.co
         env: automation
-        rauto_launch_timestamp: "1768226526"
+        rauto_launch_timestamp: "1768227945"
         squad: vikings
-      version: "1.33"
+      version: "1.32"
     network:
       cni:
         name: aws-cni
-    nodeGroups:
-    - ami: ami-099af0196b2d0ff43
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.medium
-      maxSize: 2
-      minSize: 2
-      name: rauto-cross-acc-ng1-9728
-      overrideBootstrapCommand: '| [Bottlerocket]'
-      privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
-    - ami: ami-099af0196b2d0ff43
-      desiredCapacity: 2
-      iam:
-        withAddonPolicies:
-          autoScaler: true
-          imageBuilder: true
-      instanceType: t3.medium
-      maxSize: 2
-      minSize: 2
-      name: rauto-ng2-9728
-      overrideBootstrapCommand: '| [Bottlerocket]'
-      privateNetworking: true
-      volumeSize: 80
-      volumeType: gp2
     vpc:
       cidr: 192.168.0.0/16
       clusterEndpoints:
@@ -85,6 +80,5 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  crossAccountRoleArn: arn:aws:iam::200143372387:role/rauto-cross-acc-cust
   proxyConfig: {}
   type: aws-eks
