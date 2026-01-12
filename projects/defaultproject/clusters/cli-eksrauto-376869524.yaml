@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-432544389
+  name: cli-eksrauto-376869524
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-432544389
+  cloudCredentials: cli-cprauto-376869524
   config:
     accessConfig:
       accessEntries:
@@ -68,17 +68,17 @@ spec:
       - t3.xlarge
       maxSize: 2
       minSize: 0
-      name: cli-managedngrauto-432544389
+      name: cli-managedngrauto-376869524
       privateNetworking: true
       version: "1.32"
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: cli-eksrauto-432544389
+      name: cli-eksrauto-376869524
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-11T15:16:55Z"
+        creation_time: "2026-01-12T00:21:19Z"
         email: automation@rafay.co
         env: automation
         squad: local
@@ -89,7 +89,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-first-432544389
+      name: cli-ngrauto-first-376869524
       privateNetworking: true
       version: "1.32"
     - amiFamily: AmazonLinux2023
@@ -97,7 +97,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-second-432544389
+      name: cli-ngrauto-second-376869524
       privateNetworking: true
       version: "1.32"
     vpc:
@@ -107,9 +107,4 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
-  sharing:
-    enabled: true
-    projects:
-    - name: rauto-project-631383
-    - name: rauto-project-one-631383
   type: aws-eks
