@@ -22,14 +22,6 @@ spec:
     addons:
     - name: eks-pod-identity-agent
       version: latest
-    - name: coredns
-      version: latest
-    - name: kube-proxy
-      version: latest
-    - name: vpc-cni
-      version: latest
-    - name: aws-ebs-csi-driver
-      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
@@ -70,6 +62,9 @@ spec:
       minSize: 0
       name: cli-managedngrauto-678070888
       privateNetworking: true
+      securityGroups:
+        attachIDs:
+        - sg-09936723e350a8402
       version: "1.32"
       volumeSize: 80
       volumeType: gp3
