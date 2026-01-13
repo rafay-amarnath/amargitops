@@ -18,6 +18,8 @@ spec:
       version: v1.11.4-eksbuild.24
     - name: kube-proxy
       version: v1.30.14-eksbuild.18
+    - name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     managedNodeGroups:
@@ -68,8 +70,8 @@ spec:
         name: aws-cni
     vpc:
       clusterEndpoints:
-        privateAccess: true
-        publicAccess: false
+        privateAccess: false
+        publicAccess: true
       nat:
         gateway: Single
       subnets:
