@@ -1,0 +1,81 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-cm-259733105
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_175094799
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.21.1-eksbuild.1
+    - name: coredns
+      version: v1.12.4-eksbuild.1
+    - name: kube-proxy
+      version: v1.33.5-eksbuild.2
+    addonsConfig: {}
+    autoModeConfig: {}
+    availabilityZones:
+    - us-east-1a
+    - us-east-1b
+    - us-east-1c
+    - us-east-1d
+    - us-east-1f
+    managedNodeGroups:
+    - ami: ami-099af0196b2d0ff43
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng1-259733105
+      overrideBootstrapCommand: '| [Bottlerocket]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    - ami: ami-099af0196b2d0ff43
+      desiredCapacity: 2
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3.medium
+      maxSize: 2
+      minSize: 2
+      name: rauto-ng2-259733105
+      overrideBootstrapCommand: '| [Bottlerocket]'
+      privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-259733105
+      region: us-east-1
+      tags:
+        DeleteBefore: "2026-01-13T16:35:04Z"
+        build_num: master-sanity-master-158
+        creation_time: "2026-01-13T08:35:04Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1768293304"
+        squad: vikings
+      version: "1.33"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
