@@ -32,9 +32,9 @@ spec:
       arns: []
     managedNodeGroups:
     - amiFamily: AmazonLinux2023
-      desiredCapacity: 1
+      desiredCapacity: 4
       instanceType: t3.medium
-      maxSize: 1
+      maxSize: 4
       minSize: 1
       name: rauto-cross-acc-ng4-8312
       privateNetworking: true
