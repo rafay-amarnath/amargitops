@@ -1,0 +1,91 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: rauto-cm-865834753
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: rauto_599080611
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+      bootstrapClusterCreatorAdminPermissions: true
+    addons:
+    - name: vpc-cni
+      version: v1.21.1-eksbuild.1
+    - name: coredns
+      version: v1.11.4-eksbuild.24
+    - name: kube-proxy
+      version: v1.30.14-eksbuild.18
+    addonsConfig: {}
+    autoModeConfig: {}
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng1-865834753
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.30"
+      volumeSize: 80
+      volumeType: gp2
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+          imageBuilder: true
+      instanceType: t3a.xlarge
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng2-865834753
+      overrideBootstrapCommand: null
+      privateNetworking: true
+      version: "1.30"
+      volumeSize: 80
+      volumeType: gp2
+    metadata:
+      name: rauto-cm-865834753
+      region: us-east-1
+      tags:
+        DeleteBefore: "2026-01-13T22:51:33Z"
+        build_num: master-sanity-master-158
+        creation_time: "2026-01-13T14:51:33Z"
+        email: automation@rafay.co
+        env: automation
+        rauto_launch_timestamp: "1768315893"
+        squad: vikings
+      version: "1.30"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+      subnets:
+        private:
+          subnet-06114706579ea10c0:
+            id: subnet-06114706579ea10c0
+          subnet-0c93348944b797969:
+            id: subnet-0c93348944b797969
+        public:
+          subnet-00afb1bd23c788794:
+            id: subnet-00afb1bd23c788794
+          subnet-097e192276767658d:
+            id: subnet-097e192276767658d
+  proxyConfig:
+    enabled: true
+    httpProxy: http://192.168.10.214:443/
+    httpsProxy: http://192.168.10.214:443/
+    noProxy: localhost,127.0.0.1,127.0.0.2,k8master.service.consul,ingress-controller-v1-controller-admission.rafay-system.svc,rafay-drift-v3.rafay-system.svc,secretstore-webhook.rafay-system.svc,fc00::/7,10.244.0.0/16,10.96.0.0/12,192.168.0.0/16,100.64.0.0/16,10.0.0.0/8,172.20.0.0/16,.internal,.s3.amazonaws.com,.s3.us-east-1.amazonaws.com,.us-east-1.amazonaws.com,.us-east-1.eks.amazonaws.com,.ecr.us-east-1.amazonaws.com,localhost,127.0.0.1,169.254.169.254,.ec2.us-east-1.amazonaws.com,.s3.us-west-2.amazonaws.com,api.ecr.us-west-2.amazonaws.com,dkr.ecr.us-west-2.amazonaws.com,ec2.us-west-2.amazonaws.com,.us-west-2.compute.amazonaws.com,.us-west-2.eks.amazonaws.com
+  type: aws-eks
