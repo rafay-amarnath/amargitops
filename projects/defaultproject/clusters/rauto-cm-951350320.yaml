@@ -99,7 +99,7 @@ spec:
         env: automation
         rauto_launch_timestamp: "1768303088"
         squad: vikings
-      version: "1.32"
+      version: "1.33"
     network:
       cni:
         name: aws-cni
