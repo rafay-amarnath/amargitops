@@ -22,6 +22,9 @@ spec:
     addons:
     - name: eks-pod-identity-agent
       version: latest
+    - name: vpc-cni
+      useDefaultPodIdentityAssociations: true
+      version: latest
     availabilityZones:
     - us-east-1a
     - us-east-1b
