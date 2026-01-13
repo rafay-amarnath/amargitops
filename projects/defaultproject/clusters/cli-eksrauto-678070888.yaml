@@ -1,12 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: cli-eksrauto-988420279
+  name: cli-eksrauto-678070888
   project: defaultproject
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: cli-cprauto-988420279
+  cloudCredentials: cli-cprauto-678070888
   config:
     accessConfig:
       accessEntries:
@@ -22,8 +22,13 @@ spec:
     addons:
     - name: eks-pod-identity-agent
       version: latest
+    - name: coredns
+      version: latest
+    - name: kube-proxy
+      version: latest
     - name: vpc-cni
-      useDefaultPodIdentityAssociations: true
+      version: latest
+    - name: aws-ebs-csi-driver
       version: latest
     availabilityZones:
     - us-east-1a
@@ -63,17 +68,17 @@ spec:
       - t3.xlarge
       maxSize: 2
       minSize: 0
-      name: cli-managedngrauto-988420279
+      name: cli-managedngrauto-678070888
       privateNetworking: true
       version: "1.32"
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: cli-eksrauto-988420279
+      name: cli-eksrauto-678070888
       region: us-east-1
       tags:
         build_num: local
-        creation_time: "2026-01-12T09:52:07Z"
+        creation_time: "2026-01-13T04:33:24Z"
         email: automation@rafay.co
         env: automation
         squad: local
@@ -84,7 +89,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-first-988420279
+      name: cli-ngrauto-first-678070888
       privateNetworking: true
       version: "1.32"
     - amiFamily: AmazonLinux2023
@@ -92,7 +97,7 @@ spec:
       instanceType: t3.xlarge
       maxSize: 1
       minSize: 1
-      name: cli-ngrauto-second-988420279
+      name: cli-ngrauto-second-678070888
       privateNetworking: true
       version: "1.32"
     vpc:
@@ -100,6 +105,15 @@ spec:
       clusterEndpoints:
         privateAccess: true
         publicAccess: false
-      nat:
-        gateway: Single
+      subnets:
+        private:
+          subnet-0a0dca0ce01cc2490:
+            id: subnet-0a0dca0ce01cc2490
+          subnet-0a5a7155c68eae010:
+            id: subnet-0a5a7155c68eae010
+        public:
+          subnet-0c48a5778b4bdf9f:
+            id: subnet-0c48a5778bf9f
+          subnet-0e09bb8f0675ad75c:
+            id: subnet-0e09bb8f0675ad75c
   type: aws-eks
