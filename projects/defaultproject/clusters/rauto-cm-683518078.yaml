@@ -35,13 +35,13 @@ spec:
     - us-east-1f
     iam:
       podIdentityAssociations:
-      - createServiceAccount: true
-        namespace: namespace-877869139
+      - namespace: namespace-877869139
         permissionPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
         serviceAccountName: rauto-irsa-8059405
         tags:
-          irsatag: rauto-877869139
+          awstag: rauto-irsa-877869139
       serviceAccounts:
       - attachPolicyARNs:
         - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
