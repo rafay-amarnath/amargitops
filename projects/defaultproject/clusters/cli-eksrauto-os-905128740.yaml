@@ -217,6 +217,15 @@ spec:
         email: automation@rafay.co
         env: automation
       version: null
+    - amiFamily: Ubuntu2404
+      desiredCapacity: 1
+      instanceType: t3.xlarge
+      name: ng-default-add-ng-Ubuntu2404-905128740
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      version: null
     - amiFamily: Bottlerocket
       desiredCapacity: 1
       instanceType: t3.xlarge
