@@ -72,9 +72,9 @@ spec:
       volumeSize: 80
       volumeType: gp2
     - amiFamily: WindowsServer2019FullContainer
-      desiredCapacity: 1
+      desiredCapacity: 2
       instanceType: t3.medium
-      maxSize: 1
+      maxSize: 2
       minSize: 1
       name: rauto-ng1-win-996673071
       privateNetworking: true
