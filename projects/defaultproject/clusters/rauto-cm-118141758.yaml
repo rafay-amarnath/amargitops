@@ -9,7 +9,15 @@ spec:
   cloudCredentials: rauto_944773185
   config:
     accessConfig:
-      authenticationMode: CONFIG_MAP
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy
+        kubernetesUsername: saira-rafay
+        principalARN: arn:aws:iam::211125364662:user/saira@rafay.co
+        type: STANDARD
+      authenticationMode: API_AND_CONFIG_MAP
       bootstrapClusterCreatorAdminPermissions: true
     addons:
     - name: vpc-cni
