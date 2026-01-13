@@ -116,4 +116,8 @@ spec:
             id: subnet-00afb1bd23c788794
           subnet-097e192276767658d:
             id: subnet-097e192276767658d
+  sharing:
+    projects:
+    - name: rauto-project-938487
+    - name: rauto-project-one-938487
   type: aws-eks
