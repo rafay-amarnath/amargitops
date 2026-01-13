@@ -91,4 +91,6 @@ spec:
     enabled: true
     projects:
     - {}
+    - name: rauto-infra-test-project
+    - name: rauto-sharing-test-project
   type: aws-eks
