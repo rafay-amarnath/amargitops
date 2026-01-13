@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: rauto-blueprint-5082493
-    version: v1
+    version: v2
   cloudCredentials: rauto_344176652
   config:
     accessConfig:
