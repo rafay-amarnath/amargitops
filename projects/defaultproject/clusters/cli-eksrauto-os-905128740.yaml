@@ -225,7 +225,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-      version: null
+      version: "1.34"
     - amiFamily: Bottlerocket
       desiredCapacity: 1
       instanceType: t3.xlarge
