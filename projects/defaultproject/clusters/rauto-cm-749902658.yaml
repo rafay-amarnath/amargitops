@@ -30,10 +30,10 @@ spec:
     - us-east-1f
     managedNodeGroups:
     - amiFamily: WindowsServer2019CoreContainer
-      desiredCapacity: 1
+      desiredCapacity: 0
       instanceType: t3.medium
       maxSize: 1
-      minSize: 1
+      minSize: 0
       name: rauto-ng2-win-618689828
       privateNetworking: true
       tags:
