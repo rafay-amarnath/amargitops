@@ -181,7 +181,7 @@ spec:
       version: "1.33"
       volumeSize: 80
       volumeType: gp3
-    - ami: ami-099af0196b2d0ff43
+    - ami: ami-07e4e828a19159636
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-self-managed-ng-1-905128740
@@ -190,7 +190,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-0b643482870c8f6db
+    - ami: ami-06f504b27ae5ab994
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-self-managed-ng-2-905128740
@@ -199,7 +199,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-    - ami: ami-068ba406f08e8c28f
+    - ami: ami-01872345de812817d
       desiredCapacity: 1
       instanceType: t3.xlarge
       name: cli-self-managed-ng-3-905128740
