@@ -49,6 +49,19 @@ spec:
         tags:
           irsatag: rauto-49582
       withOIDC: true
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng-42219134
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
+      volumeSize: 80
+      volumeType: gp2
     metadata:
       name: rauto-cm-683518078
       region: us-east-1
