@@ -8,7 +8,7 @@ metadata:
 spec:
   blueprintConfig:
     name: minimal
-  cloudCredentials: rauto_829994730
+  cloudCredentials: rauto_428527470
   config:
     accessConfig:
       authenticationMode: CONFIG_MAP
