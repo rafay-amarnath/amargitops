@@ -9,6 +9,14 @@ spec:
   cloudCredentials: rauto_475956044
   config:
     accessConfig:
+      accessEntries:
+      - accessPolicies:
+        - accessScope:
+            type: cluster
+          policyARN: arn:aws:eks::aws:cluster-access-policy/AmazonEKSEditPolicy
+        kubernetesUsername: shobhit-rafay
+        principalARN: arn:aws:iam::211125364662:user/shobhit@rafay.co
+        type: STANDARD
       authenticationMode: API
       bootstrapClusterCreatorAdminPermissions: true
     addons:
