@@ -110,4 +110,8 @@ spec:
         publicAccess: false
       nat:
         gateway: Single
+  sharing:
+    projects:
+    - name: rauto-project-546089
+    - name: rauto-project-one-546089
   type: aws-eks
