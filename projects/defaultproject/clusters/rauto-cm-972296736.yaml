@@ -18,6 +18,8 @@ spec:
       version: v1.12.4-eksbuild.1
     - name: kube-proxy
       version: v1.33.5-eksbuild.2
+    - name: aws-ebs-csi-driver
+      version: latest
     addonsConfig: {}
     autoModeConfig: {}
     availabilityZones:
@@ -68,6 +70,19 @@ spec:
       name: rauto-ng2-972296736
       overrideBootstrapCommand: '| [Ubuntu]'
       privateNetworking: true
+      volumeSize: 80
+      volumeType: gp2
+    - ami: ami-06382102d3ff79b05
+      desiredCapacity: 1
+      instanceType: t3.medium
+      maxSize: 1
+      minSize: 1
+      name: rauto-ng1-win-52199805
+      overrideBootstrapCommand: '| [Windows]'
+      privateNetworking: true
+      tags:
+        email: automation@rafay.co
+        env: automation
       volumeSize: 80
       volumeType: gp2
     vpc:

@@ -49,7 +49,7 @@ spec:
       name: rauto-ng1-951350320
       overrideBootstrapCommand: null
       privateNetworking: true
-      version: "1.32"
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     - amiFamily: Bottlerocket
@@ -86,6 +86,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
+      version: "1.33"
       volumeSize: 80
       volumeType: gp2
     metadata:
@@ -99,7 +100,7 @@ spec:
         env: automation
         rauto_launch_timestamp: "1768303088"
         squad: vikings
-      version: "1.33"
+      version: "1.34"
     network:
       cni:
         name: aws-cni
