@@ -5,7 +5,7 @@ metadata:
     rafa-version: "1.333"
     test-day: nothing-day-2
   labels:
-    workload: test283341822
+    workload: test813850141
   name: automation-cluster-boot-eks-1225
   project: defaultproject
 spec:
@@ -90,7 +90,5 @@ spec:
   sharing:
     enabled: true
     projects:
-    - {}
-    - name: rauto-infra-test-project
-    - name: rauto-sharing-test-project
+    - name: '*'
   type: aws-eks
