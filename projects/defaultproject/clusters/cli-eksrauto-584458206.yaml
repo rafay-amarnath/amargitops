@@ -64,6 +64,9 @@ spec:
       minSize: 0
       name: cli-managedngrauto-584458206
       privateNetworking: true
+      securityGroups:
+        attachIDs:
+        - sg-034d5dbb1459decad
       version: "1.32"
       volumeSize: 80
       volumeType: gp3
