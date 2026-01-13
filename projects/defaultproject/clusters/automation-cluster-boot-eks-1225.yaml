@@ -5,7 +5,6 @@ metadata:
     rafa-version: "1.333"
     test-day: nothing-day-2
   labels:
-    rautons: gittest970759610
     workload: test306045411
   name: automation-cluster-boot-eks-1225
   project: defaultproject
@@ -88,4 +87,8 @@ spec:
       nat:
         gateway: Single
   proxyConfig: {}
+  sharing:
+    enabled: true
+    projects:
+    - name: rs-quota-test-project-639772
   type: aws-eks
