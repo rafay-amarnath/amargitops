@@ -56,10 +56,6 @@ spec:
         group:
         - system:masters
         username: automation1
-      - arn: arn:aws:iam::679196758854:user/automation-qa2
-        group:
-        - system:masters
-        username: automation2
     managedNodeGroups:
     - amiFamily: Bottlerocket
       bottlerocket:
