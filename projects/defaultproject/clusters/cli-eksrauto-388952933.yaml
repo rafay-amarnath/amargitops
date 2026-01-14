@@ -47,11 +47,7 @@ spec:
           irsatag: rauto-irsatag
       withOIDC: true
     identityMappings:
-      arns:
-      - arn: arn:aws:iam::679196758854:user/automation-qa1
-        group:
-        - system:masters
-        username: automation1
+      arns: []
     managedNodeGroups:
     - amiFamily: Bottlerocket
       bottlerocket:
