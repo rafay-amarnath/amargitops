@@ -136,6 +136,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-self-def-Bottlerocket
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2023
