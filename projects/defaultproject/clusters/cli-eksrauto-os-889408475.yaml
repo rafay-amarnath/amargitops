@@ -64,6 +64,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-ubuntu2404
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: AmazonLinux2023
@@ -77,6 +78,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-defaultami-managed-AmazonLinux2023
+      version: "1.33"
       volumeSize: 80
       volumeType: gp3
     - amiFamily: Bottlerocket
