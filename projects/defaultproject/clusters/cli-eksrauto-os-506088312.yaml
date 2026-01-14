@@ -189,7 +189,7 @@ spec:
       tags:
         email: automation@rafay.co
         env: automation
-      version: null
+      version: "1.34"
     - amiFamily: Ubuntu2404
       desiredCapacity: 1
       instanceType: t3.xlarge
