@@ -93,4 +93,5 @@ spec:
     - {}
     - name: rauto-infra-test-project
     - name: rauto-platform-test-project
+    - name: rbac-project-763615115
   type: aws-eks
