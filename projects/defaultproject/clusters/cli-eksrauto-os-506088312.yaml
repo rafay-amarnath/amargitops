@@ -151,7 +151,7 @@ spec:
       maxSize: 1
       minSize: 1
       name: ng-self-def-AmazonLinux2023
-      version: "1.33"
+      version: "1.34"
       volumeSize: 80
       volumeType: gp3
     - ami: ami-099af0196b2d0ff43
