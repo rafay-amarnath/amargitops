@@ -92,4 +92,5 @@ spec:
     projects:
     - {}
     - name: rauto-infra-test-project
+    - name: rauto-platform-test-project
   type: aws-eks
